@@ -1,0 +1,40 @@
+{
+"responses": {
+"greeting": [
+"Halo, saya adalah chatbot kesehatan mental mahasiswa yang siap membantu Anda. Anda dapat berbagi cerita mengenai perasaan, stres, atau kendala yang sedang Anda alami di lingkungan kampus.",
+"Halo, selamat datang. Saya di sini untuk membantu Anda terkait kesehatan mental mahasiswa, seperti stres akademik, kecemasan, dan motivasi belajar. Silakan ceritakan apa yang sedang Anda rasakan.",
+"Hai, saya siap mendengarkan Anda. Jangan ragu untuk berbagi masalah yang Anda hadapi di perkuliahan atau kehidupan kampus."
+],
+
+"stress": [
+  "Stres akademik merupakan kondisi yang umum dialami mahasiswa akibat tekanan tugas, ujian, dan deadline yang menumpuk. Untuk mengatasinya, Anda dapat mencoba membuat jadwal belajar yang lebih teratur, membagi tugas menjadi bagian kecil, serta memberikan waktu istirahat yang cukup agar pikiran tidak terlalu terbebani.",
+  "Saya memahami bahwa tugas kuliah yang menumpuk dapat membuat Anda merasa stres dan kewalahan. Cobalah untuk tidak mengerjakan semuanya sekaligus. Fokus pada satu tugas terlebih dahulu, lalu lanjutkan secara bertahap sambil menjaga kesehatan fisik dan mental Anda.",
+  "Stres dalam dunia perkuliahan adalah hal yang wajar. Namun jika dibiarkan, hal ini dapat mempengaruhi konsentrasi dan kesehatan Anda. Anda bisa mencoba teknik relaksasi seperti pernapasan dalam, istirahat sejenak, atau berbicara dengan teman maupun dosen pembimbing."
+],
+
+"anxiety": [
+  "Kecemasan sering muncul ketika mahasiswa menghadapi ketidakpastian seperti ujian, nilai, atau masa depan. Cobalah untuk fokus pada hal-hal yang dapat Anda kontrol saat ini, dan hindari berpikir berlebihan terhadap hal yang belum tentu terjadi.",
+  "Perasaan cemas dan overthinking adalah hal yang cukup umum di kalangan mahasiswa. Anda dapat mencoba menenangkan diri dengan mengatur pernapasan, menulis apa yang Anda pikirkan, atau berbicara dengan orang yang Anda percaya.",
+  "Jika Anda sering merasa cemas, penting untuk memahami bahwa tidak semua hal harus diselesaikan sekaligus. Ambil langkah kecil setiap hari, dan berikan waktu untuk diri Anda beradaptasi dengan tekanan akademik."
+],
+
+"motivation": [
+  "Setiap mahasiswa pasti pernah mengalami masa sulit dalam perjalanan akademiknya. Namun, penting untuk diingat bahwa kegagalan bukanlah akhir, melainkan bagian dari proses belajar. Anda tetap bisa melangkah maju secara perlahan.",
+  "Saya tahu Anda mungkin merasa lelah atau kehilangan semangat, tetapi Anda tidak sendirian. Cobalah untuk mengingat tujuan awal Anda masuk kuliah, dan ambil langkah kecil setiap hari untuk mencapainya.",
+  "Rasa tidak percaya diri dan kehilangan motivasi adalah hal yang wajar. Yang terpenting adalah tetap mencoba, meskipun perlahan. Dukungan dari teman, keluarga, atau konselor kampus juga dapat membantu Anda bangkit kembali."
+],
+
+"consultation": [
+  "Jika Anda merasa membutuhkan bantuan lebih lanjut, Anda dapat memanfaatkan layanan konseling yang biasanya disediakan oleh kampus. Konselor profesional dapat membantu Anda dalam mengelola stres, kecemasan, maupun masalah akademik.",
+  "Layanan konseling kampus adalah tempat yang aman untuk berbicara mengenai masalah yang Anda hadapi. Anda tidak perlu merasa sendirian, karena ada tenaga profesional yang siap membantu Anda secara rahasia dan tanpa penilaian.",
+  "Apabila tekanan yang Anda rasakan sudah cukup berat, sangat disarankan untuk menghubungi layanan konseling kampus atau psikolog profesional agar Anda mendapatkan penanganan yang tepat."
+],
+
+"goodbye": [
+  "Terima kasih telah menggunakan chatbot ini. Semoga percakapan ini dapat membantu Anda merasa lebih tenang dan mendapatkan sedikit kejelasan mengenai kondisi yang Anda alami. Jangan ragu untuk kembali jika membutuhkan bantuan.",
+  "Sampai jumpa. Ingatlah bahwa menjaga kesehatan mental sama pentingnya dengan menjaga kesehatan fisik. Tetap semangat menjalani aktivitas perkuliahan Anda.",
+  "Terima kasih sudah berbagi cerita. Semoga hari Anda menjadi lebih baik. Jika Anda merasa kesulitan, jangan ragu untuk mencari bantuan dari orang terdekat atau layanan profesional."
+]
+
+}
+}

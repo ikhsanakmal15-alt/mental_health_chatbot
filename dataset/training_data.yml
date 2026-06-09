@@ -1,0 +1,87 @@
+version: "3.1"
+
+nlu:
+
+* intent: greeting
+  examples: |
+
+  * Halo
+  * Hai
+  * Hello
+  * Selamat pagi
+  * Selamat siang
+  * Selamat sore
+  * Selamat malam
+  * Apa kabar
+  * Permisi
+  * Assalamualaikum
+
+* intent: stress
+  examples: |
+
+  * Saya sedang stres
+  * Saya banyak tugas
+  * Saya burnout
+  * Saya capek kuliah
+  * Tugas saya menumpuk
+  * Saya merasa tertekan
+  * Saya lelah dengan perkuliahan
+  * Deadline membuat saya stres
+  * Saya kewalahan dengan tugas
+  * Saya tidak sanggup mengerjakan semua tugas
+
+* intent: anxiety
+  examples: |
+
+  * Saya cemas
+  * Saya khawatir dengan nilai saya
+  * Saya takut gagal
+  * Saya sering overthinking
+  * Saya tidak bisa tenang
+  * Saya takut masa depan saya buruk
+  * Saya gugup menghadapi ujian
+  * Saya merasa gelisah
+  * Saya takut tidak lulus
+  * Saya merasa khawatir terus menerus
+
+* intent: motivation
+  examples: |
+
+  * Saya kehilangan semangat
+  * Saya butuh motivasi
+  * Saya ingin menyerah
+  * Saya tidak percaya diri
+  * Saya merasa gagal
+  * Saya merasa tidak berguna
+  * Saya malas belajar
+  * Saya tidak punya tujuan
+  * Saya merasa tidak mampu
+  * Tolong beri saya motivasi
+
+* intent: consultation
+  examples: |
+
+  * Saya ingin konsultasi
+  * Bagaimana cara konseling
+  * Apakah ada layanan konselor
+  * Saya ingin berbicara dengan konselor
+  * Bagaimana menghubungi konselor kampus
+  * Saya membutuhkan bantuan profesional
+  * Apakah kampus menyediakan konseling
+  * Di mana layanan konseling mahasiswa
+  * Bagaimana prosedur konsultasi
+  * Saya ingin mendapatkan bantuan psikolog
+
+* intent: goodbye
+  examples: |
+
+  * Terima kasih
+  * Sampai jumpa
+  * Dadah
+  * Bye
+  * Selamat tinggal
+  * Terima kasih atas bantuannya
+  * Saya pamit
+  * Oke terima kasih
+  * Sampai nanti
+  * Sampai bertemu lagi

@@ -1,0 +1,74 @@
+# ===================================
+# PYTHON
+# ===================================
+
+venv/
+.venv/
+env/
+rasa_env/
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment Variables
+.env
+
+# ===================================
+# DATABASE
+# ===================================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# ===================================
+# LOG FILES
+# ===================================
+
+*.log
+
+# ===================================
+# VS CODE
+# ===================================
+
+.vscode/
+
+# ===================================
+# FLUTTER
+# ===================================
+
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+build/
+
+# Android
+frontend_flutter/android/.gradle/
+
+# Flutter generated
+frontend_flutter/.dart_tool/
+frontend_flutter/build/
+
+# ===================================
+# RASA
+# ===================================
+
+# Cache training
+rasa_nlp/.rasa/
+
+# Trained models
+rasa_nlp/models/
+
+# Virtual environment
+rasa_nlp/rasa_env/
+
+# ===================================
+# OS FILES
+# ===================================
+
+Thumbs.db
+Desktop.ini
+.DS_Store

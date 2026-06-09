@@ -1,0 +1,17 @@
+version: "3.1"
+
+intents:
+  - greet
+  - stress_academic
+  - anxiety
+
+responses:
+
+  utter_greet:
+    - text: "Halo, saya siap membantu Anda."
+
+  utter_stress_academic:
+    - text: "Saya memahami perasaan Anda. Cobalah mengatur waktu belajar dan istirahat."
+
+  utter_anxiety:
+    - text: "Kecemasan dapat muncul saat tekanan meningkat. Cobalah tarik napas perlahan."

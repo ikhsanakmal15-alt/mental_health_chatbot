@@ -1,0 +1,94 @@
+{
+"intents": [
+{
+"tag": "greeting",
+"patterns": [
+"Halo",
+"Hai",
+"Selamat pagi",
+"Selamat siang",
+"Apa kabar",
+"Permisi",
+"Halo chatbot",
+"Hai bot",
+"Assalamualaikum",
+"Selamat malam"
+]
+},
+{
+"tag": "stress",
+"patterns": [
+"Saya sedang stres",
+"Saya banyak tugas",
+"Tugas kuliah menumpuk",
+"Saya burnout",
+"Saya lelah dengan kuliah",
+"Saya tertekan dengan deadline",
+"Saya capek belajar",
+"Saya tidak sanggup mengerjakan tugas",
+"Saya merasa kewalahan",
+"Kuliah membuat saya stres"
+]
+},
+{
+"tag": "anxiety",
+"patterns": [
+"Saya cemas",
+"Saya khawatir dengan nilai saya",
+"Saya takut gagal",
+"Saya sering overthinking",
+"Saya tidak bisa tenang",
+"Saya takut masa depan",
+"Saya gugup menghadapi ujian",
+"Saya merasa tidak aman",
+"Saya takut tidak lulus",
+"Saya sering merasa gelisah"
+]
+},
+{
+"tag": "motivation",
+"patterns": [
+"Saya kehilangan semangat",
+"Saya butuh motivasi",
+"Saya ingin menyerah",
+"Saya tidak percaya diri",
+"Saya merasa tidak berguna",
+"Saya malas belajar",
+"Saya merasa gagal",
+"Saya tidak punya tujuan",
+"Saya merasa tidak mampu",
+"Berikan saya motivasi"
+]
+},
+{
+"tag": "consultation",
+"patterns": [
+"Bagaimana cara konseling",
+"Saya ingin konsultasi",
+"Apakah ada layanan konselor",
+"Bagaimana menghubungi konselor",
+"Saya ingin bertemu psikolog",
+"Di mana layanan konseling kampus",
+"Bagaimana cara mendapatkan bantuan",
+"Apakah kampus menyediakan konseling",
+"Saya ingin berbicara dengan konselor",
+"Bagaimana prosedur konsultasi"
+]
+},
+{
+"tag": "goodbye",
+"patterns": [
+"Terima kasih",
+"Sampai jumpa",
+"Dadah",
+"Bye",
+"Selamat tinggal",
+"Terima kasih atas bantuannya",
+"Saya pamit",
+"Cukup sampai di sini",
+"Oke terima kasih",
+"Sampai nanti"
+]
+}
+]
+}

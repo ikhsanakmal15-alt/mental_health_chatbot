@@ -1,0 +1,24 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - Halo
+    - Hai
+    - Selamat pagi
+    - Halo chatbot
+
+- intent: stress_academic
+  examples: |
+    - Saya stres karena tugas
+    - Banyak deadline
+    - Saya tertekan dengan kuliah
+    - Saya lelah belajar
+
+- intent: anxiety
+  examples: |
+    - Saya cemas
+    - Saya takut
+    - Saya khawatir
+    - Saya gelisah
