@@ -1,13 +1,99 @@
 version: "3.1"
 
-stories:
+rules:
 
-- story: stress academic story
+# =========================
+# GREETING
+# =========================
+- rule: Respond greeting
   steps:
-  - intent: stress_academic
-  - action: utter_stress_academic
+    - intent: greet
+    - action: utter_greet
 
-- story: anxiety story
+# =========================
+# STRESS AKADEMIK
+# =========================
+- rule: Respond stress academic
   steps:
-  - intent: anxiety
-  - action: utter_anxiety
+    - intent: stress_academic
+    - action: action_stress_advice
+
+# =========================
+# ANXIETY
+# =========================
+- rule: Respond anxiety
+  steps:
+    - intent: anxiety
+    - action: action_anxiety_advice
+
+# =========================
+# MOTIVATION
+# =========================
+- rule: Respond motivation
+  steps:
+    - intent: motivation
+    - action: utter_motivation
+
+# =========================
+# SELF CONFIDENCE
+# =========================
+- rule: Respond self confidence
+  steps:
+    - intent: self_confidence
+    - action: utter_self_confidence
+
+# =========================
+# LONELINESS
+# =========================
+- rule: Respond loneliness
+  steps:
+    - intent: loneliness
+    - action: utter_loneliness
+
+# =========================
+# SLEEP PROBLEM
+# =========================
+- rule: Respond sleep problem
+  steps:
+    - intent: sleep_problem
+    - action: utter_sleep_problem
+
+# =========================
+# DEPRESSION
+# =========================
+- rule: Respond depression symptom
+  steps:
+    - intent: depression_symptom
+    - action: utter_depression_symptom
+
+# =========================
+# ASK TIPS
+# =========================
+- rule: Respond ask tips
+  steps:
+    - intent: ask_tips
+    - action: utter_ask_tips
+
+# =========================
+# CONSULTATION
+# =========================
+- rule: Respond consultation
+  steps:
+    - intent: consultation
+    - action: utter_consultation
+
+# =========================
+# GRATITUDE
+# =========================
+- rule: Respond gratitude
+  steps:
+    - intent: gratitude
+    - action: utter_gratitude
+
+# =========================
+# GOODBYE
+# =========================
+- rule: Respond goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye

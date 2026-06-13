@@ -7,9 +7,11 @@ class ApiService {
       "http://10.0.2.2:8000";
 
   static Future<String> sendMessage(
-      String message) async {
+    String message,
+  ) async {
 
     final response = await http.post(
+
       Uri.parse(
         "$baseUrl/chat",
       ),
@@ -20,8 +22,13 @@ class ApiService {
       },
 
       body: jsonEncode({
+
+        "user_id": 1,
+
         "message": message
+
       }),
+
     );
 
     if (response.statusCode == 200) {
@@ -31,10 +38,31 @@ class ApiService {
 
       return data["reply"];
 
-    } else {
-
-      throw Exception(
-          "Gagal terhubung ke server");
     }
+
+    throw Exception(
+      "Gagal terhubung ke server"
+    );
   }
+  static Future<List<dynamic>>
+getHistory() async {
+
+  final response = await http.get(
+
+    Uri.parse(
+      "$baseUrl/history/1",
+    ),
+
+  );
+
+  if (response.statusCode == 200) {
+
+    return jsonDecode(
+      response.body,
+    );
+
+  }
+
+  return [];
+}
 }

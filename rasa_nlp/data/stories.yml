@@ -2,12 +2,168 @@ version: "3.1"
 
 stories:
 
+# =========================
+# GREETING
+# =========================
+- story: greet story
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+# =========================
+# STRESS AKADEMIK
+# =========================
 - story: stress academic story
   steps:
-  - intent: stress_academic
-  - action: utter_stress_academic
+    - intent: stress_academic
+    - action: action_stress_advice
 
+# =========================
+# ANXIETY
+# =========================
 - story: anxiety story
   steps:
-  - intent: anxiety
-  - action: utter_anxiety
+    - intent: anxiety
+    - action: action_anxiety_advice
+
+# =========================
+# MOTIVATION
+# =========================
+- story: motivation story
+  steps:
+    - intent: motivation
+    - action: utter_motivation
+
+# =========================
+# SELF CONFIDENCE
+# =========================
+- story: self confidence story
+  steps:
+    - intent: self_confidence
+    - action: utter_self_confidence
+
+# =========================
+# LONELINESS
+# =========================
+- story: loneliness story
+  steps:
+    - intent: loneliness
+    - action: utter_loneliness
+
+# =========================
+# SLEEP PROBLEM
+# =========================
+- story: sleep problem story
+  steps:
+    - intent: sleep_problem
+    - action: utter_sleep_problem
+
+# =========================
+# DEPRESSION SYMPTOM
+# =========================
+- story: depression symptom story
+  steps:
+    - intent: depression_symptom
+    - action: utter_depression_symptom
+
+# =========================
+# ASK TIPS
+# =========================
+- story: ask tips story
+  steps:
+    - intent: ask_tips
+    - action: utter_ask_tips
+
+# =========================
+# CONSULTATION
+# =========================
+- story: consultation story
+  steps:
+    - intent: consultation
+    - action: utter_consultation
+
+# =========================
+# GRATITUDE
+# =========================
+- story: gratitude story
+  steps:
+    - intent: gratitude
+    - action: utter_gratitude
+
+# =========================
+# GOODBYE
+# =========================
+- story: goodbye story
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+# =========================
+# GREET -> CONSULTATION
+# =========================
+- story: greet then consultation
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: consultation
+    - action: utter_consultation
+
+# =========================
+# GREET -> ASK TIPS
+# =========================
+- story: greet then ask tips
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_tips
+    - action: utter_ask_tips
+
+# =========================
+# GREET -> STRESS
+# =========================
+- story: greet then stress
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: stress_academic
+    - action: action_stress_advice
+
+# =========================
+# GREET -> ANXIETY
+# =========================
+- story: greet then anxiety
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: anxiety
+    - action: action_anxiety_advice
+
+# =========================
+# MOTIVATION -> GRATITUDE
+# =========================
+- story: motivation then thanks
+  steps:
+    - intent: motivation
+    - action: utter_motivation
+    - intent: gratitude
+    - action: utter_gratitude
+
+# =========================
+# CONSULTATION -> GRATITUDE
+# =========================
+- story: consultation then thanks
+  steps:
+    - intent: consultation
+    - action: utter_consultation
+    - intent: gratitude
+    - action: utter_gratitude
+
+# =========================
+# TIPS -> GOODBYE
+# =========================
+- story: tips then goodbye
+  steps:
+    - intent: ask_tips
+    - action: utter_ask_tips
+    - intent: goodbye
+    - action: utter_goodbye

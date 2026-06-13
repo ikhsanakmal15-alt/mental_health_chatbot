@@ -6,7 +6,12 @@ import '../screens/tips/tips_screen.dart';
 import '../screens/history/history_screen.dart';
 
 class BottomNav extends StatefulWidget {
-  const BottomNav({super.key});
+  final String userName;
+
+  const BottomNav({
+    super.key,
+    required this.userName,
+  });
 
   @override
   State<BottomNav> createState() => _BottomNavState();
@@ -15,36 +20,48 @@ class BottomNav extends StatefulWidget {
 class _BottomNavState extends State<BottomNav> {
   int currentIndex = 0;
 
-  final primaryColor = const Color(0xFF6FCF97);
-  final backgroundColor = const Color(0xFFF8FAFC);
+  static const Color primaryColor = Color(0xFF6FCF97);
 
-  late final List<Widget> pages = [
-    const HomeScreen(),
-    const ChatScreen(),
-    const TipsScreen(),
-    const HistoryScreen(),
-  ];
+  late final List<Widget> pages;
+
+  @override
+  void initState() {
+    super.initState();
+
+    pages = [
+      HomeScreen(
+        userName: widget.userName,
+      ),
+      const ChatScreen(),
+      const TipsScreen(),
+      const HistoryScreen(),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[currentIndex],
 
-      /// ================= BOTTOM NAV =================
+      /// ================= MODERN BOTTOM NAV =================
       bottomNavigationBar: Container(
+        margin: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
         decoration: BoxDecoration(
           color: Colors.white,
+          borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withOpacity(0.08),
               blurRadius: 20,
-              offset: const Offset(0, -5),
+              offset: const Offset(0, 10),
             ),
           ],
         ),
 
         child: BottomNavigationBar(
           currentIndex: currentIndex,
+
           onTap: (index) {
             setState(() {
               currentIndex = index;
@@ -52,19 +69,24 @@ class _BottomNavState extends State<BottomNav> {
           },
 
           type: BottomNavigationBarType.fixed,
+          elevation: 0,
+          backgroundColor: Colors.transparent,
 
           selectedItemColor: primaryColor,
-          unselectedItemColor: Colors.grey,
+          unselectedItemColor: Colors.grey.shade400,
+
+          selectedFontSize: 12,
+          unselectedFontSize: 11,
 
           selectedLabelStyle: const TextStyle(
             fontWeight: FontWeight.w600,
           ),
 
+          unselectedLabelStyle: const TextStyle(
+            fontWeight: FontWeight.w500,
+          ),
+
           showUnselectedLabels: true,
-
-          backgroundColor: Colors.white,
-
-          elevation: 0,
 
           items: const [
             BottomNavigationBarItem(
@@ -72,19 +94,16 @@ class _BottomNavState extends State<BottomNav> {
               activeIcon: Icon(Icons.home),
               label: "Home",
             ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.chat_bubble_outline),
               activeIcon: Icon(Icons.chat_bubble),
               label: "Chat",
             ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.lightbulb_outline),
               activeIcon: Icon(Icons.lightbulb),
               label: "Tips",
             ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.history_outlined),
               activeIcon: Icon(Icons.history),

@@ -2,23 +2,334 @@ version: "3.1"
 
 nlu:
 
+# =========================
+# GREETING
+# =========================
 - intent: greet
   examples: |
     - Halo
     - Hai
-    - Selamat pagi
+    - Hai chatbot
     - Halo chatbot
+    - Halo bot
+    - Halo MindCare
+    - Selamat pagi
+    - Selamat siang
+    - Selamat sore
+    - Selamat malam
+    - Apa kabar
+    - Permisi
+    - Assalamualaikum
+    - Pagi
+    - Siang
+    - Sore
+    - Malam
+    - Hai apakah kamu bisa membantu saya
+    - Senang bertemu denganmu
+    - Halo saya ingin curhat
+    - Halo saya butuh bantuan
+    - Halo apakah kamu online
+    - Hai teman
+    - Hai AI
+    - Hai saya sedang bingung
+    - Halo boleh ngobrol
+    - Saya ingin berbicara
+    - Boleh saya bertanya
+    - Halo ada yang ingin saya konsultasikan
 
+# =========================
+# STRESS AKADEMIK
+# =========================
 - intent: stress_academic
   examples: |
     - Saya stres karena tugas
+    - Saya stres karena kuliah
+    - Saya stres karena deadline
     - Banyak deadline
-    - Saya tertekan dengan kuliah
+    - Deadline menumpuk
+    - Tugas saya banyak sekali
+    - Tugas kuliah menumpuk
+    - Saya burnout
     - Saya lelah belajar
+    - Saya capek belajar
+    - Saya kewalahan
+    - Saya tertekan dengan kuliah
+    - Saya pusing mengerjakan tugas
+    - Saya tidak sanggup mengerjakan tugas
+    - Jadwal kuliah terlalu padat
+    - Saya tidak punya waktu istirahat
+    - Saya stres menghadapi ujian
+    - Saya takut nilai saya jelek
+    - Nilai saya turun dan saya stres
+    - Skripsi membuat saya stres
+    - Revisi skripsi membuat saya lelah
+    - Saya bingung membagi waktu
+    - Saya tidak bisa mengejar deadline
+    - Saya tertekan karena IPK
+    - Saya banyak tugas kelompok
+    - Saya kelelahan karena organisasi dan kuliah
+    - Saya hampir menyerah karena tugas
+    - Saya capek dengan aktivitas kampus
+    - Saya tidak kuat dengan tekanan akademik
+    - Saya ingin istirahat dari semua tugas
 
+# =========================
+# ANXIETY
+# =========================
 - intent: anxiety
   examples: |
     - Saya cemas
-    - Saya takut
-    - Saya khawatir
+    - Saya merasa cemas
     - Saya gelisah
+    - Saya khawatir
+    - Saya takut
+    - Saya takut gagal
+    - Saya takut masa depan
+    - Saya takut tidak lulus
+    - Saya sering overthinking
+    - Saya overthinking terus
+    - Pikiran saya tidak tenang
+    - Saya panik
+    - Saya sering panik
+    - Saya sulit tenang
+    - Saya cemas setiap hari
+    - Saya merasa gugup
+    - Saya khawatir berlebihan
+    - Saya takut presentasi
+    - Saya takut mengecewakan orang tua
+    - Saya takut hasil ujian jelek
+    - Saya merasa tidak aman
+    - Saya tidak bisa mengendalikan rasa cemas
+    - Saya sering memikirkan hal buruk
+    - Saya gelisah tanpa alasan
+    - Saya takut melakukan kesalahan
+    - Saya tidak bisa berhenti berpikir
+    - Saya merasa panik menghadapi masa depan
+    - Saya takut tidak sukses
+    - Saya merasa waswas terus
+    - Saya mudah cemas
+
+# =========================
+# MOTIVATION
+# =========================
+- intent: motivation
+  examples: |
+    - Saya kehilangan semangat
+    - Saya tidak semangat belajar
+    - Saya ingin menyerah
+    - Saya butuh motivasi
+    - Saya merasa gagal
+    - Saya malas belajar
+    - Saya tidak punya motivasi
+    - Saya kehilangan motivasi
+    - Saya capek mengejar target
+    - Saya ingin berhenti kuliah
+    - Saya merasa putus asa
+    - Saya tidak berenergi
+    - Saya sulit memulai belajar
+    - Saya bosan dengan kuliah
+    - Saya tidak punya tujuan
+    - Saya merasa hidup saya tidak berkembang
+    - Saya tidak berdaya
+    - Saya merasa lelah secara mental
+    - Tolong beri saya semangat
+    - Berikan saya motivasi
+    - Saya ingin bangkit lagi
+    - Saya ingin lebih semangat
+    - Saya kehilangan arah
+    - Saya merasa stuck
+    - Saya sudah tidak bersemangat lagi
+
+# =========================
+# SELF CONFIDENCE
+# =========================
+- intent: self_confidence
+  examples: |
+    - Saya tidak percaya diri
+    - Saya minder
+    - Saya malu
+    - Saya merasa tidak mampu
+    - Saya merasa bodoh
+    - Saya takut berbicara di kelas
+    - Saya takut presentasi
+    - Saya malu tampil di depan umum
+    - Saya takut berbicara di depan orang banyak
+    - Saya sering membandingkan diri dengan orang lain
+    - Saya merasa kemampuan saya kurang
+    - Saya tidak yakin dengan diri sendiri
+    - Saya merasa rendah diri
+    - Saya tidak yakin bisa berhasil
+    - Saya takut dinilai orang lain
+    - Saya takut ditertawakan
+    - Saya takut salah bicara
+    - Saya merasa tidak pantas
+    - Saya kurang percaya diri saat wawancara
+    - Saya gugup saat presentasi
+
+# =========================
+# LONELINESS
+# =========================
+- intent: loneliness
+  examples: |
+    - Saya merasa kesepian
+    - Saya merasa sendiri
+    - Saya tidak punya teman
+    - Saya sendirian
+    - Saya merasa diabaikan
+    - Tidak ada yang peduli dengan saya
+    - Saya tidak punya tempat bercerita
+    - Saya merasa dikucilkan
+    - Saya merasa tidak memiliki siapa-siapa
+    - Saya ingin punya teman
+    - Saya merasa kosong
+    - Saya merasa terisolasi
+    - Saya kesepian di kos
+    - Saya jauh dari keluarga
+    - Saya merasa sendirian di kampus
+
+# =========================
+# SLEEP PROBLEM
+# =========================
+- intent: sleep_problem
+  examples: |
+    - Saya sulit tidur
+    - Saya tidak bisa tidur
+    - Saya insomnia
+    - Saya sering begadang
+    - Saya susah tidur
+    - Saya tidur terlalu larut
+    - Saya sering terbangun di malam hari
+    - Saya kualitas tidurnya buruk
+    - Saya tidak bisa tidur nyenyak
+    - Saya sering kurang tidur
+    - Tidur saya tidak teratur
+    - Saya tidak bisa memejamkan mata
+    - Saya susah tidur karena pikiran
+    - Saya tidak bisa istirahat
+    - Saya sering tidur hanya 3 jam
+
+# =========================
+# DEPRESSION SYMPTOM
+# =========================
+- intent: depression_symptom
+  examples: |
+    - Saya merasa sedih terus
+    - Saya sedih setiap hari
+    - Saya kehilangan minat
+    - Saya tidak menikmati apa pun
+    - Saya merasa hidup tidak berarti
+    - Saya sering menangis
+    - Saya merasa putus asa
+    - Saya merasa kosong
+    - Saya merasa tidak berguna
+    - Saya merasa sangat terpuruk
+    - Saya kehilangan semangat hidup
+    - Saya merasa hampa
+    - Saya tidak ingin melakukan apa pun
+    - Saya tidak menikmati hobi lagi
+    - Saya sedih berkepanjangan
+
+# =========================
+# ASK TIPS
+# =========================
+- intent: ask_tips
+  examples: |
+    - Berikan tips
+    - Tips kesehatan mental
+    - Bagaimana cara mengurangi stres
+    - Bagaimana cara mengatasi stres
+    - Bagaimana cara mengurangi kecemasan
+    - Cara mengatasi overthinking
+    - Cara mengatasi burnout
+    - Cara menjaga kesehatan mental
+    - Apa tips menghadapi deadline
+    - Tips agar lebih tenang
+    - Tips agar tidak stres
+    - Tips menghadapi tugas kuliah
+    - Bagaimana menjaga semangat belajar
+    - Apa yang harus saya lakukan agar lebih tenang
+    - Bagaimana menenangkan pikiran
+    - Tips menghadapi ujian
+    - Bagaimana mengelola emosi
+    - Bagaimana menjaga keseimbangan hidup
+    - Bagaimana mengurangi rasa takut
+    - Tolong beri saya beberapa saran
+
+# =========================
+# CONSULTATION
+# =========================
+- intent: consultation
+  examples: |
+    - Saya ingin konsultasi
+    - Saya ingin konseling
+    - Saya ingin berkonsultasi
+    - Saya ingin bertemu psikolog
+    - Saya ingin bertemu konselor
+    - Saya ingin berbicara dengan psikolog
+    - Saya ingin berbicara dengan konselor
+    - Bagaimana prosedur konsultasi
+    - Bagaimana prosedur konseling
+    - Bagaimana cara konsultasi
+    - Bagaimana cara konseling
+    - Bagaimana cara bertemu psikolog
+    - Bagaimana cara bertemu konselor
+    - Apa langkah untuk konsultasi
+    - Apa langkah untuk konseling
+    - Bagaimana alur konsultasi
+    - Apakah ada layanan konseling
+    - Saya membutuhkan bantuan profesional
+    - Saya ingin membuat janji dengan psikolog
+    - Saya ingin membuat janji konseling
+    - Di mana saya bisa konsultasi
+    - Bagaimana cara mendapatkan bantuan psikolog
+    - Saya ingin menemui ahli
+    - Saya ingin curhat ke psikolog
+    - Saya ingin konsultasi ke psikolog kampus
+    - Apakah kampus menyediakan layanan konseling
+    - Bagaimana prosedur bertemu psikolog kampus
+    - Saya ingin konsultasi masalah mental
+    - Saya ingin mendapat pendampingan
+    - Saya membutuhkan konselor
+
+# =========================
+# GRATITUDE
+# =========================
+- intent: gratitude
+  examples: |
+    - Terima kasih
+    - Makasih
+    - Terima kasih banyak
+    - Makasih ya
+    - Thanks
+    - Thank you
+    - Oke terima kasih
+    - Baik terima kasih
+    - Sip terima kasih
+    - Sangat membantu
+    - Jawabannya membantu
+    - Terima kasih atas bantuannya
+    - Saya sangat terbantu
+    - Mantap terima kasih
+    - Baik makasih
+
+# =========================
+# GOODBYE
+# =========================
+- intent: goodbye
+  examples: |
+    - Bye
+    - Dadah
+    - Sampai jumpa
+    - Selamat tinggal
+    - Saya pergi dulu
+    - Saya pamit
+    - Oke sampai jumpa
+    - Sampai nanti
+    - Sampai ketemu lagi
+    - Terima kasih sampai jumpa
+    - Sudah cukup
+    - Saya selesai
+    - Saya akhiri dulu
+    - Saya keluar dulu
+    - Bye bye
+

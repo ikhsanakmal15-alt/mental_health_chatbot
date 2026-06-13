@@ -12,6 +12,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# =========================
+# ROUTERS
+# =========================
 app.include_router(auth.router)
 app.include_router(article.router)
 app.include_router(tips.router)
@@ -19,10 +22,11 @@ app.include_router(counselor.router)
 app.include_router(history.router)
 app.include_router(chat.router)
 
+# =========================
+# ROOT CHECK
+# =========================
 @app.get("/")
 def root():
-
     return {
-        "message":
-        "Mental Health API Running"
+        "message": "Mental Health API Running"
     }

@@ -1,97 +1,96 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-
+import '../../core/constants/app_colors.dart';
 import '../auth/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashScreen> createState() =>
+      _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  static const primaryColor = Color(0xFF6FCF97);
-  static const backgroundColor = Color(0xFFF8FAFC);
-
   @override
   void initState() {
     super.initState();
 
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (_) => const LoginScreen(),
-        ),
-      );
-    });
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        if (!mounted) return;
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const LoginScreen(),
+          ),
+        );
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      body: Container(
+        width: double.infinity,
 
-      body: Center(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              AppColors.primary,
+              AppColors.secondary,
+            ],
+          ),
+        ),
+
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment:
+              MainAxisAlignment.center,
+
           children: [
-            /// ================= ICON =================
             Container(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(25),
               decoration: BoxDecoration(
-                color: const Color(0xFFEAF8F0),
+                color: Colors.white.withValues(alpha: 0.2),
                 shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
-                    blurRadius: 20,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
               ),
               child: const Icon(
                 Icons.favorite_rounded,
-                size: 80,
-                color: primaryColor,
+                size: 90,
+                color: Colors.white,
               ),
-            ),
-
-            const SizedBox(height: 20),
-
-            /// ================= TITLE =================
-            const Text(
-              "Mental Health AI",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
-              ),
-            ),
-
-            const SizedBox(height: 8),
-
-            /// ================= SUBTITLE =================
-            const Text(
-              "Teman cerita & kesehatan mental kamu 🌿",
-              style: TextStyle(
-                fontSize: 13,
-                color: Colors.grey,
-              ),
-              textAlign: TextAlign.center,
             ),
 
             const SizedBox(height: 30),
 
-            /// ================= LOADING =================
-            const SizedBox(
-              width: 20,
-              height: 20,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                valueColor: AlwaysStoppedAnimation(primaryColor),
+            const Text(
+              "MindCare",
+              style: TextStyle(
+                fontSize: 32,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
+            ),
+
+            const SizedBox(height: 10),
+
+            const Text(
+              "Your Mind, Our Care 🌿",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+              ),
+            ),
+
+            const SizedBox(height: 50),
+
+            const CircularProgressIndicator(
+              color: Colors.white,
             ),
           ],
         ),

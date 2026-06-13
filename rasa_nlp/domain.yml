@@ -4,14 +4,96 @@ intents:
   - greet
   - stress_academic
   - anxiety
+  - motivation
+  - self_confidence
+  - loneliness
+  - sleep_problem
+  - depression_symptom
+  - ask_tips
+  - consultation
+  - gratitude
+  - goodbye
 
 responses:
 
   utter_greet:
-    - text: "Halo, saya siap membantu Anda."
+    - text: |
+        Halo 👋 Selamat datang di MindCare AI.
 
-  utter_stress_academic:
-    - text: "Saya memahami perasaan Anda. Cobalah mengatur waktu belajar dan istirahat."
+        Saya siap menjadi teman berbagi dan memberikan dukungan awal terkait kesehatan mental. Silakan ceritakan apa yang sedang Anda rasakan atau alami.
 
-  utter_anxiety:
-    - text: "Kecemasan dapat muncul saat tekanan meningkat. Cobalah tarik napas perlahan."
+  utter_motivation:
+    - text: |
+        Kehilangan semangat adalah hal yang bisa dialami siapa saja, terutama saat menghadapi tekanan akademik.
+
+        Cobalah memulai dari langkah kecil. Tidak apa-apa jika progres terasa lambat, karena setiap usaha tetap memiliki arti.
+
+  utter_self_confidence:
+    - text: |
+        Rasa kurang percaya diri dapat dilatih secara bertahap.
+
+        Fokuslah pada kemampuan dan pencapaian yang sudah Anda miliki, hindari terlalu sering membandingkan diri dengan orang lain, dan beri kesempatan pada diri sendiri untuk terus berkembang.
+
+  utter_loneliness:
+    - text: |
+        Merasa kesepian memang tidak nyaman, tetapi Anda tidak harus menghadapinya sendirian.
+
+        Jika memungkinkan, cobalah menghubungi teman, keluarga, atau seseorang yang Anda percaya untuk berbagi cerita.
+
+  utter_sleep_problem:
+    - text: |
+        Gangguan tidur dapat memengaruhi kesehatan fisik maupun mental.
+
+        Beberapa hal yang dapat dicoba:
+        • Tidur dan bangun pada jam yang konsisten.
+        • Kurangi penggunaan gadget sebelum tidur.
+        • Hindari konsumsi kafein pada malam hari.
+        • Ciptakan suasana kamar yang nyaman untuk beristirahat.
+
+  utter_depression_symptom:
+    - text: |
+        Perasaan sedih yang berlangsung terus-menerus dan mengganggu aktivitas sehari-hari perlu mendapatkan perhatian.
+
+        Jika kondisi ini berlanjut, pertimbangkan untuk berkonsultasi dengan psikolog atau tenaga profesional agar memperoleh penanganan yang sesuai.
+
+  utter_ask_tips:
+    - text: |
+        Berikut beberapa tips sederhana untuk menjaga kesehatan mental:
+
+        • Atur waktu belajar dan istirahat secara seimbang.
+        • Tidur yang cukup setiap hari.
+        • Lakukan aktivitas fisik ringan seperti berjalan kaki atau olahraga.
+        • Luangkan waktu melakukan hobi yang disukai.
+        • Ceritakan beban pikiran kepada orang yang dipercaya.
+        • Jangan ragu mencari bantuan profesional jika diperlukan.
+
+  utter_consultation:
+    - text: |
+        Jika Anda ingin melakukan konsultasi, berikut langkah yang dapat dilakukan:
+
+        1. Hubungi layanan konseling kampus atau fasilitas kesehatan yang tersedia.
+        2. Buat jadwal atau janji konsultasi sesuai prosedur.
+        3. Ceritakan kondisi yang sedang Anda alami secara jujur dan terbuka.
+        4. Ikuti arahan dan rekomendasi dari konselor atau psikolog.
+
+        Mencari bantuan profesional merupakan langkah yang positif untuk menjaga kesehatan mental.
+
+  utter_gratitude:
+    - text: |
+        Sama-sama 😊
+
+        Senang bisa membantu. Semoga informasi yang diberikan bermanfaat dan semoga keadaan Anda segera membaik.
+
+  utter_goodbye:
+    - text: |
+        Terima kasih sudah berbagi cerita hari ini.
+
+        Semoga harimu berjalan dengan baik. Sampai jumpa kembali dan jangan ragu untuk datang lagi jika membutuhkan bantuan. 👋
+
+actions:
+  - action_stress_advice
+  - action_anxiety_advice
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
