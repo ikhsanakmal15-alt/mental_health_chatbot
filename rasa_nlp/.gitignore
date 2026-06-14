@@ -1,0 +1,4 @@
+rasa_env/
+.rasa/
+__pycache__/
+*.pyc
