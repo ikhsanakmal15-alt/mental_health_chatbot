@@ -1,68 +1,51 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class ApiService {
+import '../config/api_config.dart';
 
-  static const String baseUrl =
-      "http://10.0.2.2:8000";
+class ApiService {
+  static const String baseUrl = ApiConfig.baseUrl;
 
   static Future<String> sendMessage(
     String message,
   ) async {
-
     final response = await http.post(
-
       Uri.parse(
         "$baseUrl/chat",
       ),
-
       headers: {
-        "Content-Type":
-            "application/json"
+        "Content-Type": "application/json",
       },
-
       body: jsonEncode({
-
-        "user_id": 1,
-
-        "message": message
-
+        "user_id": ApiConfig.testUserId,
+        "message": message,
       }),
-
     );
 
     if (response.statusCode == 200) {
-
-      final data =
-          jsonDecode(response.body);
+      final data = jsonDecode(response.body);
 
       return data["reply"];
-
     }
 
     throw Exception(
-      "Gagal terhubung ke server"
+      "Gagal terhubung ke server",
     );
   }
-  static Future<List<dynamic>>
-getHistory() async {
 
-  final response = await http.get(
-
-    Uri.parse(
-      "$baseUrl/history/1",
-    ),
-
-  );
-
-  if (response.statusCode == 200) {
-
-    return jsonDecode(
-      response.body,
+  static Future<List<dynamic>> getHistory() async {
+    final response = await http.get(
+      Uri.parse(
+        "$baseUrl/history/${ApiConfig.testUserId}",
+      ),
     );
 
-  }
+    if (response.statusCode == 200) {
+      return jsonDecode(
+        response.body,
+      );
+    }
 
-  return [];
-}
+    return [];
+  }
 }

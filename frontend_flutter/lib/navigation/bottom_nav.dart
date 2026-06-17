@@ -52,7 +52,7 @@ class _BottomNavState extends State<BottomNav> {
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.08),
+              color: Colors.black.withValues(alpha: 0.8),
               blurRadius: 20,
               offset: const Offset(0, 10),
             ),

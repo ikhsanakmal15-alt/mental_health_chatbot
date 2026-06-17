@@ -419,9 +419,7 @@ class _ArticleCard extends StatelessWidget {
 
           boxShadow: [
             BoxShadow(
-              color:
-                  Colors.black.withOpacity(
-                      .05),
+            color: Colors.black.withValues(alpha: 0.5),
               blurRadius: 10,
             ),
           ],

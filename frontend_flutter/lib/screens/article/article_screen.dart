@@ -229,7 +229,7 @@ class _ArticleCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(.05),
+              color: Colors.black.withValues(alpha: 0.8),
               blurRadius: 10,
             ),
           ],
