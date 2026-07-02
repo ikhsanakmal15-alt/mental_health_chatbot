@@ -4,9 +4,8 @@ import random
 
 
 # =====================================
-# ACTION STRESS ADVICE
+# STRESS ACADEMIC ACTION (UPGRADED)
 # =====================================
-
 class ActionStressAdvice(Action):
 
     def name(self) -> str:
@@ -18,80 +17,161 @@ class ActionStressAdvice(Action):
 
         message = tracker.latest_message.get("text", "").lower()
 
+        responses = []
+
+        # =========================
+        # DEADLINE / TUGAS
+        # =========================
         if any(word in message for word in ["deadline", "tugas", "menumpuk"]):
 
             responses = [
-                """Saya memahami bahwa tugas dan deadline yang menumpuk dapat terasa sangat melelahkan.
+                """Aku ngerti banget, situasi tugas yang menumpuk itu bisa bikin kepala penuh.
 
-Cobalah membuat daftar prioritas berdasarkan tingkat urgensi. Fokuslah menyelesaikan satu tugas terlebih dahulu daripada memikirkan semuanya sekaligus.
+Kita coba pecah jadi bagian kecil dulu ya, jangan dipikirkan sekaligus.
 
-Ingat, Anda tidak harus menyelesaikan semuanya dalam satu waktu.""",
+Kalau kamu urutkan sekarang, tugas mana yang paling mendesak?""",
 
-                """Beban tugas yang banyak memang dapat menimbulkan stres.
+                """Tekanan deadline itu memang bikin energi cepat terkuras.
 
-Mungkin Anda bisa membagi tugas besar menjadi beberapa target kecil yang lebih mudah dicapai.
+Coba kita ambil satu langkah kecil dulu biar lebih ringan.
 
-Setiap progres kecil tetap merupakan kemajuan yang berarti."""
+Dari semua tugas itu, mana yang paling bikin kamu stuck?""",
+
+                """Kalau semua terasa numpuk, biasanya bukan tugasnya yang masalah, tapi beban pikirannya.
+
+Kita urai pelan-pelan ya.
+
+Yang paling dekat deadline-nya apa sekarang?""",
+
+                """Aku paham ini terasa berat banget.
+
+Tapi kamu nggak harus bereskan semuanya sekaligus.
+
+Sekarang, tugas apa yang paling bikin kamu kepikiran malam ini?"""
             ]
 
+        # =========================
+        # UJIAN / NILAI
+        # =========================
         elif any(word in message for word in ["ujian", "nilai", "ipk"]):
 
             responses = [
-                """Kecemasan menghadapi ujian atau nilai adalah hal yang cukup umum dialami mahasiswa.
+                """Wajar kalau ujian bikin cemas, itu tanda kamu peduli.
 
-Fokuslah pada persiapan yang masih bisa Anda lakukan hari ini daripada terlalu memikirkan hasil akhirnya.
+Tapi kita fokus ke apa yang bisa dipelajari hari ini saja.
 
-Belajar secara konsisten biasanya lebih efektif daripada belajar berlebihan dalam waktu singkat.""",
+Mata kuliah apa yang paling bikin kamu khawatir?""",
 
-                """Tekanan untuk mendapatkan nilai yang baik memang tidak mudah.
+                """Nilai itu penting, tapi bukan satu-satunya penentu masa depanmu.
 
-Namun nilai bukan satu-satunya ukuran kemampuan seseorang.
+Coba kita lihat satu per satu biar lebih ringan.
 
-Cobalah menetapkan target yang realistis dan berikan apresiasi terhadap usaha yang sudah Anda lakukan."""
+Sekarang yang paling bikin kamu takut apa?""",
+
+                """Aku paham tekanan akademik itu nggak mudah.
+
+Tapi kamu nggak harus sempurna untuk berhasil.
+
+Bagian mana dari ujian yang paling bikin kamu cemas?""",
+
+                """Kadang yang bikin berat itu bukan ujiannya, tapi pikirannya.
+
+Coba kita pelan-pelan urai.
+
+Kamu lebih takut gagal atau tidak siap?"""
             ]
 
+        # =========================
+        # SKRIPSI / REVISI
+        # =========================
         elif any(word in message for word in ["skripsi", "revisi"]):
 
             responses = [
-                """Mengerjakan skripsi sering kali menjadi salah satu sumber stres terbesar bagi mahasiswa.
+                """Skripsi memang sering jadi fase paling melelahkan.
 
-Cobalah memecah pekerjaan menjadi target-target kecil yang dapat diselesaikan setiap hari.
+Tapi kamu sudah sampai sejauh ini, itu luar biasa.
 
-Kemajuan yang konsisten biasanya lebih efektif daripada menunggu motivasi datang.""",
+Sekarang kamu lagi stuck di bagian mana?""",
 
-                """Revisi skripsi memang bisa terasa melelahkan dan menguras energi.
+                """Revisi itu bagian dari proses, bukan tanda kamu gagal.
 
-Namun revisi merupakan bagian normal dari proses akademik.
+Kita pecah jadi lebih kecil biar lebih mudah.
 
-Jangan terlalu keras pada diri sendiri jika progres terasa lambat."""
+Bab apa yang sedang kamu kerjakan sekarang?""",
+
+                """Aku tahu ini bisa bikin frustrasi.
+
+Tapi pelan-pelan kamu pasti bisa lewat ini.
+
+Bagian mana yang paling bikin kamu buntu?""",
+
+                """Skripsi memang kadang terasa seperti tidak ada habisnya.
+
+Tapi kamu sudah lebih dekat ke garis akhir.
+
+Sekarang apa yang paling menghambatmu?"""
             ]
 
+        # =========================
+        # BURNOUT / CAPEK
+        # =========================
         elif any(word in message for word in ["burnout", "kelelahan", "capek", "lelah"]):
 
             responses = [
-                """Apa yang Anda rasakan terdengar seperti kelelahan mental yang cukup berat.
+                """Sepertinya kamu sudah sangat lelah, bukan cuma fisik tapi juga mental.
 
-Burnout sering muncul ketika seseorang terus bekerja tanpa waktu pemulihan yang cukup.
+Kamu butuh jeda, bukan tambahan tekanan.
 
-Jika memungkinkan, berikan waktu istirahat sejenak dan lakukan aktivitas yang dapat membantu Anda rileks.""",
+Kapan terakhir kali kamu benar-benar istirahat?""",
 
-                """Tubuh dan pikiran memiliki batas kemampuan.
+                """Kalau sudah capek seperti ini, itu tanda tubuhmu minta berhenti sebentar.
 
-Jika Anda merasa kelelahan terus-menerus, mungkin ini saat yang tepat untuk memperlambat ritme dan memberi ruang bagi diri sendiri untuk beristirahat."""
+Tidak apa-apa berhenti dulu.
+
+Apa yang paling menguras energimu akhir-akhir ini?""",
+
+                """Aku bisa merasakan kamu sedang sangat lelah.
+
+Kamu nggak harus kuat terus.
+
+Sekarang yang paling bikin kamu habis energi apa?""",
+
+                """Burnout itu bukan malas, tapi tanda kamu terlalu lama bertahan.
+
+Kita pelan-pelan ya.
+
+Apa aktivitas yang paling bikin kamu terkuras?"""
             ]
 
+        # =========================
+        # DEFAULT STRESS
+        # =========================
         else:
 
             responses = [
-                """Saya memahami bahwa Anda sedang mengalami tekanan akademik.
+                """Aku dengar kamu lagi ada tekanan akademik.
 
-Menghadapi tugas, ujian, organisasi, dan berbagai tuntutan lainnya memang dapat menguras energi mental.
+Kita pelan-pelan urai ya, nggak perlu semuanya sekaligus.
 
-Cobalah fokus pada hal-hal yang dapat Anda kendalikan satu per satu.""",
+Apa yang paling berat sekarang?""",
 
-                """Stres akademik merupakan pengalaman yang cukup umum di kalangan mahasiswa.
+                """Kondisi seperti ini wajar dialami banyak mahasiswa.
 
-Meskipun terasa berat saat ini, ada banyak cara untuk mengelola tekanan tersebut secara bertahap dan sehat."""
+Kita coba lihat satu per satu biar lebih ringan.
+
+Hal apa yang paling mengganggu pikiranmu?""",
+
+                """Aku di sini menemani kamu.
+
+Kita tidak perlu menyelesaikan semuanya sekarang.
+
+Cerita sedikit, apa yang paling bikin kamu tertekan?""",
+
+                """Kadang semuanya terasa terlalu banyak.
+
+Tapi kita bisa mulai dari satu hal kecil.
+
+Apa yang paling mendesak saat ini?"""
             ]
 
         dispatcher.utter_message(text=random.choice(responses))
@@ -99,9 +179,8 @@ Meskipun terasa berat saat ini, ada banyak cara untuk mengelola tekanan tersebut
 
 
 # =====================================
-# ACTION ANXIETY ADVICE
+# ANXIETY ACTION (UPGRADED)
 # =====================================
-
 class ActionAnxietyAdvice(Action):
 
     def name(self) -> str:
@@ -113,70 +192,106 @@ class ActionAnxietyAdvice(Action):
 
         message = tracker.latest_message.get("text", "").lower()
 
+        responses = []
+
+        # =========================
+        # PRESENTASI
+        # =========================
         if "presentasi" in message:
 
             responses = [
-                """Merasa gugup sebelum presentasi adalah hal yang sangat wajar.
+                """Gugup sebelum presentasi itu sangat manusiawi.
 
-Cobalah berlatih beberapa kali sebelumnya dan fokus pada penyampaian pesan, bukan pada kemungkinan melakukan kesalahan.
+Kamu nggak harus sempurna untuk bisa menyampaikan dengan baik.
 
-Tidak harus sempurna untuk dapat tampil dengan baik.""",
+Bagian mana yang paling bikin kamu takut?""",
 
-                """Banyak orang mengalami kecemasan saat berbicara di depan umum.
+                """Banyak orang juga merasakan hal yang sama.
 
-Tarik napas perlahan sebelum mulai berbicara dan ingat bahwa audiens umumnya tidak memperhatikan kesalahan kecil yang mungkin Anda lakukan."""
+Yang penting kamu paham isi, bukan sempurna.
+
+Kamu lebih takut lupa atau dinilai orang?""",
+
+                """Rasa deg-degan itu tanda kamu peduli.
+
+Coba kita pelan-pelan atur.
+
+Apa yang paling kamu khawatirkan saat presentasi?"""
             ]
 
+        # =========================
+        # MASA DEPAN / GAGAL
+        # =========================
         elif "masa depan" in message or "gagal" in message:
 
             responses = [
-                """Kekhawatiran mengenai masa depan sering dialami banyak mahasiswa.
+                """Kekhawatiran soal masa depan itu wajar banget.
 
-Ketika pikiran mulai dipenuhi berbagai kemungkinan buruk, cobalah mengalihkan fokus pada langkah kecil yang dapat dilakukan hari ini.
+Tapi kita nggak perlu memikirkan semuanya sekaligus.
 
-Masa depan dibangun dari tindakan yang dilakukan saat ini.""",
+Apa yang paling bikin kamu takut sekarang?""",
 
-                """Takut gagal merupakan perasaan yang manusiawi.
+                """Takut gagal itu bagian dari manusia.
 
-Namun kegagalan bukanlah akhir dari perjalanan, melainkan bagian dari proses belajar dan berkembang.
+Tapi gagal bukan akhir cerita.
 
-Cobalah fokus pada usaha yang bisa Anda lakukan sekarang."""
+Hal apa yang paling kamu khawatirkan?""",
+
+                """Kadang pikiran kita lari terlalu jauh ke depan.
+
+Kita fokus hari ini dulu ya.
+
+Sekarang kamu paling takut apa?"""
             ]
 
+        # =========================
+        # OVERTHINKING
+        # =========================
         elif any(word in message for word in ["overthinking", "pikiran", "gelisah"]):
 
             responses = [
-                """Overthinking dapat membuat pikiran terasa sangat lelah.
+                """Overthinking bisa sangat melelahkan.
 
-Saat hal tersebut terjadi, cobalah menuliskan semua hal yang sedang Anda pikirkan ke dalam catatan.
+Coba kita turunkan pelan-pelan beban pikiranmu.
 
-Teknik sederhana ini sering membantu mengurangi beban mental yang dirasakan.""",
+Apa yang paling sering muncul di pikiranmu?""",
 
-                """Saya memahami bahwa pikiran yang terus berputar dapat terasa melelahkan.
+                """Pikiran yang berputar terus itu menguras energi.
 
-Cobalah bertanya pada diri sendiri: apakah hal yang saya khawatirkan saat ini benar-benar terjadi, atau hanya kemungkinan yang saya bayangkan?
+Coba tulis apa yang kamu rasakan.
 
-Pertanyaan tersebut dapat membantu melihat situasi dengan lebih objektif."""
+Hal apa yang paling mengganggu?""",
+
+                """Aku paham itu nggak mudah.
+
+Tapi kita bisa urai satu per satu.
+
+Apa yang paling bikin kamu gelisah?"""
             ]
 
+        # =========================
+        # DEFAULT ANXIETY
+        # =========================
         else:
 
             responses = [
-                """Perasaan cemas dapat dialami oleh siapa saja, terutama ketika menghadapi ketidakpastian atau tekanan tertentu.
+                """Cemas itu wajar, apalagi kalau banyak tekanan.
 
-Anda dapat mencoba latihan pernapasan sederhana:
+Kita tarik napas dulu pelan-pelan ya.
 
-• Tarik napas selama 4 detik.
-• Tahan selama 4 detik.
-• Hembuskan perlahan selama 6 detik.
+Apa yang sedang kamu rasakan sekarang?""",
 
-Ulangi beberapa kali hingga tubuh terasa lebih rileks.""",
+                """Aku di sini untuk kamu.
 
-                """Terima kasih sudah berbagi mengenai kecemasan yang Anda rasakan.
+Kita pelan-pelan aja.
 
-Saat merasa cemas, cobalah fokus pada hal-hal yang dapat Anda kendalikan saat ini dan hindari memikirkan terlalu banyak kemungkinan sekaligus.
+Hal apa yang paling bikin kamu tidak tenang?""",
 
-Jika kecemasan berlangsung lama dan mengganggu aktivitas sehari-hari, pertimbangkan untuk berkonsultasi dengan psikolog atau konselor."""
+                """Terima kasih sudah cerita.
+
+Kita coba pahami bersama.
+
+Sekarang apa yang paling kamu khawatirkan?"""
             ]
 
         dispatcher.utter_message(text=random.choice(responses))

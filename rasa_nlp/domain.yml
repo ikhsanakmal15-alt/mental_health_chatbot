@@ -13,299 +13,121 @@ intents:
   - consultation
   - gratitude
   - goodbye
-
-responses:
-
-  utter_greet:
-    - text: |
-        Halo 👋 Selamat datang di MindCare AI. Saya adalah asisten virtual yang siap mendengarkan serta memberikan dukungan awal terkait kesehatan mental dan kesejahteraan emosional.
-
-        Anda dapat bercerita mengenai stres, kecemasan, kehilangan motivasi, kesepian, gangguan tidur, tekanan akademik, maupun hal lain yang sedang mengganggu pikiran Anda.
-
-        Tidak perlu khawatir, Anda boleh bercerita sesuai kenyamanan Anda.
-
-        Apa yang sedang Anda rasakan hari ini?
-
-    - text: |
-        Hai 😊 Senang bertemu dengan Anda.
-
-        Terima kasih sudah datang ke MindCare AI. Saya siap mendengarkan dan memberikan dukungan awal semampu saya.
-
-        Silakan ceritakan apa yang sedang Anda alami atau rasakan. Saya akan berusaha membantu sebaik mungkin.
-
-  utter_motivation:
-    - text: |
-        Kehilangan motivasi merupakan hal yang cukup umum, terutama ketika tuntutan akademik, pekerjaan, atau masalah pribadi terasa semakin berat.
-
-        Perasaan ini bukan berarti Anda malas ataupun gagal. Terkadang tubuh dan pikiran memang membutuhkan waktu untuk beristirahat dan memulihkan energi.
-
-        Beberapa hal yang dapat dicoba antara lain:
-
-        1. Mulailah dari tugas yang paling sederhana.
-        2. Pecah pekerjaan besar menjadi target-target kecil.
-        3. Berikan apresiasi kepada diri sendiri setiap kali berhasil menyelesaikan satu langkah.
-        4. Luangkan waktu untuk beristirahat selama 10–15 menit jika mulai merasa lelah.
-
-        Jika berkenan, boleh saya tahu apa yang membuat motivasi Anda menurun?
-
-        Apakah karena tugas kuliah, nilai akademik, masalah keluarga, hubungan dengan teman, atau ada hal lain?
-
-  utter_stress_academic:
-    - text: |
-        Saya memahami bahwa tekanan akademik dapat terasa sangat melelahkan.Banyak mahasiswa mengalami hal serupa ketika menghadapi tugas yang menumpuk, deadline yang berdekatan, ujian, ataupun tuntutan untuk mendapatkan hasil terbaik.
-
-        Merasa stres bukan berarti Anda lemah. Itu bisa menjadi tanda bahwa Anda sedang menghadapi beban yang cukup besar.
-
-        Beberapa langkah yang mungkin membantu adalah:
-
-        1. Tuliskan seluruh tugas yang perlu diselesaikan.
-        2. Susun berdasarkan prioritas.
-        3. Fokus mengerjakan satu tugas terlebih dahulu.
-        4. Tetap sisihkan waktu untuk makan, tidur, dan beristirahat.
-
-        Boleh saya tahu, bagian mana yang paling membuat Anda merasa tertekan saat ini?
-
-        Apakah karena tugas, skripsi, nilai, dosen, atau hal lainnya?
-
-  utter_anxiety:
-    - text: |
-        Terima kasih sudah mempercayakan cerita ini kepada saya.Rasa cemas dapat membuat seseorang sulit berkonsentrasi, jantung berdebar, sulit tidur, atau terus memikirkan berbagai kemungkinan terburuk.
-
-        Meskipun terasa tidak nyaman, kecemasan bukan berarti ada sesuatu yang salah dengan diri Anda.
-
-        Untuk membantu menenangkan diri, Anda dapat mencoba latihan pernapasan berikut:
-
-        1. Tarik napas perlahan selama 4 detik.
-        2. Tahan selama 4 detik.
-        3. Hembuskan perlahan selama 6 detik.
-        4. Ulangi beberapa kali hingga tubuh terasa lebih rileks.
-
-        Jika berkenan, apa yang biasanya memicu rasa cemas tersebut?
-
-  utter_loneliness:
-    - text: |
-        Saya turut prihatin mendengar bahwa Anda merasa kesepian. Kesepian tidak selalu berarti tidak memiliki teman. Seseorang tetap bisa merasa sendiri meskipun berada di tengah banyak orang.
-
-        Anda tidak harus menghadapi perasaan ini sendirian.
-
-        Beberapa hal yang mungkin dapat dicoba:
-
-        1. Menghubungi teman atau keluarga yang Anda percaya.
-        2. Mengikuti komunitas atau kegiatan sesuai minat.
-        3. Menuliskan perasaan dalam jurnal.
-        4. Berjalan santai atau menghabiskan waktu di luar ruangan.
-
-        Boleh saya tahu, apa yang paling membuat Anda merasa kesepian akhir-akhir ini?
-
-  utter_self_confidence:
-    - text: |
-        Saya memahami bahwa rasa kurang percaya diri dapat membuat berbagai hal terasa lebih sulit.
-
-        Banyak orang pernah mengalaminya, terutama ketika terlalu sering membandingkan diri dengan orang lain.
-
-        Padahal setiap orang memiliki perjalanan dan proses berkembang yang berbeda.
-
-        Anda dapat mencoba beberapa langkah berikut:
-
-        1. Tuliskan tiga hal yang menjadi kelebihan Anda.
-        2. Hargai setiap pencapaian, sekecil apa pun.
-        3. Kurangi kebiasaan membandingkan diri dengan orang lain.
-        4. Fokus pada perkembangan diri, bukan hanya hasil yang sempurna.
-
-        Kalau boleh tahu, apa yang biasanya membuat Anda merasa kurang percaya diri?
-
-  utter_depression_symptom:
-    - text: |
-        Terima kasih sudah bersedia menceritakan apa yang sedang Anda alami.
-
-        Saya turut prihatin jika akhir-akhir ini hidup terasa begitu berat.
-
-        Perasaan sedih yang berkepanjangan, kehilangan semangat, sulit menikmati aktivitas, atau merasa hampa memang dapat menjadi tanda bahwa Anda membutuhkan dukungan lebih lanjut.
-
-        Yang terpenting, Anda tidak perlu menghadapi semua ini sendirian.
-
-        Untuk sementara, Anda dapat mencoba:
-
-        1. Menjaga pola makan dan waktu tidur.
-        2. Berbicara dengan orang yang Anda percaya.
-        3. Mengurangi tekanan yang tidak perlu.
-        4. Mempertimbangkan berkonsultasi dengan psikolog atau konselor apabila kondisi ini berlangsung cukup lama atau semakin berat.
-
-        Sejak kapan Anda mulai merasakan hal-hal tersebut?
-
-  utter_ask_tips:
-    - text: |
-        Berikut beberapa kebiasaan sederhana yang dapat membantu menjaga kesehatan mental: • Menjaga keseimbangan antara belajar, bekerja, dan beristirahat. • Tidur yang cukup setiap hari. • Berolahraga atau melakukan aktivitas fisik secara rutin.
-        • Meluangkan waktu untuk hobi atau aktivitas yang disukai.
-        • Mengelola ekspektasi terhadap diri sendiri.
-        • Berbagi cerita dengan orang yang dipercaya.
-        • Mengurangi kebiasaan membandingkan diri dengan orang lain.
-        • Tidak ragu mencari bantuan profesional jika diperlukan.
-
-    - text: |
-        Menjaga kesehatan mental sama pentingnya dengan menjaga kesehatan fisik.
-
-        Kebiasaan kecil yang dilakukan secara konsisten, seperti tidur cukup, makan teratur, bergerak aktif, dan memberi waktu untuk beristirahat, dapat memberikan dampak yang positif bagi kesejahteraan Anda.
-
-  utter_sleep_problem:
-    - text: |
-        Terima kasih sudah menceritakan hal ini.Gangguan tidur dapat dipengaruhi oleh stres, kecemasan, kebiasaan sebelum tidur, maupun kondisi kesehatan tertentu.
-
-        Beberapa hal yang dapat Anda coba:
-
-        1. Tidur dan bangun pada jam yang sama setiap hari.
-        2. Hindari penggunaan ponsel 30–60 menit sebelum tidur.
-        3. Kurangi konsumsi kafein pada sore dan malam hari.
-        4. Cobalah latihan relaksasi atau pernapasan sebelum tidur.
-
-        Boleh saya tahu, akhir-akhir ini apa yang biasanya membuat Anda sulit tidur?
-
-  utter_consultation:
-    - text: |
-        Jika Anda ingin berkonsultasi dengan psikolog atau konselor, berikut beberapa langkah yang dapat dilakukan: 1. Cari layanan konseling kampus atau fasilitas kesehatan terdekat. 2. Buat janji sesuai prosedur yang berlaku. 3. Ceritakan kondisi Anda secara jujur dan terbuka. 4. Ikuti saran serta rencana penanganan yang diberikan.
-
-        Mencari bantuan profesional adalah langkah yang berani dan merupakan bentuk kepedulian terhadap diri sendiri.
-
-    - text: |
-        Berkonsultasi dengan psikolog bukan berarti Anda lemah.Jika Anda ingin berkonsultasi dengan psikolog atau konselor, berikut beberapa langkah yang dapat dilakukan: 1. Cari layanan konseling kampus atau fasilitas kesehatan terdekat. 2. Buat janji sesuai prosedur yang berlaku. 3. Ceritakan kondisi Anda secara jujur dan terbuka. 4. Ikuti saran serta rencana penanganan yang diberikan.
-
-        Justru itu menunjukkan bahwa Anda peduli terhadap kesehatan mental dan ingin memperoleh bantuan yang tepat.
-
-  utter_gratitude:
-    - text: |
-        Sama-sama. 🌿 Terima kasih sudah berbagi cerita dengan saya.
-
-        Semoga percakapan ini dapat sedikit membantu. Jika suatu saat Anda ingin bercerita lagi, saya akan siap mendengarkan.
-
-    - text: |
-        Senang bisa membantu.
-
-        Jangan ragu untuk kembali kapan saja jika Anda membutuhkan teman untuk berbagi atau ingin mencari informasi mengenai kesehatan mental.
-  # =====================================
-  # STRESS - TUGAS
-  # =====================================
-
-  utter_stress_task:
-    - text: |
-        Saya memahami bahwa tugas yang menumpuk dapat terasa sangat melelahkan. Cobalah membuat daftar prioritas dan fokus menyelesaikan satu tugas terlebih dahulu agar beban terasa lebih ringan.
-
-        Tidak apa-apa jika progresnya sedikit demi sedikit.
-
-    - text: |
-        Deadline yang berdekatan memang sering membuat seseorang merasa kewalahan.
-
-        Pecahlah tugas besar menjadi beberapa target kecil agar lebih mudah dikerjakan.
-
-        Setiap langkah kecil tetap merupakan kemajuan.
-
-  # =====================================
-  # STRESS - UJIAN
-  # =====================================
-
-  utter_stress_exam:
-    - text: |
-        Kekhawatiran menghadapi ujian atau nilai merupakan hal yang cukup umum.
-
-        Daripada terlalu memikirkan hasil akhir, cobalah fokus pada persiapan yang masih dapat Anda lakukan hari ini.
-
-    - text: |
-        Nilai memang penting, tetapi bukan satu-satunya ukuran kemampuan seseorang.
-
-        Berikan apresiasi terhadap usaha yang sudah Anda lakukan selama proses belajar.
-
-  # =====================================
-  # STRESS - SKRIPSI
-  # =====================================
-
-  utter_stress_thesis:
-    - text: |
-        Mengerjakan skripsi memang sering menjadi tantangan besar bagi mahasiswa.
-
-        Cobalah menetapkan target kecil setiap hari agar proses terasa lebih ringan.
-
-    - text: |
-        Revisi merupakan bagian yang normal dalam penyusunan skripsi.
-
-        Jangan berkecil hati apabila prosesnya terasa lambat. Kemajuan kecil tetap berarti.
-
-  # =====================================
-  # STRESS - BURNOUT
-  # =====================================
-
-  utter_stress_burnout:
-    - text: |
-        Apa yang Anda rasakan terdengar seperti kelelahan mental.
-
-        Jika memungkinkan, berikan waktu bagi diri sendiri untuk beristirahat sejenak sebelum kembali beraktivitas.
-
-    - text: |
-        Burnout dapat muncul ketika tubuh dan pikiran terus bekerja tanpa waktu pemulihan.
-
-        Istirahat bukan berarti menyerah, tetapi merupakan bagian penting dari menjaga kesehatan.
-
-  # =====================================
-  # ANXIETY - PRESENTASI
-  # =====================================
-
-  utter_anxiety_presentation:
-    - text: |
-        Gugup sebelum presentasi merupakan hal yang sangat wajar.
-
-        Berlatih beberapa kali sebelumnya dapat membantu meningkatkan rasa percaya diri.
-
-    - text: |
-        Tidak harus tampil sempurna.
-
-        Sebagian besar audiens lebih memperhatikan isi penyampaian daripada kesalahan kecil yang mungkin terjadi.
-
-  # =====================================
-  # ANXIETY - MASA DEPAN
-  # =====================================
-
-  utter_anxiety_future:
-    - text: |
-        Kekhawatiran mengenai masa depan sering dialami banyak orang.
-
-        Cobalah memusatkan perhatian pada langkah kecil yang dapat Anda lakukan hari ini.
-
-    - text: |
-        Takut gagal merupakan perasaan yang manusiawi.
-
-        Namun kegagalan sering kali menjadi bagian dari proses belajar dan berkembang.
-
-  # =====================================
-  # ANXIETY - OVERTHINKING
-  # =====================================
-
-  utter_anxiety_overthinking:
-    - text: |
-        Overthinking dapat membuat pikiran terasa sangat lelah.
-
-        Menuliskan apa yang sedang dipikirkan sering membantu mengurangi beban di kepala.
-
-    - text: |
-        Saat pikiran mulai dipenuhi berbagai kemungkinan buruk, cobalah bertanya:
-
-        "Apakah hal ini benar-benar sedang terjadi, atau hanya kekhawatiran saya?"
-
-        Pertanyaan sederhana ini dapat membantu melihat situasi dengan lebih objektif.
-
-  utter_goodbye:
-    - text: |
-        Terima kasih sudah meluangkan waktu untuk berbagi cerita hari ini. Semoga Anda dapat melalui hari-hari ke depan dengan lebih tenang. Jangan lupa untuk tetap menjaga kesehatan fisik maupun mental.
-
-        Sampai jumpa, dan semoga segala sesuatunya berjalan semakin baik.
-
-    - text: |
-        Sampai jumpa. 👋
-        Ingatlah bahwa setiap langkah kecil menuju kondisi yang lebih baik tetap merupakan sebuah kemajuan.
-
-        Semoga Anda selalu diberikan kekuatan, ketenangan, dan hari-hari yang lebih baik.
-
+  - inform
+
+slots:
+  last_topic:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+# =========================
+# ACTIONS (WAJIB TAMBAH INI)
+# =========================
 actions:
   - action_stress_advice
   - action_anxiety_advice
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+responses:
+
+# =========================
+# GREETING
+# =========================
+  utter_greet:
+    - text: "Halo 😊 aku di sini kalau kamu mau cerita."
+    - text: "Hai, santai aja ya… kamu lagi ngerasa apa sekarang?"
+    - text: "Halo, aku siap dengerin kamu."
+    - text: "Hey 👋 lagi pengen cerita apa hari ini?"
+    - text: "Halo, gak perlu dipendem sendiri ya."
+
+# =========================
+# MOTIVATION
+# =========================
+  utter_motivation:
+    - text: "Kamu sudah jauh banget sampai titik ini."
+    - text: "Pelan-pelan nggak apa-apa, yang penting jalan."
+    - text: "Hari berat itu wajar, kamu tetap bertahan sampai sekarang."
+    - text: "Kamu nggak gagal, kamu lagi proses."
+    - text: "Satu langkah kecil hari ini juga sudah cukup."
+    - text: "Kamu lebih kuat dari yang kamu kira."
+
+# =========================
+# SELF CONFIDENCE
+# =========================
+  utter_self_confidence:
+    - text: "Nggak pede itu manusiawi kok."
+    - text: "Kamu nggak harus sempurna buat dianggap mampu."
+    - text: "Kamu tetap berharga walaupun lagi ngerasa kurang."
+    - text: "Rasa ragu itu nggak mendefinisikan kamu."
+    - text: "Kamu lebih capable dari yang kamu pikirkan."
+
+# =========================
+# LONELINESS
+# =========================
+  utter_loneliness:
+    - text: "Kesepian itu berat, aku ngerti."
+    - text: "Aku ada di sini nemenin kamu."
+    - text: "Kamu nggak harus ngelewatin ini sendirian."
+    - text: "Kalau mau cerita, aku dengerin pelan-pelan ya."
+    - text: "Aku di sini, kamu aman buat cerita."
+
+# =========================
+# SLEEP PROBLEM
+# =========================
+  utter_sleep_problem:
+    - text: "Tidur yang berantakan bisa bikin semuanya terasa lebih berat."
+    - text: "Coba pelan-pelan atur ritme tidur kamu lagi."
+    - text: "Kadang pikiran yang penuh bikin susah tidur."
+    - text: "Nggak harus langsung sempurna, pelan aja."
+    - text: "Coba kurangi HP sebelum tidur ya."
+
+# =========================
+# DEPRESSION SYMPTOM
+# =========================
+  utter_depression_symptom:
+    - text: "Aku denger ini cukup berat buat kamu."
+    - text: "Kamu nggak harus ngelewatin ini sendirian."
+    - text: "Kalau ini terus berlanjut, ngobrol sama profesional bisa membantu."
+    - text: "Kamu tetap berarti walaupun lagi ngerasa kosong."
+    - text: "Kamu layak dapat bantuan dan dukungan."
+
+# =========================
+# ASK TIPS
+# =========================
+  utter_ask_tips:
+    - text: "Kamu lagi butuh bantuan di bagian apa?"
+    - text: "Boleh, kamu mau tips soal apa?"
+    - text: "Oke, kita cari cara yang cocok buat kamu."
+
+# =========================
+# CONSULTATION
+# =========================
+  utter_consultation:
+    - text: "Kamu bisa coba ke psikolog kampus atau layanan konseling."
+    - text: "Nggak ada salahnya cari bantuan profesional."
+    - text: "Itu justru langkah yang berani."
+
+# =========================
+# GRATITUDE
+# =========================
+  utter_gratitude:
+    - text: "Sama-sama 😊 aku senang bisa bantu kamu."
+    - text: "Makasih juga sudah cerita."
+    - text: "Aku selalu di sini kalau kamu butuh."
+
+# =========================
+# GOODBYE
+# =========================
+  utter_goodbye:
+    - text: "Sampai ketemu lagi ya 😊"
+    - text: "Jaga diri baik-baik."
+    - text: "Kalau butuh cerita lagi, aku ada."
+    - text: "Semoga harimu lebih ringan."
+
+# =========================
+# DEFAULT FALLBACK (BIAR TIDAK ERROR LAGI)
+# =========================
+  utter_default:
+    - text: "Maaf, aku belum paham. Bisa kamu jelaskan sedikit lebih jelas?"
+    - text: "Aku ingin bantu kamu, tapi boleh ceritakan lagi?"

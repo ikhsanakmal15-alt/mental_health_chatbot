@@ -2,98 +2,70 @@ version: "3.1"
 
 rules:
 
-# =========================
-# GREETING
-# =========================
-- rule: Respond greeting
+- rule: greet
   steps:
     - intent: greet
     - action: utter_greet
 
-# =========================
-# STRESS AKADEMIK
-# =========================
-- rule: Respond stress academic
+- rule: stress
   steps:
     - intent: stress_academic
     - action: action_stress_advice
 
-# =========================
-# ANXIETY
-# =========================
-- rule: Respond anxiety
+- rule: anxiety
   steps:
     - intent: anxiety
     - action: action_anxiety_advice
 
-# =========================
-# MOTIVATION
-# =========================
-- rule: Respond motivation
+- rule: motivation
   steps:
     - intent: motivation
     - action: utter_motivation
 
-# =========================
-# SELF CONFIDENCE
-# =========================
-- rule: Respond self confidence
+- rule: self confidence
   steps:
     - intent: self_confidence
     - action: utter_self_confidence
 
-# =========================
-# LONELINESS
-# =========================
-- rule: Respond loneliness
+- rule: loneliness
   steps:
     - intent: loneliness
     - action: utter_loneliness
 
-# =========================
-# SLEEP PROBLEM
-# =========================
-- rule: Respond sleep problem
+- rule: sleep
   steps:
     - intent: sleep_problem
     - action: utter_sleep_problem
 
-# =========================
-# DEPRESSION
-# =========================
-- rule: Respond depression symptom
+- rule: depression
   steps:
     - intent: depression_symptom
     - action: utter_depression_symptom
 
-# =========================
-# ASK TIPS
-# =========================
-- rule: Respond ask tips
+- rule: tips
   steps:
     - intent: ask_tips
     - action: utter_ask_tips
 
-# =========================
-# CONSULTATION
-# =========================
-- rule: Respond consultation
+- rule: consultation
   steps:
     - intent: consultation
     - action: utter_consultation
 
-# =========================
-# GRATITUDE
-# =========================
-- rule: Respond gratitude
+- rule: gratitude
   steps:
     - intent: gratitude
     - action: utter_gratitude
 
-# =========================
-# GOODBYE
-# =========================
-- rule: Respond goodbye
+- rule: goodbye
   steps:
     - intent: goodbye
     - action: utter_goodbye
+
+# =========================
+# FALLBACK (AMAN VERSION)
+# =========================
+- rule: fallback
+  steps:
+    - intent: nlu_fallback
+    - action: utter_default
