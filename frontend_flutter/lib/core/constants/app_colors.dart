@@ -1,47 +1,50 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  /// ================= PRIMARY BRAND =================
-  static const Color primary = Color(0xFF6FCF97);
-  static const Color secondary = Color(0xFF56CCF2);
-  static const Color accent = Color(0xFFB8A1FF);
+  /// ================= PRIMARY (PURPLE THEME) =================
+  static const Color primary = Color(0xFF7C4DFF);
+  static const Color primaryLight = Color(0xFFB388FF);
+  static const Color secondary = Color(0xFFB388FF);
 
   /// ================= BACKGROUND =================
-  static const Color background = Color(0xFFF8FAFC);
-  static const Color white = Colors.white;
+  static const Color background = Color(0xFF0B0B12);
+  static const Color surface = Color(0xFF151526);
+  static const Color card = Color(0xFF1C1C24);
 
   /// ================= TEXT =================
-  static const Color black = Colors.black87;
-  static const Color grey = Colors.grey;
+  static const Color textPrimary = Colors.white;
+  static const Color textSecondary = Colors.white70;
+  static const Color textMuted = Colors.white38;
 
   /// ================= STATUS COLORS =================
-  static const Color success = Color(0xFF6FCF97);
-  static const Color warning = Color(0xFFFFD166);
-  static const Color error = Color(0xFFFF6B6B);
+  static const Color success = Color(0xFF34C759);
+  static const Color warning = Color(0xFFFFC107);
+  static const Color error = Color(0xFFFF4D4F);
 
-  /// ================= SOFT UI COLORS =================
-  static const Color calmBlue = Color(0xFFA7D8FF);
-  static const Color softPurple = Color(0xFFD6C6FF);
-  static const Color lightGreen = Color(0xFFEAF8F0);
-  static const Color softYellow = Color(0xFFFFF4D6);
-  static const Color softRed = Color(0xFFFFE5E5);
+  /// ================= CHAT UI =================
+  static const Color userBubble = Color(0xFF7C4DFF);
+  static const Color botBubble = Color(0xFF1C1C24);
 
   /// ================= GRADIENT =================
   static const LinearGradient primaryGradient = LinearGradient(
     colors: [
-      primary,
-      secondary,
+      Color(0xFF7C4DFF),
+      Color(0xFFB388FF),
     ],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
-  static const LinearGradient calmGradient = LinearGradient(
+  static const LinearGradient softGlowGradient = LinearGradient(
     colors: [
-      Color(0xFFA7D8FF),
-      Color(0xFFD6C6FF),
+      Color(0xFF7C4DFF),
+      Color(0xFF3A2A6A),
     ],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
+
+  /// ================= GLASS EFFECT =================
+  static Color glass = Colors.white.withOpacity(0.06);
+  static Color border = Colors.white.withOpacity(0.08);
 }

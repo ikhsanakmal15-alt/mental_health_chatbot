@@ -1,20 +1,21 @@
 from passlib.context import CryptContext
+import hashlib
 
 pwd_context = CryptContext(
     schemes=["bcrypt"],
     deprecated="auto"
 )
 
-def hash_password(password):
+def hash_password(password: str):
+    if not password:
+        raise ValueError("Password kosong")
 
-    return pwd_context.hash(password)
+    # FIX 72 byte limit bcrypt
+    safe = hashlib.sha256(password.encode()).hexdigest()
 
-def verify_password(
-        plain,
-        hashed
-):
+    return pwd_context.hash(safe)
 
-    return pwd_context.verify(
-        plain,
-        hashed
-    )
+
+def verify_password(plain, hashed):
+    safe = hashlib.sha256(plain.encode()).hexdigest()
+    return pwd_context.verify(safe, hashed)

@@ -5,6 +5,8 @@ import '../screens/chat/chat_screen.dart';
 import '../screens/tips/tips_screen.dart';
 import '../screens/history/history_screen.dart';
 
+import '../core/constants/app_colors.dart';
+
 class BottomNav extends StatefulWidget {
   final String userName;
 
@@ -20,8 +22,6 @@ class BottomNav extends StatefulWidget {
 class _BottomNavState extends State<BottomNav> {
   int currentIndex = 0;
 
-  static const Color primaryColor = Color(0xFF6FCF97);
-
   late final List<Widget> pages;
 
   @override
@@ -29,9 +29,7 @@ class _BottomNavState extends State<BottomNav> {
     super.initState();
 
     pages = [
-      HomeScreen(
-        userName: widget.userName,
-      ),
+      HomeScreen(userName: widget.userName),
       const ChatScreen(),
       const TipsScreen(),
       const HistoryScreen(),
@@ -43,73 +41,69 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       body: pages[currentIndex],
 
-      /// ================= MODERN BOTTOM NAV =================
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.all(16),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+        margin: const EdgeInsets.all(14),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(25),
+          color: AppColors.surface.withOpacity(0.9),
+          borderRadius: BorderRadius.circular(28),
+          border: Border.all(
+            color: Colors.white.withOpacity(0.06),
+          ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.8),
-              blurRadius: 20,
-              offset: const Offset(0, 10),
+              color: Colors.black.withOpacity(0.5),
+              blurRadius: 25,
+              offset: const Offset(0, 12),
             ),
           ],
         ),
 
-        child: BottomNavigationBar(
-          currentIndex: currentIndex,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(28),
+          child: BottomNavigationBar(
+            currentIndex: currentIndex,
+            onTap: (index) {
+              setState(() {
+                currentIndex = index;
+              });
+            },
 
-          onTap: (index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
 
-          type: BottomNavigationBarType.fixed,
-          elevation: 0,
-          backgroundColor: Colors.transparent,
+            selectedItemColor: AppColors.primary,
+            unselectedItemColor: Colors.white38,
 
-          selectedItemColor: primaryColor,
-          unselectedItemColor: Colors.grey.shade400,
+            showUnselectedLabels: true,
 
-          selectedFontSize: 12,
-          unselectedFontSize: 11,
+            selectedFontSize: 12,
+            unselectedFontSize: 11,
 
-          selectedLabelStyle: const TextStyle(
-            fontWeight: FontWeight.w600,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined),
+                activeIcon: Icon(Icons.home),
+                label: "Home",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.chat_bubble_outline),
+                activeIcon: Icon(Icons.chat_bubble),
+                label: "Chat",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.lightbulb_outline),
+                activeIcon: Icon(Icons.lightbulb),
+                label: "Tips",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.history_outlined),
+                activeIcon: Icon(Icons.history),
+                label: "Riwayat",
+              ),
+            ],
           ),
-
-          unselectedLabelStyle: const TextStyle(
-            fontWeight: FontWeight.w500,
-          ),
-
-          showUnselectedLabels: true,
-
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              activeIcon: Icon(Icons.home),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.chat_bubble_outline),
-              activeIcon: Icon(Icons.chat_bubble),
-              label: "Chat",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.lightbulb_outline),
-              activeIcon: Icon(Icons.lightbulb),
-              label: "Tips",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.history_outlined),
-              activeIcon: Icon(Icons.history),
-              label: "Riwayat",
-            ),
-          ],
         ),
       ),
     );

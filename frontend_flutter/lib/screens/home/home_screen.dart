@@ -6,490 +6,335 @@ import '../history/history_screen.dart';
 import '../counselor/counselor_screen.dart';
 import '../article/article_screen.dart';
 
-import '../../core/constants/app_colors.dart';
-import '../../widgets/home_menu_card.dart';
-
 class HomeScreen extends StatelessWidget {
   final String userName;
 
-  const HomeScreen({
-    super.key,
-    required this.userName,
-  });
-  
+  const HomeScreen({super.key, required this.userName});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: const Color(0xFF120A25),
 
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(20),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF2A1450), // soft purple top
+              Color(0xFF120A25), // deep purple bottom (NOT black)
+            ],
+          ),
+        ),
 
-          children: [
-            /// ================= HEADER =================
-            Container(
-              padding: const EdgeInsets.all(20),
+        child: SafeArea(
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            children: [
 
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [
-                    AppColors.primary,
-                    AppColors.secondary,
-                  ],
-                ),
-
-                borderRadius:
-                    BorderRadius.circular(25),
-              ),
-
-              child: Row(
-                children: [
-                  const CircleAvatar(
-                    radius: 28,
-                    backgroundColor:
-                        Colors.white,
-
-                    child: Icon(
-                      Icons.person,
-                      color:
-                          AppColors.primary,
-                      size: 30,
-                    ),
-                  ),
-
-                  const SizedBox(width: 15),
-
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment:
-                          CrossAxisAlignment
-                              .start,
-
-                      children: [
-                      Text(
-                        "Halo ${userName.isEmpty ? 'Mahasiswa' : userName} 👋",
-                          style:
-                              const TextStyle(
-                            color:
-                                Colors.white,
-                            fontSize: 22,
-                            fontWeight:
-                                FontWeight
-                                    .bold,
-                          ),
-                        ),
-
-                        const SizedBox(
-                            height: 4),
-
-                        const Text(
-                          "Bagaimana perasaanmu hari ini? 🌿",
-                          style:
-                              TextStyle(
-                            color:
-                                Colors.white70,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  const Icon(
-                    Icons
-                        .notifications_none,
-                    color: Colors.white,
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            /// ================= MOOD TRACKER =================
-            Container(
-              padding:
-                  const EdgeInsets.all(18),
-
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius:
-                    BorderRadius.circular(
-                        20),
-
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black
-                        .withOpacity(.05),
-                    blurRadius: 10,
-                  ),
-                ],
-              ),
-
-              child: Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment
-                        .start,
-
-                children: [
-                  const Text(
-                    "Mood Hari Ini 😊",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight:
-                          FontWeight.bold,
-                    ),
-                  ),
-
-                  const SizedBox(height: 15),
-
-                  Row(
-                    mainAxisAlignment:
-                        MainAxisAlignment
-                            .spaceAround,
-
-                    children: const [
-                      Text("😔",
-                          style: TextStyle(
-                              fontSize: 30)),
-                      Text("😐",
-                          style: TextStyle(
-                              fontSize: 30)),
-                      Text("🙂",
-                          style: TextStyle(
-                              fontSize: 30)),
-                      Text("😄",
-                          style: TextStyle(
-                              fontSize: 30)),
-                      Text("🤩",
-                          style: TextStyle(
-                              fontSize: 30)),
+              /// ================= HEADER =================
+              Container(
+                padding: const EdgeInsets.all(18),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color(0xFF8B5CFF),
+                      Color(0xFFB388FF),
                     ],
                   ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 25),
-
-            /// ================= FITUR =================
-            const Text(
-              "Fitur Utama",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            const SizedBox(height: 12),
-
-            GridView(
-              shrinkWrap: true,
-
-              physics:
-                  const NeverScrollableScrollPhysics(),
-
-              gridDelegate:
-                  const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12,
-                childAspectRatio: 1.15,
-              ),
-
-              children: [
-                HomeMenuCard(
-                  title: "Chat AI",
-                  subtitle:
-                      "Curhat & Konsultasi",
-
-                  icon:
-                      Icons.chat_bubble_outline,
-
-                  color:
-                      const Color(0xFFEAF8F0),
-
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            const ChatScreen(),
-                      ),
-                    );
-                  },
                 ),
+                child: Row(
+                  children: [
+                    const CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: Icon(Icons.person, color: Color(0xFF7C4DFF)),
+                    ),
+                    const SizedBox(width: 12),
 
-                HomeMenuCard(
-                  title: "Tips Mental",
-                  subtitle:
-                      "Edukasi & Kesehatan",
-
-                  icon:
-                      Icons.lightbulb_outline,
-
-                  color:
-                      const Color(0xFFFFF5DD),
-
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            const TipsScreen(),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Selamat datang, ${userName.isEmpty ? 'Mahasiswa' : userName}",
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          const Text(
+                            "Pelan-pelan saja, kamu tidak sendiri 🌿",
+                            style: TextStyle(color: Colors.white70),
+                          ),
+                        ],
                       ),
-                    );
-                  },
-                ),
-
-                HomeMenuCard(
-                  title: "Riwayat",
-                  subtitle:
-                      "Percakapan kamu",
-
-                  icon: Icons.history,
-
-                  color:
-                      const Color(0xFFEAF7FF),
-
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            const HistoryScreen(),
-                      ),
-                    );
-                  },
-                ),
-
-                HomeMenuCard(
-                  title: "Konselor",
-                  subtitle:
-                      "Bantuan Profesional",
-
-                  icon:
-                      Icons.people_outline,
-
-                  color:
-                      const Color(0xFFF8EEFF),
-
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            const CounselorScreen(),
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 25),
-
-            /// ================= ARTIKEL =================
-            const Text(
-              "Artikel Pilihan 📚",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            const SizedBox(height: 12),
-
-            _ArticleCard(
-              image: "assets/images/anxiety.jpg",
-
-              title: "Mengelola Anxiety Saat Kuliah",
-
-              subtitle:
-                  "Kecemasan terhadap tugas, ujian, dan tuntutan akademik dapat memengaruhi fokus serta kesehatan mental mahasiswa.",
-            ),
-
-            _ArticleCard(
-              image: "assets/images/burnout.jpg",
-
-              title: "Mengenali dan Mencegah Burnout",
-
-              subtitle:
-                  "Kelelahan fisik dan mental yang berkepanjangan dapat menurunkan motivasi belajar dan produktivitas sehari-hari.",
-            ),
-
-            _ArticleCard(
-              image:
-                  "assets/images/overthinking.jpg",
-
-              title:
-                  "Cara Mengurangi Overthinking",
-
-              subtitle:
-                  "Teknik sederhana yang membantu pikiran lebih tenang dan fokus.",
-            ),
-
-            const SizedBox(height: 20),
-
-            /// ================= MOTIVASI =================
-            Container(
-              padding:
-                  const EdgeInsets.all(20),
-
-              decoration: BoxDecoration(
-                gradient:
-                    const LinearGradient(
-                  colors: [
-                    Color(0xFFEAF8F0),
-                    Color(0xFFEAF7FF),
+                    ),
                   ],
                 ),
-
-                borderRadius:
-                    BorderRadius.circular(
-                        20),
               ),
 
-              child: const Column(
-                children: [
-                  Text(
-                    "💡 Motivasi Hari Ini",
-                    style: TextStyle(
-                      fontWeight:
-                          FontWeight.bold,
-                      fontSize: 18,
+              const SizedBox(height: 16),
+
+              /// ================= HERO IMAGE =================
+              Container(
+                height: 140,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: const DecorationImage(
+                    image: AssetImage("assets/images/mountain.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.black.withOpacity(0.2),
+                        Colors.black.withOpacity(0.65),
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
                     ),
                   ),
-
-                  SizedBox(height: 10),
-
-                  Text(
-                    "\"Kamu tidak harus sempurna hari ini. Terus melangkah sedikit demi sedikit sudah merupakan kemajuan.\"",
-                    textAlign:
-                        TextAlign.center,
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Jaga Kesehatan Mental",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        "Mulai dari diri sendiri",
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                      SizedBox(height: 6),
+                      Text(
+                        "Kamu berharga, jangan lupa istirahat.",
+                        style: TextStyle(color: Colors.white60),
+                      ),
+                    ],
                   ),
+                ),
+              ),
+
+              const SizedBox(height: 18),
+
+              /// ================= MOOD =================
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF22133D),
+                  borderRadius: BorderRadius.circular(18),
+                  border: Border.all(color: Colors.white10),
+                ),
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Mood Hari Ini",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 14),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("😔", style: TextStyle(fontSize: 26)),
+                        Text("😕", style: TextStyle(fontSize: 26)),
+                        Text("😐", style: TextStyle(fontSize: 26)),
+                        Text("🙂", style: TextStyle(fontSize: 26)),
+                        Text("😍", style: TextStyle(fontSize: 26)),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 18),
+
+              const Text(
+                "Fitur Utama",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 12),
+
+              /// ================= FEATURES =================
+              GridView(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: 1.15,
+                ),
+                children: [
+                  _card(context, "Chat AI", Icons.chat_bubble,
+                      const Color(0xFF8B5CFF), const ChatScreen()),
+
+                  _card(context, "Tips Mental", Icons.lightbulb,
+                      const Color(0xFFFFC107), const TipsScreen()),
+
+                  _card(context, "Riwayat", Icons.history,
+                      const Color(0xFF4FC3F7), const HistoryScreen()),
+
+                  _card(context, "Konselor", Icons.people,
+                      const Color(0xFF81C784), const CounselorScreen()),
                 ],
               ),
-            ),
 
-            const SizedBox(height: 30),
-          ],
+              const SizedBox(height: 20),
+
+              /// ================= ARTICLE =================
+              const Text(
+                "Artikel Pilihan",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 12),
+
+              _article(context, "assets/images/anxiety.jpg",
+                  "Mengelola Anxiety Saat Kuliah",
+                  "Tips menjaga fokus & ketenangan pikiran"),
+
+              _article(context, "assets/images/overthinking.jpg",
+                  "Mengurangi Overthinking",
+                  "Latihan sederhana untuk pikiran tenang"),
+
+              _article(context, "assets/images/burnout.jpg",
+                  "Menghindari Burnout",
+                  "Jaga energi agar tetap stabil setiap hari"),
+            ],
+          ),
         ),
       ),
     );
   }
-}
 
-class _ArticleCard extends StatelessWidget {
-  final String image;
-  final String title;
-  final String subtitle;
+  /// ================= FEATURE CARD =================
+  Widget _card(BuildContext context, String title, IconData icon,
+      Color color, Widget page) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (_) => page));
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xFF1F1436),
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: Colors.white10),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: color.withOpacity(0.18),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(icon, color: color),
+              ),
+              const Spacer(),
+              Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-  const _ArticleCard({
-    required this.image,
-    required this.title,
-    required this.subtitle,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius:
-          BorderRadius.circular(20),
-
+  /// ================= ARTICLE CARD (CLICKABLE + IMAGE) =================
+  Widget _article(BuildContext context, String image, String title,
+      String subtitle) {
+    return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
-            builder: (_) =>
-                const ArticleScreen(),
-          ),
+          MaterialPageRoute(builder: (_) => const ArticleScreen()),
         );
       },
-
       child: Container(
-        margin:
-            const EdgeInsets.only(bottom: 15),
-
+        margin: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
-          color: Colors.white,
-
-          borderRadius:
-              BorderRadius.circular(20),
-
-          boxShadow: [
-            BoxShadow(
-            color: Colors.black.withValues(alpha: 0.5),
-              blurRadius: 10,
-            ),
-          ],
+          color: const Color(0xFF1F1436),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.white10),
         ),
-
-        child: Column(
-          crossAxisAlignment:
-              CrossAxisAlignment.start,
-
+        child: Row(
           children: [
             ClipRRect(
-              borderRadius:
-                  const BorderRadius.vertical(
-                top: Radius.circular(20),
-              ),
-
+              borderRadius: BorderRadius.circular(12),
               child: Image.asset(
                 image,
-                height: 180,
-                width: double.infinity,
+                width: 70,
+                height: 70,
                 fit: BoxFit.cover,
               ),
             ),
+            const SizedBox(width: 10),
 
-            Padding(
-              padding:
-                  const EdgeInsets.all(15),
-
-              child: Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment
-                        .start,
-
-                children: [
-                  Text(
-                    title,
-                    style:
-                        const TextStyle(
-                      fontWeight:
-                          FontWeight.bold,
-                      fontSize: 18,
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ),
-
-                  const SizedBox(
-                      height: 8),
-
-                  Text(
-                    subtitle,
-                    style:
-                        const TextStyle(
-                      color: Colors.grey,
+                    const SizedBox(height: 4),
+                    Text(
+                      subtitle,
+                      style: const TextStyle(
+                        color: Colors.white54,
+                        fontSize: 12,
+                      ),
                     ),
-                  ),
-
-                  const SizedBox(
-                      height: 10),
-
-                  const Text(
-                    "Baca Selengkapnya →",
-                    style: TextStyle(
-                      color:
-                          AppColors.primary,
-                      fontWeight:
-                          FontWeight.bold,
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
+
+            const Icon(Icons.arrow_forward_ios,
+                size: 14, color: Colors.white38),
+
+            const SizedBox(width: 10),
           ],
         ),
       ),

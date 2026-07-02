@@ -1,33 +1,64 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
 
-from app.schemas.user_schema import *
+from app.schemas.user_schema import RegisterSchema, LoginSchema
+from app.database.db import get_db
+from app.services.auth_service import register_user, login_user
 
-from app.utils.jwt_handler import create_token
+router = APIRouter(prefix="/auth", tags=["Auth"])
 
-router = APIRouter(
-    prefix="/auth"
-)
 
+# =========================
+# REGISTER
+# =========================
 @router.post("/register")
+def register(data: RegisterSchema, db: Session = Depends(get_db)):
 
-def register(
-    data:RegisterSchema
-):
+    user = register_user(
+        db=db,
+        name=data.fullname,
+        email=data.email,
+        password=data.password
+    )
+
+    if not user:
+        raise HTTPException(
+            status_code=400,
+            detail="Email sudah digunakan"
+        )
 
     return {
-        "message":"register success"
+        "status": "success",
+        "message": "register success",
+        "user": {
+            "id": user.id,
+            "name": user.fullname,
+            "email": user.email
+        }
     }
 
+
+# =========================
+# LOGIN
+# =========================
 @router.post("/login")
+def login(data: LoginSchema, db: Session = Depends(get_db)):
 
-def login(
-    data:LoginSchema
-):
+    result = login_user(
+        db=db,
+        email=data.email,
+        password=data.password
+    )
 
-    token = create_token({
-        "email":data.email
-    })
+    if not result:
+        raise HTTPException(
+            status_code=401,
+            detail="Email atau password salah"
+        )
 
     return {
-        "token":token
+        "status": "success",
+        "access_token": result["access_token"],
+        "token_type": result["token_type"],
+        "user": result["user"]
     }

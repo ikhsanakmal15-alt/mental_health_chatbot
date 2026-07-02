@@ -6,16 +6,24 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.12.0
+  sdk: ">=3.3.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
+  # UI & ICON
   cupertino_icons: ^1.0.8
+
+  # NETWORK
   http: ^1.2.0
+
+  # UTILITIES
   url_launcher: ^6.3.0
   shared_preferences: ^2.2.3
+
+  # TEXT TO SPEECH (VOICE OUTPUT)
+  flutter_tts: ^4.0.2
 
 dev_dependencies:
   flutter_test:

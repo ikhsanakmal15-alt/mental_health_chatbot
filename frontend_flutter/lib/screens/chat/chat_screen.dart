@@ -1,442 +1,307 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import '../../services/api_service.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
 
   @override
-  State<ChatScreen> createState() =>
-      _ChatScreenState();
+  State<ChatScreen> createState() => _ChatScreenState();
 }
 
-class _ChatScreenState
-    extends State<ChatScreen> {
-  final TextEditingController controller =
-      TextEditingController();
+class _ChatScreenState extends State<ChatScreen> {
+  final TextEditingController controller = TextEditingController();
+  final ScrollController scrollController = ScrollController();
+  final FlutterTts tts = FlutterTts();
 
-  final ScrollController scrollController =
-      ScrollController();
+  bool isTyping = false;
 
-  final List<Map<String, dynamic>>
-      messages = [];
+  final List<Map<String, dynamic>> messages = [];
 
   final List<String> suggestions = [
     "Halo Chatbot 👋",
-    "Saya cemas 😔",
     "Banyak deadline 📚",
+    "Saya stres menghadapi ujian",
+    "Tolong beri saya saran",
   ];
 
-  Future<void> sendMessage(
-      [String? text]) async {
-    String userMessage =
-        text ?? controller.text.trim();
+  final Color bg = const Color(0xFF120A25);
+  final Color card = const Color(0xFF1E1533);
+  final Color purple = const Color(0xFF8B5CFF);
 
-    if (userMessage.isEmpty) return;
+  Future<void> sendMessage([String? text]) async {
+    String msg = text ?? controller.text.trim();
+    if (msg.isEmpty) return;
 
     setState(() {
-      messages.add({
-        "sender": "user",
-        "text": userMessage,
-      });
+      messages.add({"sender": "user", "text": msg});
+      isTyping = true;
     });
 
     controller.clear();
 
     try {
-      String botReply =
-          await ApiService.sendMessage(
-        userMessage,
-      );
+      final reply = await ApiService.sendMessage(msg);
+
+      await tts.setLanguage("id-ID");
+      await tts.speak(reply);
 
       setState(() {
-        messages.add({
-          "sender": "bot",
-          "text": botReply,
-        });
+        messages.add({"sender": "bot", "text": reply});
+        isTyping = false;
       });
     } catch (e) {
       setState(() {
+        isTyping = false;
         messages.add({
           "sender": "bot",
-          "text":
-              "Maaf, server sedang tidak dapat dihubungi.",
+          "text": "Maaf, sistem belum tersedia."
         });
       });
     }
 
-    await Future.delayed(
-      const Duration(milliseconds: 100),
-    );
+    scrollToBottom();
+  }
 
-    if (scrollController.hasClients) {
-      scrollController.animateTo(
-        scrollController
-            .position.maxScrollExtent,
-        duration: const Duration(
-          milliseconds: 300,
+  void scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (scrollController.hasClients) {
+        scrollController.animateTo(
+          scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
+  }
+
+  Widget botAvatar() {
+    return Container(
+      width: 36,
+      height: 36,
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: LinearGradient(
+          colors: [Color(0xFF8B5CFF), Color(0xFFB388FF)],
         ),
-        curve: Curves.easeOut,
-      );
-    }
+      ),
+      child: const Icon(Icons.smart_toy, color: Colors.white, size: 18),
+    );
+  }
+
+  Widget bubble(String text, bool isUser) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 6),
+      padding: const EdgeInsets.all(14),
+      constraints: BoxConstraints(
+        maxWidth: MediaQuery.of(context).size.width * 0.75,
+      ),
+      decoration: BoxDecoration(
+        color: isUser ? purple : card,
+        borderRadius: BorderRadius.circular(18),
+      ),
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.white,
+          height: 1.4,
+          fontSize: 14,
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-          const Color(0xFFF8FAFC),
+      backgroundColor: bg,
 
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        foregroundColor: Colors.black87,
-        title: const Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CircleAvatar(
-              radius: 16,
-              backgroundColor:
-                  Color(0xFFEAF8F0),
-              child: Icon(
-                Icons.smart_toy,
-                color: Color(0xFF6FCF97),
-                size: 18,
-              ),
-            ),
-            SizedBox(width: 8),
-            Text(
-              "MindCare",
-              style: TextStyle(
-                fontWeight:
-                    FontWeight.bold,
-              ),
-            ),
-          ],
+        title: const Text(
+          "MindCare AI",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
         ),
       ),
 
-      body: Column(
+      body: Stack(
         children: [
-          /// HEADER
-          Container(
-            margin:
-                const EdgeInsets.all(15),
-            padding:
-                const EdgeInsets.all(18),
-            decoration: BoxDecoration(
-              gradient:
-                  const LinearGradient(
-                colors: [
-                  Color(0xFF6FCF97),
-                  Color(0xFF56CCF2),
-                ],
-              ),
-              borderRadius:
-                  BorderRadius.circular(
-                      20),
+
+          /// ================= BACKGROUND IMAGE =================
+          Positioned.fill(
+            child: Image.asset(
+              "assets/images/mountain.png",
+              fit: BoxFit.cover,
             ),
-            child: const Row(
-              children: [
-                CircleAvatar(
-                  radius: 24,
-                  backgroundColor:
-                      Colors.white,
-                  child: Icon(
-                    Icons.smart_toy,
-                    color:
-                        Color(0xFF6FCF97),
+          ),
+
+          /// DARK OVERLAY BIAR TETAP READABLE
+          Positioned.fill(
+            child: Container(
+              color: const Color(0xFF120A25).withOpacity(0.88),
+            ),
+          ),
+
+          /// ================= CONTENT =================
+          Column(
+            children: [
+
+              /// ================= HEADER =================
+              Container(
+                margin: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF2A1B4A), Color(0xFF1C1233)],
                   ),
                 ),
-                SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    "Hai 👋 Ceritakan apa yang sedang kamu rasakan hari ini. Aku siap mendengarkan.",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 13,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          /// KEYWORD REKOMENDASI
-          SizedBox(
-            height: 42,
-            child: ListView(
-              scrollDirection:
-                  Axis.horizontal,
-              children:
-                  suggestions.map((text) {
-                return Padding(
-                  padding:
-                      const EdgeInsets
-                          .only(
-                    left: 10,
-                  ),
-                  child: ActionChip(
-                    backgroundColor:
-                        const Color(
-                            0xFFEAF8F0),
-                    label: Text(text),
-                    onPressed: () =>
-                        sendMessage(text),
-                  ),
-                );
-              }).toList(),
-            ),
-          ),
-
-          const SizedBox(height: 10),
-
-          /// CHAT AREA
-          Expanded(
-            child: messages.isEmpty
-                ? Center(
-                    child: Column(
-                      mainAxisAlignment:
-                          MainAxisAlignment
-                              .center,
-                      children: [
-                        Container(
-                          padding:
-                              const EdgeInsets
-                                  .all(
-                                      25),
-                          decoration:
-                              const BoxDecoration(
-                            color: Color(
-                                0xFFEAF8F0),
-                            shape:
-                                BoxShape
-                                    .circle,
-                          ),
-                          child:
-                              const Icon(
-                            Icons
-                                .smart_toy,
-                            size: 60,
-                            color: Color(
-                                0xFF6FCF97),
-                          ),
-                        ),
-                        const SizedBox(
-                            height: 15),
-                        const Text(
-                          "Belum ada percakapan",
-                          style:
-                              TextStyle(
-                            fontSize: 18,
-                            fontWeight:
-                                FontWeight
-                                    .bold,
-                          ),
-                        ),
-                        const SizedBox(
-                            height: 5),
-                        const Text(
-                          "Mulai percakapan dengan MindCare 🌿",
-                          style:
-                              TextStyle(
-                            color:
-                                Colors
-                                    .grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                : ListView.builder(
-                    controller:
-                        scrollController,
-                    padding:
-                        const EdgeInsets
-                            .all(15),
-                    itemCount:
-                        messages.length,
-                    itemBuilder:
-                        (context,
-                            index) {
-                      final msg =
-                          messages[
-                              index];
-
-                      final isUser =
-                          msg["sender"] ==
-                              "user";
-
-                      return Padding(
-                        padding:
-                            const EdgeInsets
-                                .only(
-                          bottom: 12,
-                        ),
-                        child: Row(
-                          crossAxisAlignment:
-                              CrossAxisAlignment
-                                  .start,
-                          mainAxisAlignment:
-                              isUser
-                                  ? MainAxisAlignment
-                                      .end
-                                  : MainAxisAlignment
-                                      .start,
-                          children: [
-                            if (!isUser)
-                              Container(
-                                margin:
-                                    const EdgeInsets
-                                        .only(
-                                  right: 8,
-                                ),
-                                child:
-                                    const CircleAvatar(
-                                  backgroundColor:
-                                      Color(
-                                          0xFFEAF8F0),
-                                  child:
-                                      Icon(
-                                    Icons
-                                        .smart_toy,
-                                    color:
-                                        Color(
-                                            0xFF6FCF97),
-                                  ),
-                                ),
-                              ),
-
-                            Flexible(
-                              child:
-                                  Container(
-                                padding:
-                                    const EdgeInsets
-                                        .all(
-                                            14),
-                                decoration:
-                                    BoxDecoration(
-                                  color: isUser
-                                      ? const Color(
-                                          0xFF6FCF97)
-                                      : Colors.white,
-                                  borderRadius:
-                                      BorderRadius.circular(
-                                          20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors
-                                          .black
-                                          .withOpacity(
-                                              0.05),
-                                      blurRadius:
-                                          10,
-                                    ),
-                                  ],
-                                ),
-                                child: Text(
-                                  msg[
-                                      "text"],
-                                  style:
-                                      TextStyle(
-                                    color: isUser
-                                        ? Colors.white
-                                        : Colors.black87,
-                                    height:
-                                        1.5,
-                                  ),
-                                ),
-                              ),
-                            ),
-
-                            if (isUser)
-                              Container(
-                                margin:
-                                    const EdgeInsets
-                                        .only(
-                                  left: 8,
-                                ),
-                                child:
-                                    const CircleAvatar(
-                                  backgroundColor:
-                                      Color(
-                                          0xFF6FCF97),
-                                  child:
-                                      Icon(
-                                    Icons
-                                        .person,
-                                    color:
-                                        Colors
-                                            .white,
-                                  ),
-                                ),
-                              ),
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-          ),
-
-          /// INPUT
-          Container(
-            padding:
-                const EdgeInsets.all(
-                    12),
-            color: Colors.white,
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller:
-                        controller,
-                    decoration:
-                        InputDecoration(
-                      hintText:
-                          "Tulis perasaanmu...",
-                      filled: true,
-                      fillColor:
-                          const Color(
-                              0xFFF3F5F7),
-                      border:
-                          OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(
-                                30),
-                        borderSide:
-                            BorderSide.none,
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white.withOpacity(0.06),
+                      ),
+                      child: const Icon(
+                        Icons.favorite,
+                        color: Color(0xFFB388FF),
                       ),
                     ),
-                  ),
+                    const SizedBox(width: 12),
+                    const Expanded(
+                      child: Text(
+                        "Aku di sini untuk mendengarkan kamu dan membantu kamu merasa lebih baik.",
+                        style: TextStyle(
+                          color: Colors.white70,
+                          height: 1.3,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(width: 10),
-                Container(
-                  decoration:
-                      const BoxDecoration(
-                    shape:
-                        BoxShape.circle,
-                    gradient:
-                        LinearGradient(
-                      colors: [
-                        Color(
-                            0xFF6FCF97),
-                        Color(
-                            0xFF56CCF2),
+              ),
+
+              /// ================= CHAT =================
+              Expanded(
+                child: ListView.builder(
+                  controller: scrollController,
+                  padding: const EdgeInsets.all(12),
+                  itemCount: messages.length,
+                  itemBuilder: (context, i) {
+                    final msg = messages[i];
+                    final isUser = msg["sender"] == "user";
+
+                    return Row(
+                      mainAxisAlignment: isUser
+                          ? MainAxisAlignment.end
+                          : MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        if (!isUser) botAvatar(),
+                        const SizedBox(width: 8),
+                        bubble(msg["text"], isUser),
                       ],
-                    ),
-                  ),
-                  child: IconButton(
-                    onPressed:
-                        sendMessage,
-                    icon: const Icon(
-                      Icons.send,
-                      color:
-                          Colors.white,
-                    ),
+                    );
+                  },
+                ),
+              ),
+
+              /// ================= TYPING =================
+              if (isTyping)
+                const Padding(
+                  padding: EdgeInsets.only(left: 16, bottom: 6),
+                  child: Row(
+                    children: [
+                      Icon(Icons.smart_toy, color: Colors.white38, size: 18),
+                      SizedBox(width: 8),
+                      Text(
+                        "AI sedang mengetik...",
+                        style: TextStyle(color: Colors.white38),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+
+              /// ================= SUGGESTIONS =================
+              SizedBox(
+                height: 46,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  itemCount: suggestions.length,
+                  itemBuilder: (context, i) {
+                    return GestureDetector(
+                      onTap: () => sendMessage(suggestions[i]),
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 14),
+                        decoration: BoxDecoration(
+                          color: card.withOpacity(0.9),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.white10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            suggestions[i],
+                            style: const TextStyle(
+                              color: Colors.white70,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+
+              /// ================= INPUT =================
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: card.withOpacity(0.95),
+                  border: Border.all(color: Colors.white10),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: controller,
+                        style: const TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                          hintText: "Tulis perasaanmu...",
+                          hintStyle: const TextStyle(color: Colors.white38),
+                          filled: true,
+                          fillColor: bg,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    GestureDetector(
+                      onTap: () => sendMessage(),
+                      child: Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            colors: [Color(0xFF8B5CFF), Color(0xFFB388FF)],
+                          ),
+                        ),
+                        child: const Icon(Icons.send, color: Colors.white),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
