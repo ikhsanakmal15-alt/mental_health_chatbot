@@ -1,62 +1,193 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../config/api_config.dart';
+
 
 class AuthService {
-  static const String baseUrl = "http://10.0.2.2:8000";
 
-  /// ================= LOGIN =================
+  static const String baseUrl = ApiConfig.baseUrl;
+
+
+  // ================= LOGIN =================
+
   static Future<Map<String, dynamic>?> login(
     String email,
     String password,
   ) async {
+
     try {
+
       final response = await http.post(
-        Uri.parse("$baseUrl/auth/login"),
-        headers: {"Content-Type": "application/json"},
+
+        Uri.parse(
+          "$baseUrl/auth/login"
+        ),
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
         body: jsonEncode({
+
           "email": email,
+
           "password": password,
+
         }),
+
+      ).timeout(
+        const Duration(seconds: 10),
       );
 
-      final data = jsonDecode(response.body);
 
-      /// backend success
-      if (response.statusCode == 200) {
-        return data; // {access_token, token_type, user}
+      print("LOGIN STATUS : ${response.statusCode}");
+      print("LOGIN BODY : ${response.body}");
+
+
+      final data = jsonDecode(
+        response.body
+      );
+
+
+      if(response.statusCode == 200){
+
+
+        // simpan user id untuk chat/history
+        if(data["user"] != null){
+
+          final prefs =
+              await SharedPreferences.getInstance();
+
+
+          await prefs.setInt(
+            "user_id",
+            data["user"]["id"],
+          );
+
+        }
+
+
+        return data;
+
       }
 
+
       return null;
-    } catch (e) {
+
+
+    }catch(e){
+
+      print(
+        "LOGIN ERROR : $e"
+      );
+
       return null;
+
     }
+
   }
 
-  /// ================= REGISTER =================
+
+
+
+  // ================= REGISTER =================
+
+
   static Future<bool> register(
     String name,
     String email,
     String password,
   ) async {
+
+
     try {
+
+
       final response = await http.post(
-        Uri.parse("$baseUrl/auth/register"),
-        headers: {"Content-Type": "application/json"},
-        body: jsonEncode({
-          "fullname": name,
-          "email": email,
-          "password": password,
+
+        Uri.parse(
+          "$baseUrl/auth/register"
+        ),
+
+        headers: {
+
+          "Content-Type":"application/json",
+
+        },
+
+
+        body:jsonEncode({
+
+          "fullname":name,
+
+          "email":email,
+
+          "password":password,
+
         }),
+
+
+      ).timeout(
+
+        const Duration(seconds:10),
+
       );
 
-      /// backend kamu return 200 atau 400
-      if (response.statusCode == 200) {
+
+
+      print(
+        "REGISTER STATUS : ${response.statusCode}"
+      );
+
+      print(
+        "REGISTER BODY : ${response.body}"
+      );
+
+
+
+      if(response.statusCode == 200){
+
         return true;
+
       }
 
+
       return false;
-    } catch (e) {
+
+
+
+    }catch(e){
+
+
+      print(
+        "REGISTER ERROR : $e"
+      );
+
+
       return false;
+
+
     }
+
   }
+
+
+
+  // ================= LOGOUT =================
+
+
+  static Future<void> logout() async {
+
+    final prefs =
+        await SharedPreferences.getInstance();
+
+
+    await prefs.remove(
+      "user_id"
+    );
+
+  }
+
 }

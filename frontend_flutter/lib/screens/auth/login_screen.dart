@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/constants/app_colors.dart';
 import '../../navigation/bottom_nav.dart';
 import '../../services/auth_service.dart';
@@ -57,7 +58,27 @@ class _LoginScreenState extends State<LoginScreen> {
 
       /// ✅ LOGIN BERHASIL
       final user = result["user"];
-      final userName = user != null ? user["name"] ?? "User" : "User";
+
+      if (user != null) {
+
+        final prefs = await SharedPreferences.getInstance();
+
+        await prefs.setInt(
+          "user_id",
+          user["id"],
+        );
+
+        await prefs.setString(
+          "user_name",
+          user["name"] ?? "User",
+        );
+      }
+
+
+      final userName = user != null
+          ? user["name"] ?? "User"
+          : "User";
+
 
       Navigator.pushReplacement(
         context,

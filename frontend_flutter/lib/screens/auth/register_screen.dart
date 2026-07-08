@@ -1,73 +1,185 @@
 import 'package:flutter/material.dart';
+
 import '../../core/constants/app_colors.dart';
 import '../../services/auth_service.dart';
 
+
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+
+  const RegisterScreen({
+    super.key,
+  });
+
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
+
 }
 
+
+
 class _RegisterScreenState extends State<RegisterScreen> {
+
+
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+
   bool obscurePassword = true;
   bool isLoading = false;
 
+
+
   @override
   void dispose() {
+
     nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
+
     super.dispose();
+
   }
 
-  /// ================= REGISTER =================
+
+
+  // ================= REGISTER =================
+
   Future<void> register() async {
+
+
     final name = nameController.text.trim();
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
 
-    if (name.isEmpty || email.isEmpty || password.isEmpty) {
+
+
+    if(name.isEmpty ||
+       email.isEmpty ||
+       password.isEmpty) {
+
+
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Semua data wajib diisi")),
+
+        const SnackBar(
+          content: Text(
+            "Semua data wajib diisi",
+          ),
+        ),
+
       );
+
+
       return;
+
     }
 
-    setState(() => isLoading = true);
+
+
+
+    setState(() {
+
+      isLoading = true;
+
+    });
+
+
 
     try {
-      final success = await AuthService.register(
+
+
+      final result = await AuthService.register(
+
         name,
         email,
         password,
+
       );
 
-      setState(() => isLoading = false);
 
-      if (!mounted) return;
 
-      if (success) {
+      if(!mounted) return;
+
+
+
+      setState(() {
+
+        isLoading = false;
+
+      });
+
+
+
+
+
+      if(result != null) {
+
+
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Registrasi berhasil 🎉")),
+
+          const SnackBar(
+
+            content: Text(
+              "Registrasi berhasil 🎉 Silakan login",
+            ),
+
+          ),
+
         );
+
+
+
         Navigator.pop(context);
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Email sudah digunakan ❌")),
-        );
-      }
-    } catch (e) {
-      setState(() => isLoading = false);
 
-      if (!mounted) return;
+
+
+      } else {
+
+
+
+        ScaffoldMessenger.of(context).showSnackBar(
+
+          const SnackBar(
+
+            content: Text(
+              "Email sudah digunakan ❌",
+            ),
+
+          ),
+
+        );
+
+
+      }
+
+
+
+    } catch(e) {
+
+
+      if(!mounted) return;
+
+
+
+      setState(() {
+
+        isLoading = false;
+
+      });
+
+
 
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Terjadi kesalahan server")),
+
+        const SnackBar(
+
+          content: Text(
+            "Terjadi kesalahan server",
+          ),
+
+        ),
+
       );
     }
   }
