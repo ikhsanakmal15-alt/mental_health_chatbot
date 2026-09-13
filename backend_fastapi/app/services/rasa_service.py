@@ -1,17 +1,34 @@
 import requests
 
+
 RASA_URL = "http://localhost:5005/webhooks/rest/webhook"
 
-def send_to_rasa(message: str):
 
+def send_to_rasa(message: str, sender_id: str = "user"):
     payload = {
-        "sender": "user",
+        "sender": sender_id,
         "message": message
     }
 
-    response = requests.post(
-        RASA_URL,
-        json=payload
-    )
+    try:
+        response = requests.post(
+            RASA_URL,
+            json=payload,
+            timeout=15
+        )
 
-    return response.json()
+        response.raise_for_status()
+
+        return response.json()
+
+    except requests.exceptions.Timeout:
+        print("RASA ERROR: Request timeout")
+        return []
+
+    except requests.exceptions.ConnectionError:
+        print("RASA ERROR: Tidak dapat terhubung ke Rasa")
+        return []
+
+    except requests.exceptions.RequestException as e:
+        print(f"RASA ERROR: {e}")
+        return []
