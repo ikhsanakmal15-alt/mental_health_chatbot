@@ -2,70 +2,142 @@ version: "3.1"
 
 rules:
 
-- rule: greet
+# ============================================================
+# GREETING
+# ============================================================
+
+- rule: Respond to greeting
   steps:
     - intent: greet
     - action: utter_greet
 
-- rule: stress
+
+# ============================================================
+# ACADEMIC STRESS
+# ============================================================
+
+- rule: Handle academic stress
   steps:
     - intent: stress_academic
-    - action: action_stress_advice
+    - action: action_contextual_support
 
-- rule: anxiety
+
+# ============================================================
+# ANXIETY
+# ============================================================
+
+- rule: Handle anxiety
   steps:
     - intent: anxiety
-    - action: action_anxiety_advice
+    - action: action_contextual_support
 
-- rule: motivation
+
+# ============================================================
+# MOTIVATION
+# ============================================================
+
+- rule: Handle motivation
   steps:
     - intent: motivation
-    - action: utter_motivation
+    - action: action_contextual_support
 
-- rule: self confidence
+
+# ============================================================
+# SELF CONFIDENCE
+# ============================================================
+
+- rule: Handle self confidence
   steps:
     - intent: self_confidence
-    - action: utter_self_confidence
+    - action: action_contextual_support
 
-- rule: loneliness
+
+# ============================================================
+# LONELINESS
+# ============================================================
+
+- rule: Handle loneliness
   steps:
     - intent: loneliness
-    - action: utter_loneliness
+    - action: action_contextual_support
 
-- rule: sleep
+
+# ============================================================
+# SLEEP PROBLEM
+# ============================================================
+
+- rule: Handle sleep problem
   steps:
     - intent: sleep_problem
-    - action: utter_sleep_problem
+    - action: action_contextual_support
 
-- rule: depression
+
+# ============================================================
+# DEPRESSION SYMPTOM
+# ============================================================
+
+- rule: Handle depression symptom
   steps:
     - intent: depression_symptom
-    - action: utter_depression_symptom
+    - action: action_contextual_support
 
-- rule: tips
+
+# ============================================================
+# ASK TIPS
+# ============================================================
+
+- rule: Handle ask tips
   steps:
     - intent: ask_tips
-    - action: utter_ask_tips
+    - action: action_contextual_support
 
-- rule: consultation
+
+# ============================================================
+# CONSULTATION
+# ============================================================
+
+- rule: Handle consultation
   steps:
     - intent: consultation
     - action: utter_consultation
 
-- rule: gratitude
+
+# ============================================================
+# GRATITUDE
+# ============================================================
+
+- rule: Handle gratitude
   steps:
     - intent: gratitude
     - action: utter_gratitude
 
-- rule: goodbye
+
+# ============================================================
+# GOODBYE
+# ============================================================
+
+- rule: Handle goodbye
   steps:
     - intent: goodbye
     - action: utter_goodbye
 
-# =========================
-# FALLBACK (AMAN VERSION)
-# =========================
-- rule: fallback
+
+# ============================================================
+# INFORM
+# Untuk cerita panjang / narasi mahasiswa
+# ============================================================
+
+- rule: Handle long student story
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+
+# ============================================================
+# NLU FALLBACK
+# ============================================================
+
+- rule: Handle NLU fallback
   steps:
     - intent: nlu_fallback
-    - action: utter_default
+    - action: action_contextual_support

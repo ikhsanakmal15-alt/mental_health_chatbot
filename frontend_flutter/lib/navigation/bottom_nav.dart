@@ -9,10 +9,12 @@ import '../core/constants/app_colors.dart';
 
 class BottomNav extends StatefulWidget {
   final String userName;
+  final String userEmail;
 
   const BottomNav({
     super.key,
     required this.userName,
+    required this.userEmail,
   });
 
   @override
@@ -29,9 +31,31 @@ class _BottomNavState extends State<BottomNav> {
     super.initState();
 
     pages = [
-      HomeScreen(userName: widget.userName),
+      // =====================================================
+      // HOME
+      // =====================================================
+
+      HomeScreen(
+        userName: widget.userName,
+        userEmail: widget.userEmail,
+      ),
+
+      // =====================================================
+      // CHAT
+      // =====================================================
+
       const ChatScreen(),
+
+      // =====================================================
+      // TIPS
+      // =====================================================
+
       const TipsScreen(),
+
+      // =====================================================
+      // RIWAYAT
+      // =====================================================
+
       const HistoryScreen(),
     ];
   }
@@ -41,18 +65,30 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold(
       body: pages[currentIndex],
 
+      // =====================================================
+      // BOTTOM NAVIGATION
+      // =====================================================
+
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(14),
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+        ),
         decoration: BoxDecoration(
-          color: AppColors.surface.withOpacity(0.9),
+          color: AppColors.surface.withValues(
+            alpha: 0.9,
+          ),
           borderRadius: BorderRadius.circular(28),
           border: Border.all(
-            color: Colors.white.withOpacity(0.06),
+            color: Colors.white.withValues(
+              alpha: 0.06,
+            ),
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.5),
+              color: Colors.black.withValues(
+                alpha: 0.5,
+              ),
               blurRadius: 25,
               offset: const Offset(0, 12),
             ),
@@ -61,8 +97,10 @@ class _BottomNavState extends State<BottomNav> {
 
         child: ClipRRect(
           borderRadius: BorderRadius.circular(28),
+
           child: BottomNavigationBar(
             currentIndex: currentIndex,
+
             onTap: (index) {
               setState(() {
                 currentIndex = index;
@@ -70,36 +108,76 @@ class _BottomNavState extends State<BottomNav> {
             },
 
             type: BottomNavigationBarType.fixed,
+
             backgroundColor: Colors.transparent,
+
             elevation: 0,
 
             selectedItemColor: AppColors.primary,
+
             unselectedItemColor: Colors.white38,
 
             showUnselectedLabels: true,
 
             selectedFontSize: 12,
+
             unselectedFontSize: 11,
 
             items: const [
+
+              // =================================================
+              // HOME
+              // =================================================
+
               BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
-                activeIcon: Icon(Icons.home),
+                icon: Icon(
+                  Icons.home_outlined,
+                ),
+                activeIcon: Icon(
+                  Icons.home,
+                ),
                 label: "Home",
               ),
+
+              // =================================================
+              // CHAT
+              // =================================================
+
               BottomNavigationBarItem(
-                icon: Icon(Icons.chat_bubble_outline),
-                activeIcon: Icon(Icons.chat_bubble),
+                icon: Icon(
+                  Icons.chat_bubble_outline,
+                ),
+                activeIcon: Icon(
+                  Icons.chat_bubble,
+                ),
                 label: "Chat",
               ),
+
+              // =================================================
+              // TIPS
+              // =================================================
+
               BottomNavigationBarItem(
-                icon: Icon(Icons.lightbulb_outline),
-                activeIcon: Icon(Icons.lightbulb),
+                icon: Icon(
+                  Icons.lightbulb_outline,
+                ),
+                activeIcon: Icon(
+                  Icons.lightbulb,
+                ),
                 label: "Tips",
               ),
+
+              // =================================================
+              // RIWAYAT
+              // =================================================
+
               BottomNavigationBarItem(
-                icon: Icon(Icons.history_outlined),
-                activeIcon: Icon(Icons.history),
+                icon: Icon(
+                  Icons.history_outlined,
+                ),
+                activeIcon: Icon(
+                  Icons.history,
+                ),
                 label: "Riwayat",
               ),
             ],

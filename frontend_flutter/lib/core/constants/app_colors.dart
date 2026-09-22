@@ -44,7 +44,8 @@ class AppColors {
     end: Alignment.bottomRight,
   );
 
-  /// ================= GLASS EFFECT =================
-  static Color glass = Colors.white.withOpacity(0.06);
-  static Color border = Colors.white.withOpacity(0.08);
+/// ================= GLASS EFFECT =================
+
+static Color glass = Colors.white.withValues(alpha: 0.06);
+static Color border = Colors.white.withValues(alpha: 0.08);
 }

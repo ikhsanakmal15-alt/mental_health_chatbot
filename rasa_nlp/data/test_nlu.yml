@@ -1,0 +1,268 @@
+version: "3.1"
+
+nlu:
+
+# ============================================================
+# DATA TESTING NLU
+# Catatan:
+# - Seluruh kalimat di bawah dibuat berbeda dari data training.
+# - Intent adalah ground truth / label sebenarnya.
+# - File ini digunakan khusus untuk pengujian NLU.
+# ============================================================
+
+# ============================================================
+# GREETING
+# ============================================================
+
+- intent: greet
+  examples: |
+    - halo, apakah ada yang bisa diajak bicara?
+    - hai, saya ingin menggunakan chatbot ini
+    - selamat pagi, saya mau ngobrol
+    - selamat sore, boleh saya berbicara?
+    - selamat malam, saya ingin bercerita
+    - permisi, saya ingin berbicara sebentar
+    - hai chatbot, saya sedang butuh teman bicara
+    - halo, saya ingin menyampaikan sesuatu
+    - apakah kamu ada di sini untuk mendengarkan?
+    - boleh kita ngobrol sebentar?
+
+# ============================================================
+# STRESS AKADEMIK
+# ============================================================
+
+- intent: stress_academic
+  examples: |
+    - pekerjaan kampus saya terasa tidak ada habisnya
+    - saya kewalahan melihat banyaknya tugas yang harus dikumpulkan
+    - beberapa tugas memiliki batas pengumpulan yang hampir bersamaan
+    - saya panik karena pekerjaan kuliah belum selesai semua
+    - banyak laporan yang harus saya selesaikan dalam waktu singkat
+    - saya kesulitan menentukan tugas kampus yang harus diprioritaskan
+    - beban tugas semester ini membuat saya merasa sangat terbebani
+    - saya sudah dikejar banyak deadline dari berbagai mata kuliah
+    - saya sulit berkonsentrasi karena terus memikirkan pekerjaan kampus
+    - saya merasa tertekan setiap kali melihat daftar tugas kuliah
+
+# ============================================================
+# ANXIETY / KECEMASAN
+# ============================================================
+
+- intent: anxiety
+  examples: |
+    - saya terus merasa waswas mengenai apa yang akan terjadi
+    - pikiran tentang masa depan membuat saya tidak tenang
+    - saya merasa takut sebelum menghadapi sesuatu yang penting
+    - setiap memikirkan hasil ujian saya menjadi gelisah
+    - saya sangat gugup ketika harus menyampaikan pendapat di kelas
+    - saya terus membayangkan kemungkinan yang tidak menyenangkan
+    - saya sulit merasa tenang karena banyak kekhawatiran di kepala
+    - saya merasa takut kalau hasil yang saya dapat tidak sesuai harapan
+    - saya sering memikirkan sesuatu secara berulang-ulang
+    - tubuh saya terasa tegang ketika memikirkan masalah kuliah
+
+# ============================================================
+# MOTIVATION
+# ============================================================
+
+- intent: motivation
+  examples: |
+    - saya sulit menemukan dorongan untuk belajar lagi
+    - rasanya semangat saya untuk menjalani perkuliahan semakin berkurang
+    - saya ingin mulai produktif tetapi selalu berhenti di awal
+    - kegiatan belajar terasa sangat berat untuk saya mulai
+    - saya ingin kembali memiliki tujuan dalam menjalani kuliah
+    - belakangan ini saya menjalani semuanya tanpa antusiasme
+    - saya tahu banyak hal yang harus dikerjakan tetapi tidak terdorong untuk melakukannya
+    - saya ingin membangun kebiasaan belajar yang lebih baik
+    - saya merasa tidak memiliki dorongan untuk mengejar target akademik
+    - bagaimana agar saya bisa menemukan semangat belajar lagi?
+
+# ============================================================
+# SELF CONFIDENCE
+# ============================================================
+
+- intent: self_confidence
+  examples: |
+    - saya sering merasa kemampuan saya tidak sebaik orang lain
+    - saya ragu untuk menunjukkan hasil pekerjaan saya kepada orang lain
+    - saya merasa kurang yakin ketika harus mengambil keputusan
+    - saya takut pendapat saya dianggap tidak bagus
+    - saya merasa kecil hati ketika melihat prestasi teman
+    - saya selalu berpikir bahwa orang lain lebih mampu daripada saya
+    - saya kurang yakin ketika harus tampil di depan banyak orang
+    - saya sering merasa kemampuan saya belum cukup untuk mencapai tujuan
+    - saya takut mencoba karena merasa hasilnya pasti mengecewakan
+    - saya kesulitan melihat hal positif dari kemampuan diri sendiri
+
+# ============================================================
+# LONELINESS
+# ============================================================
+
+- intent: loneliness
+  examples: |
+    - saya merasa tidak punya orang yang bisa saya hubungi saat sedang sedih
+    - berada bersama banyak orang tidak membuat saya merasa dekat dengan mereka
+    - saya berharap memiliki teman yang bisa memahami keadaan saya
+    - saya lebih sering menghadapi masalah tanpa ditemani siapa pun
+    - rasanya tidak ada orang yang benar-benar dekat dengan saya
+    - saya ingin memiliki seseorang yang bisa menjadi tempat berbagi
+    - saya merasa terasing meskipun berada di lingkungan kampus
+    - saya kesulitan menemukan teman yang membuat saya nyaman untuk terbuka
+    - akhir-akhir ini saya merasa hubungan saya dengan teman semakin jauh
+    - saya sering menyimpan cerita sendiri karena tidak punya tempat untuk membagikannya
+
+# ============================================================
+# SLEEP PROBLEM
+# ============================================================
+
+- intent: sleep_problem
+  examples: |
+    - saya baru bisa tidur ketika hari sudah sangat larut
+    - beberapa malam ini saya sulit mendapatkan waktu tidur yang cukup
+    - saya terjaga lama meskipun sudah berbaring di tempat tidur
+    - saya kerap terbangun dan sulit tidur kembali
+    - waktu tidur saya berubah-ubah setiap hari
+    - saya merasa mengantuk terus karena waktu istirahat kurang
+    - saya bangun pagi tetapi tubuh masih terasa sangat letih
+    - pekerjaan kuliah membuat waktu istirahat saya menjadi kacau
+    - saya sering kehilangan waktu tidur karena menyelesaikan pekerjaan kampus
+    - saya merasa sulit beristirahat dengan baik pada malam hari
+
+# ============================================================
+# DEPRESSION SYMPTOM
+# ============================================================
+
+- intent: depression_symptom
+  examples: |
+    - beberapa waktu terakhir suasana hati saya sangat buruk
+    - saya merasa tidak tertarik lagi pada hal-hal yang biasanya saya nikmati
+    - menjalani aktivitas sehari-hari terasa sangat berat bagi saya
+    - saya sering merasa hampa tanpa tahu penyebabnya
+    - belakangan ini saya merasa sangat kehilangan tenaga secara emosional
+    - saya lebih banyak menghabiskan waktu sendiri dan tidak menikmati kegiatan
+    - saya merasa sedih berkepanjangan dan sulit merasa lebih baik
+    - akhir-akhir ini saya merasa tidak berdaya menghadapi kehidupan
+    - saya sering merasa bahwa usaha saya tidak menghasilkan apa-apa
+    - saya kehilangan rasa senang terhadap kegiatan yang dulu saya sukai
+
+# ============================================================
+# ASK TIPS
+# ============================================================
+
+- intent: ask_tips
+  examples: |
+    - saya perlu mengetahui cara menghadapi keadaan ini
+    - bisa beri saya langkah yang dapat saya coba?
+    - saya membutuhkan saran untuk mengatasi tekanan kuliah
+    - apa yang bisa saya lakukan agar pikiran lebih tenang?
+    - saya ingin tahu cara mengelola tugas yang banyak
+    - adakah cara sederhana untuk membangun kebiasaan belajar?
+    - saya membutuhkan panduan untuk menghadapi rasa takut
+    - apa langkah yang dapat saya lakukan ketika sedang kewalahan?
+    - bisakah kamu memberikan beberapa cara untuk mengatasi masalah ini?
+    - saya ingin tahu tindakan pertama yang bisa saya coba
+
+# ============================================================
+# CONSULTATION
+# ============================================================
+
+- intent: consultation
+  examples: |
+    - saya ingin membahas sesuatu yang sedang saya alami
+    - apakah saya boleh menceritakan masalah saya di sini?
+    - saya membutuhkan ruang untuk menyampaikan keadaan saya
+    - saya ingin berbicara lebih lanjut mengenai masalah pribadi saya
+    - bisakah saya menceritakan apa yang sedang terjadi?
+    - saya ingin didengarkan tanpa merasa dihakimi
+    - ada beberapa hal yang ingin saya sampaikan
+    - saya membutuhkan teman untuk mendengarkan cerita saya
+    - saya ingin membahas kondisi yang sedang saya hadapi
+    - saya ingin membuka cerita tentang masalah yang sedang saya alami
+
+# ============================================================
+# GRATITUDE
+# ============================================================
+
+- intent: gratitude
+  examples: |
+    - terima kasih, penjelasannya sangat berarti bagi saya
+    - saya berterima kasih karena sudah menemani saya
+    - bantuanmu membuat saya merasa sedikit lebih tenang
+    - terima kasih atas waktu yang sudah diberikan
+    - saya senang sudah mendapatkan kesempatan untuk bercerita
+    - sarannya cukup membantu saya
+    - saya berterima kasih sudah mau mendengarkan cerita saya
+    - terima kasih, sekarang saya punya gambaran apa yang harus dilakukan
+    - saya menghargai perhatian yang sudah kamu berikan
+    - terima kasih sudah menemani percakapan ini
+
+# ============================================================
+# GOODBYE
+# ============================================================
+
+- intent: goodbye
+  examples: |
+    - saya cukupkan percakapan ini dulu
+    - saya harus pergi sekarang
+    - kita lanjutkan lain kali
+    - saya pamit untuk sekarang
+    - sampai bertemu di percakapan berikutnya
+    - saya akan kembali lagi nanti
+    - untuk saat ini saya ingin mengakhiri obrolan
+    - saya tutup dulu percakapannya
+    - saya harus melanjutkan aktivitas lain
+    - sampai ngobrol lagi nanti
+
+# ============================================================
+# INFORM
+# Narasi panjang / cerita mahasiswa
+# ============================================================
+
+- intent: inform
+  examples: |
+    - saya sedang kuliah sambil mengikuti organisasi dan akhir-akhir ini semuanya terasa sulit diseimbangkan
+    - sejak beberapa minggu terakhir saya kesulitan mengurus kuliah karena ada banyak urusan lain yang juga harus saya selesaikan
+    - saya sudah membuat rencana untuk menyelesaikan pekerjaan kampus tetapi keadaan yang datang bersamaan membuat semuanya berantakan
+    - saya sedang memikirkan banyak hal tentang kuliah, keluarga, dan masa depan sehingga saya tidak tahu mana yang harus saya selesaikan lebih dulu
+    - beberapa hari terakhir saya merasa kewalahan dengan berbagai tanggung jawab dan mulai kesulitan menjalani rutinitas
+    - saya ingin tetap menyelesaikan kuliah dengan baik tetapi keadaan akhir-akhir ini membuat saya sulit fokus pada satu hal
+    - saya punya beberapa masalah sekaligus dan semuanya membuat saya sulit menentukan langkah berikutnya
+    - saya sudah berusaha mengatur kegiatan sehari-hari tetapi jadwal yang padat membuat saya cepat merasa lelah
+    - saya merasa banyak hal yang harus saya pikirkan dalam waktu bersamaan dan akhirnya tidak bisa menyelesaikan apa pun dengan baik
+    - saya sedang menghadapi masa kuliah yang cukup berat dan belum menemukan cara untuk mengatur semuanya
+
+# ============================================================
+# INFORM - CERITA PANJANG / MULTI-KONTEKS
+# ============================================================
+
+- intent: inform
+  examples: |
+    - saya sedang mengerjakan tugas akhir sambil menyelesaikan beberapa kewajiban kampus lainnya, sehingga setiap hari terasa penuh dan saya sulit menentukan prioritas
+    - semester ini terasa sangat padat karena ada ujian, tugas kelompok, kegiatan organisasi, dan beberapa urusan pribadi yang harus saya tangani
+    - saya ingin memperbaiki keadaan akademik saya tetapi semakin banyak yang dipikirkan justru membuat saya bingung menentukan langkah pertama
+    - saya sudah mencoba membagi waktu untuk belajar dan beristirahat, tetapi beberapa hari terakhir rencana tersebut tidak berjalan seperti yang saya harapkan
+    - saya merasa tertinggal dalam perkuliahan dan pada saat yang sama masih harus menyelesaikan banyak tanggung jawab lain di luar kampus
+    - saya sedang berada dalam situasi yang membuat saya sulit berkonsentrasi karena masalah akademik dan kehidupan pribadi muncul hampir bersamaan
+    - saya ingin menyelesaikan semua kewajiban kuliah tetapi energi saya terbatas sehingga pekerjaan yang seharusnya selesai malah terus tertunda
+    - saya akhir-akhir ini memikirkan kelanjutan kuliah dan rencana setelah lulus sambil tetap berusaha menyelesaikan tugas yang ada
+    - saya merasa banyak tekanan datang sekaligus dan saya belum tahu bagaimana menjelaskan semuanya kepada orang-orang terdekat
+    - saya sudah lama menyimpan beberapa persoalan sendiri dan sekarang semuanya terasa menumpuk bersamaan dengan tuntutan kuliah
+
+# ============================================================
+# CRISIS / KESELAMATAN
+# Tetap menggunakan intent depression_symptom sesuai nlu.yml
+# ============================================================
+
+- intent: depression_symptom
+  examples: |
+    - saya merasa sudah tidak kuat menghadapi semua yang terjadi
+    - saya merasa tidak ingin menjalani hari-hari seperti ini lagi
+    - saya merasa keberadaan saya tidak berarti bagi siapa pun
+    - saya ingin berhenti dari semuanya karena terasa terlalu berat
+    - saya merasa tidak memiliki harapan untuk melanjutkan hidup seperti sekarang
+    - saya berharap bisa menghilang dari semua masalah yang sedang saya hadapi
+    - saya merasa hidup saya tidak memiliki tujuan lagi
+    - saya merasa tidak sanggup menanggung semua masalah ini sendirian
+    - saya merasa tidak melihat jalan keluar dari keadaan saya
+    - saya merasa ingin lenyap karena sudah terlalu lelah menghadapi semuanya

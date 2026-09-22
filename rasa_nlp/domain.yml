@@ -1,5 +1,9 @@
 version: "3.1"
 
+# ==========================================================
+# INTENTS
+# ==========================================================
+
 intents:
   - greet
   - stress_academic
@@ -15,119 +19,430 @@ intents:
   - goodbye
   - inform
 
+
+# ==========================================================
+# SLOTS
+# ==========================================================
+
 slots:
+
   last_topic:
     type: text
     influence_conversation: true
     mappings:
       - type: custom
 
-# =========================
-# ACTIONS (WAJIB TAMBAH INI)
-# =========================
+
+# ==========================================================
+# ACTIONS
+# ==========================================================
+
 actions:
+
+  # Action utama untuk membaca pesan panjang/kompleks
+  - action_contextual_support
+
+  # Action khusus yang tetap dipertahankan
   - action_stress_advice
   - action_anxiety_advice
 
+
+# ==========================================================
+# RESPONSES
+# ==========================================================
+
 responses:
 
-# =========================
-# GREETING
-# =========================
+
+  # ========================================================
+  # GREETING
+  # ========================================================
+
   utter_greet:
-    - text: "Halo 😊 aku di sini kalau kamu mau cerita."
-    - text: "Hai, santai aja ya… kamu lagi ngerasa apa sekarang?"
-    - text: "Halo, aku siap dengerin kamu."
-    - text: "Hey 👋 lagi pengen cerita apa hari ini?"
-    - text: "Halo, gak perlu dipendem sendiri ya."
 
-# =========================
-# MOTIVATION
-# =========================
+    - text: >
+        Halo 😊 Aku di sini untuk mendengarkan ceritamu.
+        Kamu nggak harus membuat ceritanya rapi atau singkat.
+        Kalau ada banyak hal yang sedang terjadi sekaligus,
+        ceritakan saja satu per satu. Aku akan membantu
+        menguraikannya bersama kamu.
+
+    - text: >
+        Hai 👋 Kamu boleh cerita pelan-pelan di sini.
+        Nggak harus langsung tahu harus mulai dari mana.
+        Ceritakan saja apa yang sedang paling memenuhi
+        pikiranmu saat ini.
+
+    - text: >
+        Halo. Aku siap mendengarkan kamu.
+        Kalau ada masalah kuliah, tekanan dari keluarga,
+        masalah dengan teman, rasa cemas, kehilangan motivasi,
+        atau hal lain yang membuatmu berat, kamu boleh
+        menceritakannya dengan caramu sendiri.
+
+    - text: >
+        Hai 😊 Kalau akhir-akhir ini ada sesuatu yang terasa
+        berat, kamu boleh cerita di sini. Bahkan kalau ceritanya
+        panjang atau bercampur antara beberapa masalah sekaligus,
+        tidak apa-apa. Kita bisa mengurainya perlahan.
+
+
+  # ========================================================
+  # MOTIVATION
+  # ========================================================
+
   utter_motivation:
-    - text: "Kamu sudah jauh banget sampai titik ini."
-    - text: "Pelan-pelan nggak apa-apa, yang penting jalan."
-    - text: "Hari berat itu wajar, kamu tetap bertahan sampai sekarang."
-    - text: "Kamu nggak gagal, kamu lagi proses."
-    - text: "Satu langkah kecil hari ini juga sudah cukup."
-    - text: "Kamu lebih kuat dari yang kamu kira."
 
-# =========================
-# SELF CONFIDENCE
-# =========================
+    - text: >
+        Aku bisa memahami kalau akhir-akhir ini kamu merasa
+        kehilangan semangat. Ketika seseorang terlalu lama
+        menghadapi tekanan, hal sederhana pun kadang terasa berat.
+        Jadi, kamu tidak harus memaksa diri untuk langsung kembali
+        produktif seperti biasanya. Coba mulai dari satu hal kecil
+        yang masih sanggup kamu lakukan hari ini.
+
+    - text: >
+        Kalau sekarang kamu merasa tidak punya motivasi, bukan
+        berarti semua usaha yang sudah kamu lakukan menjadi sia-sia.
+        Bisa jadi kamu sedang terlalu lelah atau terlalu banyak
+        memikirkan hal sekaligus. Kita bisa mencoba mengurangi
+        bebannya sedikit demi sedikit, mulai dari satu hal yang
+        paling penting.
+
+    - text: >
+        Kamu tidak harus selalu produktif untuk tetap dianggap
+        berharga. Kalau hari ini hanya mampu menyelesaikan satu
+        hal kecil, itu tetap sebuah kemajuan. Yang penting bukan
+        seberapa cepat kamu berjalan, tetapi kamu masih memberi
+        kesempatan kepada dirimu untuk melangkah.
+
+    - text: >
+        Mungkin sekarang kamu sedang membutuhkan jeda, bukan
+        tekanan tambahan. Tidak apa-apa kalau prosesmu sedang
+        berjalan lebih lambat dari yang kamu harapkan. Coba
+        tentukan satu hal sederhana yang bisa kamu lakukan tanpa
+        menuntut dirimu untuk langsung menyelesaikan semuanya.
+
+
+  # ========================================================
+  # SELF CONFIDENCE
+  # ========================================================
+
   utter_self_confidence:
-    - text: "Nggak pede itu manusiawi kok."
-    - text: "Kamu nggak harus sempurna buat dianggap mampu."
-    - text: "Kamu tetap berharga walaupun lagi ngerasa kurang."
-    - text: "Rasa ragu itu nggak mendefinisikan kamu."
-    - text: "Kamu lebih capable dari yang kamu pikirkan."
 
-# =========================
-# LONELINESS
-# =========================
+    - text: >
+        Rasa tidak percaya diri bisa terasa sangat kuat, terutama
+        ketika kamu sering membandingkan dirimu dengan orang lain
+        atau merasa hasilmu belum sesuai harapan. Tapi kemampuan
+        seseorang tidak bisa ditentukan hanya dari satu kegagalan
+        atau satu pencapaian. Coba lihat juga hal-hal yang sudah
+        berhasil kamu lewati sampai sekarang.
+
+    - text: >
+        Kamu tidak harus sempurna untuk dianggap mampu. Kalau
+        sekarang kamu sedang meragukan diri sendiri, coba pisahkan
+        antara "aku sedang mengalami kesulitan" dan "aku tidak
+        mampu". Dua hal itu berbeda. Kesulitan yang kamu alami
+        sekarang tidak otomatis menentukan kemampuanmu secara
+        keseluruhan.
+
+    - text: >
+        Aku tahu meragukan diri sendiri itu melelahkan. Tapi rasa
+        takut gagal atau merasa kurang bukan bukti bahwa kamu benar-
+        benar tidak mampu. Kita bisa melihatnya dari hal yang lebih
+        konkret: apa yang sebenarnya sudah kamu coba, bagian mana
+        yang masih sulit, dan dukungan apa yang kamu butuhkan.
+
+    - text: >
+        Kalau kamu terus membandingkan dirimu dengan pencapaian
+        orang lain, kamu mungkin hanya melihat hasil mereka tanpa
+        mengetahui proses yang mereka jalani. Coba kembali melihat
+        perjalananmu sendiri dan hal-hal yang sudah kamu usahakan.
+
+
+  # ========================================================
+  # LONELINESS
+  # ========================================================
+
   utter_loneliness:
-    - text: "Kesepian itu berat, aku ngerti."
-    - text: "Aku ada di sini nemenin kamu."
-    - text: "Kamu nggak harus ngelewatin ini sendirian."
-    - text: "Kalau mau cerita, aku dengerin pelan-pelan ya."
-    - text: "Aku di sini, kamu aman buat cerita."
 
-# =========================
-# SLEEP PROBLEM
-# =========================
+    - text: >
+        Kesepian bisa terasa berat, apalagi ketika kamu berada
+        di tengah banyak orang tetapi tetap merasa tidak benar-benar
+        dipahami. Kamu tidak harus langsung menyelesaikan semuanya
+        hari ini. Kalau kamu mau, ceritakan apa yang membuatmu
+        merasa sendirian akhir-akhir ini. Aku akan membantu
+        menguraikannya tanpa menghakimi.
+
+    - text: >
+        Perasaan sendirian tidak selalu berarti tidak ada orang
+        di sekitarmu. Kadang seseorang bisa merasa kesepian karena
+        tidak punya tempat yang nyaman untuk bercerita. Kamu boleh
+        mulai dari hal yang paling sederhana: apa yang sebenarnya
+        ingin kamu sampaikan kepada seseorang tetapi selama ini
+        kamu simpan sendiri?
+
+    - text: >
+        Aku mendengar bahwa kamu sedang membutuhkan ruang untuk
+        didengarkan. Kamu boleh cerita pelan-pelan. Kalau ada
+        kejadian tertentu yang membuat rasa sepi itu semakin kuat,
+        ceritakan bagian tersebut supaya kita bisa memahami apa
+        yang sebenarnya sedang kamu hadapi.
+
+    - text: >
+        Kalau kamu merasa tidak punya siapa-siapa untuk diajak
+        bicara, perasaan itu tentu bisa terasa sangat berat.
+        Kamu tidak perlu langsung menceritakan semuanya. Kita bisa
+        mulai dari satu kejadian atau satu hal yang paling membuat
+        kamu merasa sendirian.
+
+
+  # ========================================================
+  # SLEEP PROBLEM
+  # ========================================================
+
   utter_sleep_problem:
-    - text: "Tidur yang berantakan bisa bikin semuanya terasa lebih berat."
-    - text: "Coba pelan-pelan atur ritme tidur kamu lagi."
-    - text: "Kadang pikiran yang penuh bikin susah tidur."
-    - text: "Nggak harus langsung sempurna, pelan aja."
-    - text: "Coba kurangi HP sebelum tidur ya."
 
-# =========================
-# DEPRESSION SYMPTOM
-# =========================
+    - text: >
+        Pola tidur yang berantakan memang bisa membuat kuliah,
+        konsentrasi, dan emosi terasa semakin berat. Kalau pikiranmu
+        terus aktif ketika ingin tidur, jangan langsung menyalahkan
+        diri sendiri. Coba mulai dengan rutinitas sederhana seperti
+        mengurangi penggunaan HP menjelang tidur, membuat waktu tidur
+        yang relatif konsisten, dan memberikan waktu untuk menenangkan
+        pikiran.
+
+    - text: >
+        Kalau akhir-akhir ini kamu sulit tidur karena terus
+        memikirkan kuliah atau masalah lain, mungkin yang perlu
+        diperhatikan bukan hanya jam tidurnya tetapi juga beban
+        pikiran yang kamu bawa ke tempat tidur. Kamu bisa menuliskan
+        hal-hal yang masih harus dikerjakan sehingga tidak semuanya
+        berputar di kepala.
+
+    - text: >
+        Kamu tidak perlu memperbaiki pola tidur secara sempurna
+        dalam satu malam. Mulai perlahan. Kalau masalah tidur
+        berlangsung terus, sangat mengganggu aktivitas, atau membuat
+        kondisi emosimu semakin berat, pertimbangkan untuk
+        membicarakannya dengan tenaga profesional.
+
+    - text: >
+        Kalau tubuhmu sudah lelah tetapi pikiran masih terus
+        bekerja, itu bisa membuat tidur menjadi semakin sulit.
+        Sebelum tidur, coba beri dirimu waktu untuk berhenti
+        mengerjakan tugas dan menenangkan pikiran. Kamu tidak harus
+        menyelesaikan semua masalah sebelum tidur malam ini.
+
+
+  # ========================================================
+  # DEPRESSION SYMPTOM
+  # ========================================================
+
   utter_depression_symptom:
-    - text: "Aku denger ini cukup berat buat kamu."
-    - text: "Kamu nggak harus ngelewatin ini sendirian."
-    - text: "Kalau ini terus berlanjut, ngobrol sama profesional bisa membantu."
-    - text: "Kamu tetap berarti walaupun lagi ngerasa kosong."
-    - text: "Kamu layak dapat bantuan dan dukungan."
 
-# =========================
-# ASK TIPS
-# =========================
+    - text: >
+        Aku mendengar bahwa apa yang kamu alami terasa cukup berat.
+        Ketika seseorang mulai kehilangan semangat, merasa kosong,
+        sulit menikmati hal yang biasanya disukai, atau merasa
+        semuanya terlalu berat, kondisi tersebut layak mendapatkan
+        perhatian dan dukungan. Kamu tidak perlu menghadapi
+        semuanya sendirian.
+
+    - text: >
+        Terima kasih sudah mau menceritakan hal yang mungkin tidak
+        mudah untuk disampaikan. Aku tidak bisa menentukan diagnosis
+        hanya dari percakapan ini, tetapi perasaan dan perubahan
+        yang kamu alami tetap penting untuk diperhatikan. Kalau
+        kondisi ini berlangsung lama atau mulai mengganggu kuliah,
+        tidur, makan, hubungan sosial, atau aktivitas sehari-hari,
+        pertimbangkan untuk berbicara dengan psikolog atau konselor.
+
+    - text: >
+        Kamu tetap berharga meskipun sekarang sedang merasa kosong,
+        lelah, atau kehilangan arah. Tidak perlu menunggu sampai
+        keadaan menjadi sangat berat untuk mencari dukungan. Kamu
+        boleh meminta bantuan dari orang yang kamu percaya atau
+        layanan konseling yang tersedia di kampus.
+
+    - text: >
+        Kalau beberapa waktu terakhir semuanya terasa berat dan
+        kamu mulai kesulitan menjalani aktivitas yang biasanya
+        dapat kamu lakukan, jangan menganggap perasaan tersebut
+        sebagai sesuatu yang harus kamu tanggung sendirian.
+        Dukungan dari orang yang dipercaya atau tenaga profesional
+        dapat membantu memahami apa yang sedang terjadi.
+
+
+  # ========================================================
+  # ASK TIPS
+  # ========================================================
+
   utter_ask_tips:
-    - text: "Kamu lagi butuh bantuan di bagian apa?"
-    - text: "Boleh, kamu mau tips soal apa?"
-    - text: "Oke, kita cari cara yang cocok buat kamu."
 
-# =========================
-# CONSULTATION
-# =========================
+    - text: >
+        Tentu. Ceritakan dulu situasinya secara lebih lengkap kalau
+        kamu mau. Misalnya, apa yang terjadi, sejak kapan kamu
+        merasakannya, dan bagian mana yang paling membuatmu
+        kesulitan. Dari situ kita bisa mencoba mencari langkah yang
+        lebih sesuai dengan kondisimu.
+
+    - text: >
+        Boleh banget. Kamu tidak harus membuat ceritanya rapi.
+        Ceritakan saja apa yang sedang terjadi dan apa yang paling
+        kamu butuhkan sekarang—apakah ingin didengarkan, mencari
+        cara menghadapi masalah, mengatur tugas, atau sekadar
+        memahami perasaanmu.
+
+    - text: >
+        Aku bisa membantu menguraikannya bersama kamu. Kalau
+        masalahnya terdiri dari beberapa hal sekaligus, ceritakan
+        semuanya terlebih dahulu. Setelah itu kita bisa menentukan
+        bagian mana yang paling perlu diperhatikan.
+
+    - text: >
+        Silakan ceritakan sedetail yang kamu perlukan. Semakin
+        lengkap konteks yang kamu berikan, semakin mudah untuk
+        memberikan tanggapan yang lebih sesuai dengan keadaanmu.
+
+
+  # ========================================================
+  # CONSULTATION
+  # ========================================================
+
   utter_consultation:
-    - text: "Kamu bisa coba ke psikolog kampus atau layanan konseling."
-    - text: "Nggak ada salahnya cari bantuan profesional."
-    - text: "Itu justru langkah yang berani."
 
-# =========================
-# GRATITUDE
-# =========================
+    - text: >
+        Mencari bantuan dari psikolog, konselor, atau layanan
+        konseling kampus merupakan salah satu pilihan ketika masalah
+        mulai terasa sulit ditangani sendiri. Kamu tidak harus
+        menunggu sampai semuanya menjadi sangat berat. Kalau kamu
+        merasa nyaman, kamu juga bisa mulai dengan bercerita kepada
+        orang yang kamu percaya.
+
+    - text: >
+        Kalau masalah yang kamu alami sudah cukup lama, semakin
+        berat, atau mengganggu kuliah dan kehidupan sehari-hari,
+        berbicara dengan profesional bisa menjadi langkah yang
+        membantu. Kamu tetap boleh menceritakan situasimu di sini,
+        tetapi dukungan profesional dapat memberikan penilaian
+        dan bantuan yang lebih sesuai.
+
+    - text: >
+        Meminta bantuan bukan berarti kamu tidak mampu menghadapi
+        masalah. Justru mencari dukungan ketika keadaan terasa
+        terlalu berat merupakan salah satu cara untuk menjaga diri.
+        Kamu bisa mempertimbangkan psikolog, konselor kampus, atau
+        orang yang kamu percaya.
+
+
+  # ========================================================
+  # GRATITUDE
+  # ========================================================
+
   utter_gratitude:
-    - text: "Sama-sama 😊 aku senang bisa bantu kamu."
-    - text: "Makasih juga sudah cerita."
-    - text: "Aku selalu di sini kalau kamu butuh."
 
-# =========================
-# GOODBYE
-# =========================
+    - text: >
+        Sama-sama 😊 Terima kasih juga karena sudah mau cerita.
+        Kadang menceritakan apa yang kita rasakan saja sudah menjadi
+        langkah kecil untuk memahami diri sendiri. Kalau nanti ada
+        hal lain yang ingin kamu ceritakan, kamu boleh kembali lagi.
+
+    - text: >
+        Sama-sama. Aku senang kalau percakapan ini sedikit
+        membantu. Kamu nggak harus langsung menyelesaikan semuanya
+        hari ini. Jaga dirimu pelan-pelan, ya.
+
+    - text: >
+        Sama-sama 😊 Semoga setelah membicarakannya kamu bisa
+        mendapatkan sedikit ruang untuk bernapas. Kalau masih ada
+        bagian yang belum sempat kamu ceritakan, kamu boleh
+        membicarakannya kapan saja.
+
+
+  # ========================================================
+  # GOODBYE
+  # ========================================================
+
   utter_goodbye:
-    - text: "Sampai ketemu lagi ya 😊"
-    - text: "Jaga diri baik-baik."
-    - text: "Kalau butuh cerita lagi, aku ada."
-    - text: "Semoga harimu lebih ringan."
 
-# =========================
-# DEFAULT FALLBACK (BIAR TIDAK ERROR LAGI)
-# =========================
+    - text: >
+        Sampai ketemu lagi 😊 Semoga setelah cerita tadi pikiranmu
+        sedikit lebih ringan. Kalau nanti kamu ingin mengurai
+        masalah lain, kamu boleh kembali dan menceritakannya
+        pelan-pelan.
+
+    - text: >
+        Baik, jaga dirimu ya. Tidak apa-apa kalau prosesnya pelan.
+        Semoga hari ini ada satu hal kecil yang bisa membuatmu
+        merasa sedikit lebih baik.
+
+    - text: >
+        Sampai jumpa lagi. Ingat, kamu tidak harus menyelesaikan
+        semua masalah sekaligus. Satu langkah kecil tetap berarti.
+
+    - text: >
+        Sampai ketemu lagi 😊 Semoga kamu bisa beristirahat dan
+        memberi sedikit ruang untuk dirimu sendiri. Kalau nanti
+        ingin bercerita lagi, kamu bisa kembali.
+
+
+  # ========================================================
+  # DEFAULT FALLBACK
+  # ========================================================
+
   utter_default:
-    - text: "Maaf, aku belum paham. Bisa kamu jelaskan sedikit lebih jelas?"
-    - text: "Aku ingin bantu kamu, tapi boleh ceritakan lagi?"
+
+    - text: >
+        Aku ingin memahami ceritamu dengan lebih baik. Kamu boleh
+        menjelaskan lebih panjang kalau perlu. Ceritakan apa yang
+        terjadi, bagaimana perasaanmu terhadap situasi itu, dan
+        bagian mana yang paling membuatmu kesulitan.
+
+    - text: >
+        Aku belum sepenuhnya menangkap maksud ceritamu, tetapi kamu
+        tidak perlu membuatnya singkat. Ceritakan saja seperti kamu
+        sedang bercerita kepada seseorang yang ingin memahami
+        keadaanmu.
+
+    - text: >
+        Tidak apa-apa kalau ceritamu masih berantakan atau terdiri
+        dari beberapa masalah sekaligus. Coba ceritakan semuanya
+        terlebih dahulu. Setelah itu kita bisa mencoba menguraikan
+        mana yang paling penting untuk dibicarakan.
+
+    - text: >
+        Aku ingin memberikan respons yang benar-benar sesuai dengan
+        keadaanmu, jadi aku membutuhkan sedikit lebih banyak konteks.
+        Kamu boleh menceritakan apa yang terjadi dari awal atau
+        langsung menjelaskan bagian yang paling membuatmu tertekan.
+
+
+  # ========================================================
+  # CRISIS / SAFETY RESPONSE
+  # ========================================================
+
+  utter_crisis_support:
+
+    - text: >
+        Aku mendengar bahwa kamu sedang mengalami sesuatu yang
+        sangat berat. Kalau saat ini kamu merasa ingin menyakiti
+        diri sendiri atau mengakhiri hidup, keselamatanmu menjadi
+        hal yang paling penting.
+
+        Tolong jangan menghadapi situasi ini sendirian. Kalau
+        memungkinkan, segera hubungi orang yang kamu percaya dan
+        mintalah mereka menemanimu secara langsung. Kamu juga bisa
+        menghubungi layanan darurat atau fasilitas kesehatan
+        terdekat untuk mendapatkan bantuan segera.
+
+        Untuk saat ini, coba berada di tempat yang ada orang lain
+        dan jauhkan benda atau situasi yang bisa digunakan untuk
+        menyakiti diri.
+
+        Aku tetap bisa mendengarkan ceritamu di sini, tetapi untuk
+        kondisi seperti ini dukungan langsung dari orang yang dapat
+        berada bersamamu dan tenaga profesional sangat penting.
+
+        Kalau kamu merasa aman untuk melanjutkan cerita, kamu boleh
+        memberi tahu aku apa yang sedang terjadi sekarang.

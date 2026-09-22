@@ -33,12 +33,18 @@ class _ChatScreenState extends State<ChatScreen> {
   // SUGGESTIONS
   // ============================================================
 
-  final List<String> suggestions = [
-    "Halo Chatbot 👋",
-    "Banyak deadline 📚",
-    "Saya stres menghadapi ujian",
-    "Tolong beri saya saran",
-  ];
+final List<String> suggestions = [
+  "Halo 👋",                              // greet
+  "Deadline tugas saya menumpuk 📚",     // stress_academic
+  "Saya cemas menghadapi ujian 😟",      // anxiety
+  "Saya kehilangan motivasi belajar 💭", // motivation
+  "Saya tidak percaya diri 😔",           // self_confidence
+  "Saya merasa kesepian 🫂",             // loneliness
+  "Saya sulit tidur 😴",                  // sleep_problem
+  "Saya stres mengerjakan skripsi 📖",   // inform / stress_academic
+  "Apa yang harus saya lakukan? 💡",     // ask_tips
+  "Saya ingin konsultasi 💬",            // consultation
+];
 
   // ============================================================
   // COLORS

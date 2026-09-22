@@ -2,110 +2,600 @@ version: "3.1"
 
 stories:
 
-# =========================
-# GREETING FLOW
-# =========================
-- story: greet flow
+# ============================================================
+# STORY 01 — GREETING
+# ============================================================
+
+- story: Greeting conversation
   steps:
     - intent: greet
     - action: utter_greet
 
-# =========================
-# STRESS FLOW
-# =========================
-- story: stress flow
+
+# ============================================================
+# STORY 02 — STRESS AKADEMIK
+# ============================================================
+
+- story: Student has academic stress
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+    - intent: stress_academic
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 03 — TUGAS MENUMPUK
+# ============================================================
+
+- story: Student overwhelmed by assignments
   steps:
     - intent: stress_academic
-    - action: action_stress_advice
-    - intent: inform
-    - action: action_stress_advice
+    - action: action_contextual_support
 
-# =========================
-# ANXIETY FLOW
-# =========================
-- story: anxiety flow
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 04 — UJIAN DAN KECEMASAN
+# ============================================================
+
+- story: Student anxious about examination
   steps:
     - intent: anxiety
-    - action: action_anxiety_advice
-    - intent: inform
-    - action: action_anxiety_advice
+    - action: action_contextual_support
 
-# =========================
-# MOTIVATION FLOW
-# =========================
-- story: motivation flow
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 05 — MOTIVASI BELAJAR
+# ============================================================
+
+- story: Student loses motivation
   steps:
     - intent: motivation
-    - action: utter_motivation
-    - intent: inform
-    - action: utter_motivation
+    - action: action_contextual_support
 
-# =========================
-# SELF CONFIDENCE FLOW
-# =========================
-- story: self confidence flow
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 06 — KEPERCAYAAN DIRI
+# ============================================================
+
+- story: Student lacks confidence
   steps:
     - intent: self_confidence
-    - action: utter_self_confidence
-    - intent: inform
-    - action: utter_self_confidence
+    - action: action_contextual_support
 
-# =========================
-# LONELINESS FLOW
-# =========================
-- story: loneliness flow
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 07 — KESEPIAN
+# ============================================================
+
+- story: Student feels lonely
   steps:
     - intent: loneliness
-    - action: utter_loneliness
-    - intent: inform
-    - action: utter_loneliness
+    - action: action_contextual_support
 
-# =========================
-# SLEEP FLOW
-# =========================
-- story: sleep flow
+    - intent: consultation
+    - action: utter_consultation
+
+
+# ============================================================
+# STORY 08 — MASALAH TIDUR
+# ============================================================
+
+- story: Student has sleep problems
   steps:
     - intent: sleep_problem
-    - action: utter_sleep_problem
-    - intent: inform
-    - action: utter_sleep_problem
+    - action: action_contextual_support
 
-# =========================
-# DEPRESSION FLOW
-# =========================
-- story: depression flow
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 09 — GEJALA EMOSIONAL
+# ============================================================
+
+- story: Student feels emotionally exhausted
   steps:
     - intent: depression_symptom
-    - action: utter_depression_symptom
-    - intent: inform
-    - action: utter_depression_symptom
+    - action: action_contextual_support
+
     - intent: consultation
     - action: utter_consultation
 
-# =========================
-# TIPS FLOW
-# =========================
-- story: tips flow
+
+# ============================================================
+# STORY 10 — KONSULTASI
+# ============================================================
+
+- story: Student wants consultation
   steps:
+    - intent: greet
+    - action: utter_greet
+
+    - intent: consultation
+    - action: utter_consultation
+
+    - intent: inform
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 11 — CERITA PANJANG TENTANG TUGAS
+# ============================================================
+
+- story: Long story about academic assignments
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 12 — CERITA PANJANG TENTANG SKRIPSI
+# ============================================================
+
+- story: Long story about thesis
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
     - intent: ask_tips
-    - action: utter_ask_tips
-    - intent: inform
-    - action: utter_ask_tips
+    - action: action_contextual_support
 
-# =========================
-# CONSULTATION FLOW
-# =========================
-- story: consultation flow
+
+# ============================================================
+# STORY 13 — SKRIPSI DAN KECEMASAN
+# ============================================================
+
+- story: Thesis and anxiety
   steps:
+    - intent: stress_academic
+    - action: action_contextual_support
+
+    - intent: anxiety
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 14 — TUGAS DAN TIDUR
+# ============================================================
+
+- story: Assignments affect sleep
+  steps:
+    - intent: stress_academic
+    - action: action_contextual_support
+
+    - intent: sleep_problem
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 15 — TUGAS DAN MOTIVASI
+# ============================================================
+
+- story: Assignments cause loss of motivation
+  steps:
+    - intent: stress_academic
+    - action: action_contextual_support
+
+    - intent: motivation
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 16 — UJIAN DAN KEPERCAYAAN DIRI
+# ============================================================
+
+- story: Examination affects confidence
+  steps:
+    - intent: anxiety
+    - action: action_contextual_support
+
+    - intent: self_confidence
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 17 — KESEPIAN DAN STRES AKADEMIK
+# ============================================================
+
+- story: Academic stress and loneliness
+  steps:
+    - intent: stress_academic
+    - action: action_contextual_support
+
+    - intent: loneliness
+    - action: action_contextual_support
+
     - intent: consultation
     - action: utter_consultation
+
+
+# ============================================================
+# STORY 18 — MOTIVASI DAN KEPERCAYAAN DIRI
+# ============================================================
+
+- story: Motivation and self confidence
+  steps:
+    - intent: motivation
+    - action: action_contextual_support
+
+    - intent: self_confidence
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 19 — STRES, CEMAS, DAN TIDUR
+# ============================================================
+
+- story: Stress anxiety and sleep problems
+  steps:
+    - intent: stress_academic
+    - action: action_contextual_support
+
+    - intent: anxiety
+    - action: action_contextual_support
+
+    - intent: sleep_problem
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 20 — STRES, MOTIVASI, DAN KELELAHAN
+# ============================================================
+
+- story: Academic stress and exhaustion
+  steps:
+    - intent: stress_academic
+    - action: action_contextual_support
+
+    - intent: motivation
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 21 — MASALAH KULIAH KOMPLEKS
+# ============================================================
+
+- story: Complex academic problem
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
     - intent: gratitude
     - action: utter_gratitude
 
-# =========================
-# GOODBYE FLOW
-# =========================
-- story: goodbye flow
+
+# ============================================================
+# STORY 22 — CERITA PANJANG DAN KONSULTASI
+# ============================================================
+
+- story: Long emotional consultation
   steps:
+    - intent: consultation
+    - action: utter_consultation
+
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: inform
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 23 — MAHASISWA MERASA TERTEKAN
+# ============================================================
+
+- story: Student under pressure
+  steps:
+    - intent: stress_academic
+    - action: action_contextual_support
+
+    - intent: anxiety
+    - action: action_contextual_support
+
+    - intent: motivation
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 24 — MASALAH KULIAH DAN KELUARGA
+# ============================================================
+
+- story: Academic and family pressure
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: consultation
+    - action: utter_consultation
+
+
+# ============================================================
+# STORY 25 — MASALAH TEMAN DAN KESEPIAN
+# ============================================================
+
+- story: Friendship problem and loneliness
+  steps:
+    - intent: loneliness
+    - action: action_contextual_support
+
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 26 — PRESENTASI DAN KECEMASAN
+# ============================================================
+
+- story: Presentation anxiety
+  steps:
+    - intent: anxiety
+    - action: action_contextual_support
+
+    - intent: self_confidence
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 27 — GAGAL DAN MENYALAHKAN DIRI SENDIRI
+# ============================================================
+
+- story: Student blames themselves after failure
+  steps:
+    - intent: self_confidence
+    - action: action_contextual_support
+
+    - intent: motivation
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 28 — TIDUR TERGANGGU KARENA OVERTHINKING
+# ============================================================
+
+- story: Overthinking affects sleep
+  steps:
+    - intent: anxiety
+    - action: action_contextual_support
+
+    - intent: sleep_problem
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 29 — KELELAHAN EMOSIONAL
+# ============================================================
+
+- story: Emotional exhaustion
+  steps:
+    - intent: depression_symptom
+    - action: action_contextual_support
+
+    - intent: motivation
+    - action: action_contextual_support
+
+    - intent: consultation
+    - action: utter_consultation
+
+
+# ============================================================
+# STORY 30 — MAHASISWA TIDAK TAHU HARUS MULAI DARI MANA
+# ============================================================
+
+- story: Student does not know where to start
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 31 — CERITA PANJANG DENGAN BANYAK MASALAH
+# ============================================================
+
+- story: Student has multiple problems
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 32 — MAHASISWA CERITA LALU BERTERIMA KASIH
+# ============================================================
+
+- story: Student shares story and expresses gratitude
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: gratitude
+    - action: utter_gratitude
+
+
+# ============================================================
+# STORY 33 — KONSULTASI LALU CERITA PANJANG
+# ============================================================
+
+- story: Consultation followed by detailed story
+  steps:
+    - intent: consultation
+    - action: utter_consultation
+
+    - intent: inform
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 34 — CERITA PANJANG TENTANG SKRIPSI DAN MASA DEPAN
+# ============================================================
+
+- story: Thesis and future anxiety
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: anxiety
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 35 — CERITA PANJANG TENTANG KULIAH DAN ORGANISASI
+# ============================================================
+
+- story: Academic and organization pressure
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: stress_academic
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 36 — CERITA PANJANG TENTANG KULIAH DAN PEKERJAAN
+# ============================================================
+
+- story: Academic and work pressure
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: motivation
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 37 — BANYAK MASALAH DAN OVERTHINKING
+# ============================================================
+
+- story: Multiple problems with overthinking
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+    - intent: anxiety
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 38 — MAHASISWA SULIT FOKUS
+# ============================================================
+
+- story: Student has difficulty focusing
+  steps:
+    - intent: stress_academic
+    - action: action_contextual_support
+
+    - intent: anxiety
+    - action: action_contextual_support
+
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 39 — MAHASISWA MERASA TERTINGGAL
+# ============================================================
+
+- story: Student feels left behind
+  steps:
+    - intent: self_confidence
+    - action: action_contextual_support
+
+    - intent: motivation
+    - action: action_contextual_support
+
+    - intent: inform
+    - action: action_contextual_support
+
+
+# ============================================================
+# STORY 40 — PENUTUP PERCAKAPAN
+# ============================================================
+
+- story: End conversation
+  steps:
+    - intent: gratitude
+    - action: utter_gratitude
+
     - intent: goodbye
     - action: utter_goodbye
+
+
+# ============================================================
+# STORY 41 — FALLBACK
+# ============================================================
+
+- story: Unknown student message
+  steps:
+    - intent: nlu_fallback
+    - action: action_contextual_support
