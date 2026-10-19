@@ -18,6 +18,7 @@ intents:
   - gratitude
   - goodbye
   - inform
+  - nlu_fallback
 
 
 # ==========================================================
@@ -42,7 +43,7 @@ actions:
   # Action utama untuk membaca pesan panjang/kompleks
   - action_contextual_support
 
-  # Action khusus yang tetap dipertahankan
+  # Action khusus
   - action_stress_advice
   - action_anxiety_advice
 
@@ -52,7 +53,6 @@ actions:
 # ==========================================================
 
 responses:
-
 
   # ========================================================
   # GREETING
@@ -416,6 +416,21 @@ responses:
         keadaanmu, jadi aku membutuhkan sedikit lebih banyak konteks.
         Kamu boleh menceritakan apa yang terjadi dari awal atau
         langsung menjelaskan bagian yang paling membuatmu tertekan.
+
+
+  # ========================================================
+  # NLU FALLBACK
+  # ========================================================
+
+  utter_nlu_fallback:
+
+    - text: >
+        Maaf, aku belum sepenuhnya memahami maksud pesanmu.
+        Kamu boleh menceritakan kembali dengan kata-katamu sendiri.
+        Kalau sedang menghadapi masalah kuliah, merasa cemas,
+        kehilangan motivasi, sulit tidur, merasa sendirian, atau
+        sedang mengalami tekanan lainnya, ceritakan saja apa yang
+        sedang terjadi. Aku akan mencoba memahaminya.
 
 
   # ========================================================

@@ -140,4 +140,4 @@ rules:
 - rule: Handle NLU fallback
   steps:
     - intent: nlu_fallback
-    - action: action_contextual_support
+    - action: utter_nlu_fallback

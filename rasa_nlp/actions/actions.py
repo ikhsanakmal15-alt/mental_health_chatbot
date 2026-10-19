@@ -552,10 +552,6 @@ class ActionContextualSupport(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        # ----------------------------------------------------
-        # AMBIL PESAN TERAKHIR USER
-        # ----------------------------------------------------
-
         message = tracker.latest_message.get("text", "")
 
         if not message:

@@ -33,18 +33,12 @@ class _ChatScreenState extends State<ChatScreen> {
   // SUGGESTIONS
   // ============================================================
 
-final List<String> suggestions = [
-  "Halo 👋",                              // greet
-  "Deadline tugas saya menumpuk 📚",     // stress_academic
-  "Saya cemas menghadapi ujian 😟",      // anxiety
-  "Saya kehilangan motivasi belajar 💭", // motivation
-  "Saya tidak percaya diri 😔",           // self_confidence
-  "Saya merasa kesepian 🫂",             // loneliness
-  "Saya sulit tidur 😴",                  // sleep_problem
-  "Saya stres mengerjakan skripsi 📖",   // inform / stress_academic
-  "Apa yang harus saya lakukan? 💡",     // ask_tips
-  "Saya ingin konsultasi 💬",            // consultation
-];
+  final List<String> suggestions = [
+    "Halo Chatbot 👋",
+    "Banyak deadline 📚",
+    "Saya stres menghadapi ujian",
+    "Tolong beri saya saran",
+  ];
 
   // ============================================================
   // COLORS
@@ -63,7 +57,7 @@ final List<String> suggestions = [
   Future<void> sendMessage([String? text]) async {
     final String msg = text ?? controller.text.trim();
 
-    // Jangan kirim pesan kosong atau ketika AI masih menjawab
+
     if (msg.isEmpty || isTyping) return;
 
     // ------------------------------------------------------------
@@ -113,7 +107,7 @@ final List<String> suggestions = [
       // TTS
       // ----------------------------------------------------------
       // TTS dijalankan SETELAH bot tampil.
-      // Jadi UI tidak menunggu TTS selesai.
+      
 
       try {
         await tts.setLanguage("id-ID");

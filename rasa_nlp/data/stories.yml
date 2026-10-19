@@ -20,7 +20,6 @@ stories:
   steps:
     - intent: greet
     - action: utter_greet
-
     - intent: stress_academic
     - action: action_contextual_support
 
@@ -33,7 +32,6 @@ stories:
   steps:
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -46,7 +44,6 @@ stories:
   steps:
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -59,7 +56,6 @@ stories:
   steps:
     - intent: motivation
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -72,7 +68,6 @@ stories:
   steps:
     - intent: self_confidence
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -85,7 +80,6 @@ stories:
   steps:
     - intent: loneliness
     - action: action_contextual_support
-
     - intent: consultation
     - action: utter_consultation
 
@@ -98,7 +92,6 @@ stories:
   steps:
     - intent: sleep_problem
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -111,7 +104,6 @@ stories:
   steps:
     - intent: depression_symptom
     - action: action_contextual_support
-
     - intent: consultation
     - action: utter_consultation
 
@@ -124,10 +116,8 @@ stories:
   steps:
     - intent: greet
     - action: utter_greet
-
     - intent: consultation
     - action: utter_consultation
-
     - intent: inform
     - action: action_contextual_support
 
@@ -150,7 +140,6 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -163,10 +152,8 @@ stories:
   steps:
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -179,10 +166,8 @@ stories:
   steps:
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: sleep_problem
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -195,10 +180,8 @@ stories:
   steps:
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: motivation
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -211,10 +194,8 @@ stories:
   steps:
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: self_confidence
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -227,10 +208,8 @@ stories:
   steps:
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: loneliness
     - action: action_contextual_support
-
     - intent: consultation
     - action: utter_consultation
 
@@ -243,10 +222,8 @@ stories:
   steps:
     - intent: motivation
     - action: action_contextual_support
-
     - intent: self_confidence
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -259,13 +236,10 @@ stories:
   steps:
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: sleep_problem
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -278,10 +252,8 @@ stories:
   steps:
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: motivation
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -294,10 +266,8 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
-
     - intent: gratitude
     - action: utter_gratitude
 
@@ -310,10 +280,8 @@ stories:
   steps:
     - intent: consultation
     - action: utter_consultation
-
     - intent: inform
     - action: action_contextual_support
-
     - intent: inform
     - action: action_contextual_support
 
@@ -326,10 +294,8 @@ stories:
   steps:
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: motivation
     - action: action_contextual_support
 
@@ -342,7 +308,6 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: consultation
     - action: utter_consultation
 
@@ -355,10 +320,8 @@ stories:
   steps:
     - intent: loneliness
     - action: action_contextual_support
-
     - intent: inform
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -371,10 +334,8 @@ stories:
   steps:
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: self_confidence
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -387,10 +348,8 @@ stories:
   steps:
     - intent: self_confidence
     - action: action_contextual_support
-
     - intent: motivation
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -403,10 +362,8 @@ stories:
   steps:
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: sleep_problem
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -419,10 +376,8 @@ stories:
   steps:
     - intent: depression_symptom
     - action: action_contextual_support
-
     - intent: motivation
     - action: action_contextual_support
-
     - intent: consultation
     - action: utter_consultation
 
@@ -435,7 +390,6 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -448,10 +402,8 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: inform
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -464,7 +416,6 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: gratitude
     - action: utter_gratitude
 
@@ -477,7 +428,6 @@ stories:
   steps:
     - intent: consultation
     - action: utter_consultation
-
     - intent: inform
     - action: action_contextual_support
 
@@ -490,10 +440,8 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -506,10 +454,8 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -522,10 +468,8 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: motivation
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -538,10 +482,8 @@ stories:
   steps:
     - intent: inform
     - action: action_contextual_support
-
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -554,10 +496,8 @@ stories:
   steps:
     - intent: stress_academic
     - action: action_contextual_support
-
     - intent: anxiety
     - action: action_contextual_support
-
     - intent: ask_tips
     - action: action_contextual_support
 
@@ -570,10 +510,8 @@ stories:
   steps:
     - intent: self_confidence
     - action: action_contextual_support
-
     - intent: motivation
     - action: action_contextual_support
-
     - intent: inform
     - action: action_contextual_support
 
@@ -586,16 +524,6 @@ stories:
   steps:
     - intent: gratitude
     - action: utter_gratitude
-
     - intent: goodbye
     - action: utter_goodbye
 
-
-# ============================================================
-# STORY 41 — FALLBACK
-# ============================================================
-
-- story: Unknown student message
-  steps:
-    - intent: nlu_fallback
-    - action: action_contextual_support
