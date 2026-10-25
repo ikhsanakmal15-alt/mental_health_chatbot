@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      /// ================= THEME (FIXED) =================
+      /// ================= THEME =================
       theme: AppTheme.darkTheme,
 
       /// ================= HOME =================

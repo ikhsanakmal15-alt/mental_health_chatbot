@@ -225,7 +225,6 @@ nlu:
     - saya tidak menikmati kegiatan yang biasanya membuat saya senang
     - saya merasa tidak punya energi untuk melakukan apa pun
     - saya lebih sering ingin menyendiri
-    - saya merasa semuanya terlalu berat
     - saya merasa sangat sulit menjalani hari
     - saya sering merasa putus asa
     - saya merasa tidak berguna
@@ -415,3 +414,98 @@ nlu:
     - saya merasa tidak ada gunanya saya hidup
     - saya ingin menghilang saja
     - saya merasa tidak punya alasan untuk terus menjalani semuanya
+
+
+# ============================================================
+# CRISIS RISK (intent baru, Oktober 2026)
+# Definisi: ungkapan eksplisit keinginan mati / bunuh diri /
+# menyakiti diri (termasuk ide pasif: ingin menghilang selamanya).
+# Batas dengan depression_symptom: depression_symptom = sedih,
+# hampa, kehilangan minat, putus asa TANPA menyebut keinginan
+# mati atau menyakiti diri.
+# CATATAN: contoh kalimat tidak memuat cara/metode apa pun.
+# STATUS: BELUM ditinjau konselor -> wajib ditinjau sebelum sidang.
+# ============================================================
+
+- intent: crisis_risk
+  examples: |
+    - saya ingin bunuh diri
+    - aku mau bunuh diri
+    - aku pengen bunuh diri
+    - saya berpikir untuk bunuh diri
+    - saya ingin mengakhiri hidup saya
+    - aku mau mengakhiri hidupku
+    - aku ingin mati saja
+    - saya pengen mati
+    - lebih baik saya mati
+    - lebih baik aku tidak ada di dunia ini
+    - aku tidak mau hidup lagi
+    - saya tidak ingin hidup lagi
+    - saya ingin menyakiti diri sendiri
+    - aku ingin melukai diriku
+    - aku sering ingin menyakiti diri sendiri kalau lagi stres
+    - saya sudah tidak mau melanjutkan hidup
+    - hidupku tidak ada gunanya lagi dan aku ingin mati
+    - saya merasa dunia lebih baik tanpa saya
+    - aku capek hidup dan ingin menghilang selamanya
+    - sepertinya saya lebih baik pergi untuk selamanya
+    - aku punya pikiran untuk mengakhiri semuanya, termasuk hidupku
+    - belakangan ini saya sering memikirkan kematian dan ingin mati
+    - aku berpikir untuk melukai diriku sendiri
+    - tidak ada alasan lagi bagi saya untuk tetap hidup
+    - aku nggak mau hidup lagi
+    - saya mau mati aja
+    - rasanya aku pengen menghilang dari dunia ini selamanya
+    - saya takut pada diri sendiri karena sering ingin menyakiti diri
+    - saya ingin tidur dan tidak pernah bangun lagi
+    - kalau saya mati, mungkin semua orang akan lebih tenang
+
+
+# ============================================================
+# AMBIGUOUS DISTRESS
+# Pesan samar: minta klarifikasi, tidak langsung mengasumsikan diagnosis.
+# ============================================================
+- intent: ambiguous_distress
+  examples: |
+    - semuanya berat banget akhir-akhir ini
+    - aku capek sama semuanya
+    - rasanya lagi nggak enak aja
+    - aku bingung mau cerita dari mana
+    - akhir-akhir ini rasanya campur aduk
+    - aku nggak tahu kenapa, pokoknya berat
+    - lagi nggak baik-baik aja kayaknya
+    - aku ngerasa aneh belakangan ini
+    - susah jelasinnya, tapi rasanya nggak nyaman
+    - aku lagi down, tapi nggak tahu penyebabnya
+    - rasanya pengin berhenti sebentar dari semua ini
+    - aku lagi pusing sama keadaan
+    - belakangan ini semuanya terasa beda
+    - aku nggak tahu harus ngomong apa
+    - rasanya aku butuh cerita tapi bingung mulai dari mana
+
+# ============================================================
+# OUT OF SCOPE
+# Permintaan umum yang bukan dukungan kesehatan mental mahasiswa.
+# ============================================================
+- intent: out_of_scope
+  examples: |
+    - berapa harga laptop gaming terbaru?
+    - cuaca Makassar hari ini panas atau hujan?
+    - kasih resep nasi goreng yang gampang
+    - gimana cara install Python di Windows?
+    - siapa yang menang bola tadi malam?
+    - rekomendasi HP baru di bawah tiga juta
+    - tolong hitung luas segitiga ini
+    - jelaskan cara kerja mesin diesel
+    - buatkan caption jualan sepatu
+    - berapa kurs dolar ke rupiah sekarang?
+    - rekomendasi tempat wisata di Bali
+    - bagaimana cara memperbaiki printer macet?
+    - siapa presiden pertama Indonesia?
+    - tolong terjemahkan kalimat ini ke bahasa Inggris
+    - buatkan kode HTML untuk halaman login
+    - kapan film terbaru itu tayang?
+    - bagaimana cara memasak ayam kecap?
+    - saya mau beli tiket pesawat ke Jakarta
+    - berapa skor pertandingan sepak bola semalam?
+    - tolong buatkan rumus Excel untuk menghitung total

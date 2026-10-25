@@ -79,7 +79,19 @@ rules:
 - rule: Handle depression symptom
   steps:
     - intent: depression_symptom
-    - action: action_contextual_support
+    - action: action_depression_support
+
+
+# ============================================================
+# CRISIS RISK (baru, Oktober 2026)
+# Respons tetap (utter_crisis_support), tidak melalui custom action
+# berbasis kata kunci, selalu berisi rujukan konselor + layanan darurat.
+# ============================================================
+
+- rule: Handle crisis risk
+  steps:
+    - intent: crisis_risk
+    - action: utter_crisis_support
 
 
 # ============================================================
@@ -140,4 +152,20 @@ rules:
 - rule: Handle NLU fallback
   steps:
     - intent: nlu_fallback
-    - action: utter_nlu_fallback
+    - action: action_safe_fallback
+
+# ============================================================
+# AMBIGUOUS DISTRESS
+# ============================================================
+- rule: Clarify ambiguous distress message
+  steps:
+    - intent: ambiguous_distress
+    - action: action_contextual_support
+
+# ============================================================
+# OUT OF SCOPE
+# ============================================================
+- rule: Handle out of scope question
+  steps:
+    - intent: out_of_scope
+    - action: action_out_of_scope

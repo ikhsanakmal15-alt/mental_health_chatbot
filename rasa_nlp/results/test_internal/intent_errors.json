@@ -1,0 +1,490 @@
+[
+  {
+    "text": "halo, apakah ada yang bisa diajak bicara?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.9502052068710327
+    }
+  },
+  {
+    "text": "selamat sore, boleh saya berbicara?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "consultation",
+      "confidence": 0.9906420111656189
+    }
+  },
+  {
+    "text": "selamat malam, saya ingin bercerita",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "consultation",
+      "confidence": 0.7142595052719116
+    }
+  },
+  {
+    "text": "permisi, saya ingin berbicara sebentar",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "consultation",
+      "confidence": 0.8976904153823853
+    }
+  },
+  {
+    "text": "hai chatbot, saya sedang butuh teman bicara",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "consultation",
+      "confidence": 0.430366188287735
+    }
+  },
+  {
+    "text": "apakah saya bisa bercerita kepadamu hari ini?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.9868326187133789
+    }
+  },
+  {
+    "text": "pekerjaan kampus saya terasa tidak ada habisnya",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "motivation",
+      "confidence": 0.9349622130393982
+    }
+  },
+  {
+    "text": "beberapa tugas memiliki batas pengumpulan yang hampir bersamaan",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7710979580879211
+    }
+  },
+  {
+    "text": "saya panik karena pekerjaan kuliah belum selesai semua",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9996713399887085
+    }
+  },
+  {
+    "text": "beban tugas semester ini membuat saya merasa sangat terbebani",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.4665369689464569
+    }
+  },
+  {
+    "text": "saya sudah dikejar banyak deadline dari berbagai mata kuliah",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.2791675329208374
+    }
+  },
+  {
+    "text": "saya sulit berkonsentrasi karena terus memikirkan pekerjaan kampus",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "anxiety",
+      "confidence": 0.9795660376548767
+    }
+  },
+  {
+    "text": "saya terus merasa waswas mengenai apa yang akan terjadi",
+    "intent": "anxiety",
+    "intent_prediction": {
+      "name": "stress_academic",
+      "confidence": 0.47967585921287537
+    }
+  },
+  {
+    "text": "saya merasa takut sebelum menghadapi sesuatu yang penting",
+    "intent": "anxiety",
+    "intent_prediction": {
+      "name": "self_confidence",
+      "confidence": 0.8049412369728088
+    }
+  },
+  {
+    "text": "saya terus membayangkan kemungkinan yang tidak menyenangkan",
+    "intent": "anxiety",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.4453686773777008
+    }
+  },
+  {
+    "text": "saya sulit merasa tenang karena banyak kekhawatiran di kepala",
+    "intent": "anxiety",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7408791184425354
+    }
+  },
+  {
+    "text": "saya merasa takut kalau hasil yang saya dapat tidak sesuai harapan",
+    "intent": "anxiety",
+    "intent_prediction": {
+      "name": "self_confidence",
+      "confidence": 0.4239943027496338
+    }
+  },
+  {
+    "text": "saya sulit menemukan dorongan untuk belajar lagi",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.5704412460327148
+    }
+  },
+  {
+    "text": "belakangan ini saya menjalani semuanya tanpa antusiasme",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "depression_symptom",
+      "confidence": 0.9964426159858704
+    }
+  },
+  {
+    "text": "saya ingin membangun kebiasaan belajar yang lebih baik",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "crisis_risk",
+      "confidence": 0.44024842977523804
+    }
+  },
+  {
+    "text": "saya merasa tidak memiliki dorongan untuk mengejar target akademik",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "anxiety",
+      "confidence": 0.4730476438999176
+    }
+  },
+  {
+    "text": "bagaimana agar saya bisa menemukan semangat belajar lagi?",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "ask_tips",
+      "confidence": 0.8225902915000916
+    }
+  },
+  {
+    "text": "saya ragu untuk menunjukkan hasil pekerjaan saya kepada orang lain",
+    "intent": "self_confidence",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.6926246881484985
+    }
+  },
+  {
+    "text": "saya kurang yakin ketika harus tampil di depan banyak orang",
+    "intent": "self_confidence",
+    "intent_prediction": {
+      "name": "anxiety",
+      "confidence": 0.9041380286216736
+    }
+  },
+  {
+    "text": "saya takut mencoba karena merasa hasilnya pasti mengecewakan",
+    "intent": "self_confidence",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9930790066719055
+    }
+  },
+  {
+    "text": "saya merasa tidak punya orang yang bisa saya hubungi saat sedang sedih",
+    "intent": "loneliness",
+    "intent_prediction": {
+      "name": "depression_symptom",
+      "confidence": 0.9818726181983948
+    }
+  },
+  {
+    "text": "saya berharap memiliki teman yang bisa memahami keadaan saya",
+    "intent": "loneliness",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8506238460540771
+    }
+  },
+  {
+    "text": "saya lebih sering menghadapi masalah tanpa ditemani siapa pun",
+    "intent": "loneliness",
+    "intent_prediction": {
+      "name": "depression_symptom",
+      "confidence": 0.5928574204444885
+    }
+  },
+  {
+    "text": "saya kesulitan menemukan teman yang membuat saya nyaman untuk terbuka",
+    "intent": "loneliness",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7744807600975037
+    }
+  },
+  {
+    "text": "akhir-akhir ini saya merasa hubungan saya dengan teman semakin jauh",
+    "intent": "loneliness",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9857886433601379
+    }
+  },
+  {
+    "text": "saya sering menyimpan cerita sendiri karena tidak punya tempat untuk membagikannya",
+    "intent": "loneliness",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999016523361206
+    }
+  },
+  {
+    "text": "beberapa malam ini saya sulit mendapatkan waktu tidur yang cukup",
+    "intent": "sleep_problem",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9800179600715637
+    }
+  },
+  {
+    "text": "saya merasa mengantuk terus karena waktu istirahat kurang",
+    "intent": "sleep_problem",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8557780981063843
+    }
+  },
+  {
+    "text": "pekerjaan kuliah membuat waktu istirahat saya menjadi kacau",
+    "intent": "sleep_problem",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9810177087783813
+    }
+  },
+  {
+    "text": "saya sering kehilangan waktu tidur karena menyelesaikan pekerjaan kampus",
+    "intent": "sleep_problem",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9970666766166687
+    }
+  },
+  {
+    "text": "saya merasa sulit beristirahat dengan baik pada malam hari",
+    "intent": "sleep_problem",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8508846759796143
+    }
+  },
+  {
+    "text": "beberapa waktu terakhir suasana hati saya sangat buruk",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "anxiety",
+      "confidence": 0.36390459537506104
+    }
+  },
+  {
+    "text": "saya sering merasa bahwa usaha saya tidak menghasilkan apa-apa",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "motivation",
+      "confidence": 0.9181304574012756
+    }
+  },
+  {
+    "text": "saya perlu mengetahui cara menghadapi keadaan ini",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "depression_symptom",
+      "confidence": 0.7882418036460876
+    }
+  },
+  {
+    "text": "saya ingin tahu cara mengelola tugas yang banyak",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "stress_academic",
+      "confidence": 0.9947180151939392
+    }
+  },
+  {
+    "text": "adakah cara sederhana untuk membangun kebiasaan belajar?",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "motivation",
+      "confidence": 0.7384122014045715
+    }
+  },
+  {
+    "text": "saya membutuhkan panduan untuk menghadapi rasa takut",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "anxiety",
+      "confidence": 0.6704409122467041
+    }
+  },
+  {
+    "text": "bisakah kamu memberikan beberapa cara untuk mengatasi masalah ini?",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9221432209014893
+    }
+  },
+  {
+    "text": "saya ingin tahu tindakan pertama yang bisa saya coba",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.236211895942688
+    }
+  },
+  {
+    "text": "saya membutuhkan ruang untuk menyampaikan keadaan saya",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "depression_symptom",
+      "confidence": 0.9270298480987549
+    }
+  },
+  {
+    "text": "saya ingin didengarkan tanpa merasa dihakimi",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "depression_symptom",
+      "confidence": 0.32370755076408386
+    }
+  },
+  {
+    "text": "bantuanmu membuat saya merasa sedikit lebih tenang",
+    "intent": "gratitude",
+    "intent_prediction": {
+      "name": "depression_symptom",
+      "confidence": 0.6996936798095703
+    }
+  },
+  {
+    "text": "saya senang sudah mendapatkan kesempatan untuk bercerita",
+    "intent": "gratitude",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.9419259428977966
+    }
+  },
+  {
+    "text": "terima kasih, sekarang saya punya gambaran apa yang harus dilakukan",
+    "intent": "gratitude",
+    "intent_prediction": {
+      "name": "ask_tips",
+      "confidence": 0.9380515813827515
+    }
+  },
+  {
+    "text": "untuk saat ini saya ingin mengakhiri obrolan",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "crisis_risk",
+      "confidence": 0.9993999004364014
+    }
+  },
+  {
+    "text": "saya harus melanjutkan aktivitas lain",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "crisis_risk",
+      "confidence": 0.5697559714317322
+    }
+  },
+  {
+    "text": "saya merasa keberadaan saya tidak berarti bagi siapa pun",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.9221593737602234
+    }
+  },
+  {
+    "text": "saya ingin berhenti dari semuanya karena terasa terlalu berat",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.7595497965812683
+    }
+  },
+  {
+    "text": "saya merasa hidup saya tidak memiliki tujuan lagi",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "motivation",
+      "confidence": 0.47136640548706055
+    }
+  },
+  {
+    "text": "saya merasa tidak sanggup menanggung semua masalah ini sendirian",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7522583603858948
+    }
+  },
+  {
+    "text": "saya merasa tidak melihat jalan keluar dari keadaan saya",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7143644094467163
+    }
+  },
+  {
+    "text": "saya berharap bisa menghilang dari semua masalah yang sedang saya hadapi",
+    "intent": "crisis_risk",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9976285099983215
+    }
+  },
+  {
+    "text": "saya merasa ingin lenyap karena sudah terlalu lelah menghadapi semuanya",
+    "intent": "crisis_risk",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.4625670909881592
+    }
+  },
+  {
+    "text": "cara bikin sambal matah gimana?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_tips",
+      "confidence": 0.983110785484314
+    }
+  },
+  {
+    "text": "gimana cara ganti password Wi-Fi?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_tips",
+      "confidence": 0.8106299042701721
+    }
+  },
+  {
+    "text": "tempat makan murah dekat kampus ada apa?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.6483009457588196
+    }
+  }
+]

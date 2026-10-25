@@ -1,0 +1,82 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hallo selamat siang kk, aq mau cerita ttg kuliahku
+    - hay ad yg bs diajak ngobrol ga
+
+- intent: stress_academic
+  examples: |
+    - revisi skripsi dr dosen pembimbing blm kelar2 dan ujian udh deket bgt stress parah
+    - laporan praktikum blm kelar, besok dikumpul, pusing bgt
+
+- intent: anxiety
+  examples: |
+    - aku takut bgt kalo dipanggil maju ke depan, badan lgsg gemeteran dan keringat dingin
+    - khawatir terus soal masa depan, nggak bisa tenang sama sekali
+
+- intent: motivation
+  examples: |
+    - mager parah, bukannya belajar malah scroll hp seharian padahal tau harus ngerjain tugas
+    - udah nggak ada alasan buat semangat ngampus lagi sih
+
+- intent: self_confidence
+  examples: |
+    - kyknya aku emg nggak cocok di jurusan ini, orang lain jauh lebih bagus
+    - aku selalu ngerasa hasil kerjaku jelek dibanding punya orang lain
+
+- intent: loneliness
+  examples: |
+    - nggak ada yg ngajak aku ngumpul, kyknya aku nggak dianggap di kelas
+    - ngerasa sendirian padahal lagi rame di kampus
+
+- intent: sleep_problem
+  examples: |
+    - isomnia ku kambuh lg, 3 hari ini tidur cuma 2 jam
+    - bgadang tiap malam gara2 tugas, badan jadi lemes dan nggak bisa tidur nyenyak
+
+- intent: depression_symptom
+  examples: |
+    - aku ngerasa sedih terus tanpa alasan jelas dan udah males ngapa-ngapain berminggu-minggu
+    - hatiku kosong bgt, makan pun nggak selera
+
+- intent: ask_tips
+  examples: |
+    - kasih aku cara dong buat ngatasin rasa cemas sebelum sidang
+    - tips biar fokus belajar gimana ya
+
+- intent: consultation
+  examples: |
+    - aku mau konsul soal masalah yg bikin aku nggak tenang akhir2 ini
+    - bisa minta tolong dengerin cerita aku nggak, agak panjang soalnya
+
+- intent: gratitude
+  examples: |
+    - terima kasih bnyk ya udh bantu, aku jd lebih tenang
+    - makasih sarannya, bakal aku coba
+
+- intent: goodbye
+  examples: |
+    - ok aku pamit dulu ya, makasih udh nemenin, bye
+    - sampai jumpa, aku mau istirahat dulu
+
+- intent: inform
+  examples: |
+    - aku capek kuliah, tugas banyak, dosen nggak pernah puas, di rumah juga ortu nuntut nilai bagus, rasanya semua numpuk jadi satu
+    - skripsiku ditolak dua kali, teman-teman udah pada wisuda, aku jadi takut dan nggak tau mau mulai dari mana lagi
+
+- intent: crisis_risk
+  examples: |
+    - sebenernya aku pengen akhiri semuanya aja, udh gk kuat
+    - kadang kepikiran buat nyakitin diri sendiri biar lega
+
+- intent: ambiguous_distress
+  examples: |
+    - entah kenapa aku ngerasa aneh, bukan sedih bukan marah juga
+    - aku nggak tau ini apa, cuma ngerasa ada yg salah sama aku akhir2 ini
+
+- intent: out_of_scope
+  examples: |
+    - cara daftar BPJS online gimana ya?
+    - minta tolong terjemahin paragraf ini ke bahasa Jepang

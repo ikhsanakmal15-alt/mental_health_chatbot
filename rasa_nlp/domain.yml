@@ -18,6 +18,9 @@ intents:
   - gratitude
   - goodbye
   - inform
+  - crisis_risk
+  - ambiguous_distress
+  - out_of_scope
   - nlu_fallback
 
 
@@ -40,10 +43,15 @@ slots:
 
 actions:
 
-  # Action utama untuk membaca pesan panjang/kompleks
+  # Action utama: respons berbasis kata kunci + templat (tanpa API eksternal)
   - action_contextual_support
 
-  # Action khusus
+  # Action baru (Okt 2026): cek kata kunci krisis dulu, lalu respons templat
+  - action_depression_support
+  - action_safe_fallback
+  - action_out_of_scope
+
+  # Action lama: ada di actions.py tetapi TIDAK dipetakan di rules/stories
   - action_stress_advice
   - action_anxiety_advice
 
@@ -388,37 +396,6 @@ responses:
 
 
   # ========================================================
-  # DEFAULT FALLBACK
-  # ========================================================
-
-  utter_default:
-
-    - text: >
-        Aku ingin memahami ceritamu dengan lebih baik. Kamu boleh
-        menjelaskan lebih panjang kalau perlu. Ceritakan apa yang
-        terjadi, bagaimana perasaanmu terhadap situasi itu, dan
-        bagian mana yang paling membuatmu kesulitan.
-
-    - text: >
-        Aku belum sepenuhnya menangkap maksud ceritamu, tetapi kamu
-        tidak perlu membuatnya singkat. Ceritakan saja seperti kamu
-        sedang bercerita kepada seseorang yang ingin memahami
-        keadaanmu.
-
-    - text: >
-        Tidak apa-apa kalau ceritamu masih berantakan atau terdiri
-        dari beberapa masalah sekaligus. Coba ceritakan semuanya
-        terlebih dahulu. Setelah itu kita bisa mencoba menguraikan
-        mana yang paling penting untuk dibicarakan.
-
-    - text: >
-        Aku ingin memberikan respons yang benar-benar sesuai dengan
-        keadaanmu, jadi aku membutuhkan sedikit lebih banyak konteks.
-        Kamu boleh menceritakan apa yang terjadi dari awal atau
-        langsung menjelaskan bagian yang paling membuatmu tertekan.
-
-
-  # ========================================================
   # NLU FALLBACK
   # ========================================================
 
@@ -435,29 +412,60 @@ responses:
 
   # ========================================================
   # CRISIS / SAFETY RESPONSE
+  # Dipakai oleh: (1) rule intent crisis_risk,
+  #               (2) pengaman kata kunci pada custom action.
+  # CATATAN: nomor/kontak WAJIB diverifikasi pihak kampus dan
+  # teks ini WAJIB ditinjau konselor sebelum sidang.
+  # Healing119 (Kemenkes): 119 ekstensi 8.
   # ========================================================
 
   utter_crisis_support:
 
     - text: >
-        Aku mendengar bahwa kamu sedang mengalami sesuatu yang
-        sangat berat. Kalau saat ini kamu merasa ingin menyakiti
-        diri sendiri atau mengakhiri hidup, keselamatanmu menjadi
-        hal yang paling penting.
+        Terima kasih sudah berani menceritakan hal ini kepadaku.
+        Aku mendengar bahwa kamu sedang mengalami sesuatu yang sangat
+        berat, dan keselamatanmu adalah hal yang paling penting sekarang.
 
-        Tolong jangan menghadapi situasi ini sendirian. Kalau
-        memungkinkan, segera hubungi orang yang kamu percaya dan
-        mintalah mereka menemanimu secara langsung. Kamu juga bisa
-        menghubungi layanan darurat atau fasilitas kesehatan
-        terdekat untuk mendapatkan bantuan segera.
+        Kalau saat ini kamu merasa ingin menyakiti diri sendiri atau
+        mengakhiri hidup, tolong jangan menghadapinya sendirian. Segera
+        hubungi orang yang kamu percaya (keluarga, sahabat, atau teman
+        dekat) dan mintalah mereka menemanimu secara langsung.
 
-        Untuk saat ini, coba berada di tempat yang ada orang lain
-        dan jauhkan benda atau situasi yang bisa digunakan untuk
-        menyakiti diri.
+        Kamu juga bisa menghubungi bantuan profesional sekarang:
 
-        Aku tetap bisa mendengarkan ceritamu di sini, tetapi untuk
-        kondisi seperti ini dukungan langsung dari orang yang dapat
-        berada bersamamu dan tenaga profesional sangat penting.
+        - Konselor kampus UNM: buka menu "Bantuan Konselor" di aplikasi
+        ini untuk melihat kontak yang tersedia.
 
-        Kalau kamu merasa aman untuk melanjutkan cerita, kamu boleh
-        memberi tahu aku apa yang sedang terjadi sekarang.
+        - Layanan kesehatan jiwa Kementerian Kesehatan (Healing119):
+        telepon 119 lalu pilih ekstensi 8.
+
+        - Jika ada bahaya yang terasa segera atau kamu merasa tidak mampu
+        menjaga keselamatanmu, hubungi layanan darurat setempat atau
+        datang ke fasilitas kesehatan (IGD) terdekat.
+
+        Untuk saat ini, usahakan berada di tempat yang ada orang lain dan
+        jauhkan benda yang bisa kamu gunakan untuk menyakiti diri.
+
+        Aku tetap di sini dan bisa menemanimu bercerita, tetapi aku adalah
+        chatbot dan tidak bisa menggantikan bantuan langsung dari manusia.
+
+
+  # ========================================================
+  # AMBIGUOUS DISTRESS: klarifikasi tanpa membuat asumsi
+  # ========================================================
+  utter_ambiguous_clarification:
+    - text: >
+        Aku ingin memahami maksudmu dengan lebih tepat, tanpa menebak-nebak.
+        Bagian mana yang paling terasa berat sekarang—kuliah, hubungan dengan
+        orang lain, keluarga, kondisi diri sendiri, atau hal lain?
+        Kalau belum tahu harus mulai dari mana, ceritakan satu hal kecil saja.
+
+  # ========================================================
+  # OUT OF SCOPE: jelaskan batas kemampuan chatbot
+  # ========================================================
+  utter_out_of_scope:
+    - text: >
+        Maaf, aku belum bisa membantu pertanyaan di luar dukungan kesehatan
+        mental mahasiswa. Aku bisa membantu membahas stres kuliah, kecemasan,
+        motivasi, tidur, hubungan sosial, atau mencari dukungan yang sesuai.
+        Kalau ada hal yang sedang membebani pikiranmu, kamu boleh cerita.

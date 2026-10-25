@@ -1,0 +1,130 @@
+[
+  {
+    "text": "hay ad yg bs diajak ngobrol ga",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.5686931610107422
+    }
+  },
+  {
+    "text": "revisi skripsi dr dosen pembimbing blm kelar2 dan ujian udh deket bgt stress parah",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999275207519531
+    }
+  },
+  {
+    "text": "laporan praktikum blm kelar, besok dikumpul, pusing bgt",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "self_confidence",
+      "confidence": 0.7939674854278564
+    }
+  },
+  {
+    "text": "aku takut bgt kalo dipanggil maju ke depan, badan lgsg gemeteran dan keringat dingin",
+    "intent": "anxiety",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.976533830165863
+    }
+  },
+  {
+    "text": "khawatir terus soal masa depan, nggak bisa tenang sama sekali",
+    "intent": "anxiety",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.4694717824459076
+    }
+  },
+  {
+    "text": "mager parah, bukannya belajar malah scroll hp seharian padahal tau harus ngerjain tugas",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.925157368183136
+    }
+  },
+  {
+    "text": "udah nggak ada alasan buat semangat ngampus lagi sih",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.9040156602859497
+    }
+  },
+  {
+    "text": "kyknya aku emg nggak cocok di jurusan ini, orang lain jauh lebih bagus",
+    "intent": "self_confidence",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.7548765540122986
+    }
+  },
+  {
+    "text": "nggak ada yg ngajak aku ngumpul, kyknya aku nggak dianggap di kelas",
+    "intent": "loneliness",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.9867566823959351
+    }
+  },
+  {
+    "text": "bgadang tiap malam gara2 tugas, badan jadi lemes dan nggak bisa tidur nyenyak",
+    "intent": "sleep_problem",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9014587998390198
+    }
+  },
+  {
+    "text": "aku ngerasa sedih terus tanpa alasan jelas dan udah males ngapa-ngapain berminggu-minggu",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8900887966156006
+    }
+  },
+  {
+    "text": "aku mau konsul soal masalah yg bikin aku nggak tenang akhir2 ini",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.6867995262145996
+    }
+  },
+  {
+    "text": "bisa minta tolong dengerin cerita aku nggak, agak panjang soalnya",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.9162151217460632
+    }
+  },
+  {
+    "text": "sebenernya aku pengen akhiri semuanya aja, udh gk kuat",
+    "intent": "crisis_risk",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.8115586638450623
+    }
+  },
+  {
+    "text": "entah kenapa aku ngerasa aneh, bukan sedih bukan marah juga",
+    "intent": "ambiguous_distress",
+    "intent_prediction": {
+      "name": "depression_symptom",
+      "confidence": 0.3384309709072113
+    }
+  },
+  {
+    "text": "cara daftar BPJS online gimana ya?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_tips",
+      "confidence": 0.953734278678894
+    }
+  }
+]

@@ -34,11 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> login() async {
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
-
-    // ---------------------------------------------------------
-    // VALIDASI INPUT
-    // ---------------------------------------------------------
-
+    
     if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -53,9 +49,6 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     try {
-      // -------------------------------------------------------
-      // REQUEST LOGIN
-      // -------------------------------------------------------
 
       final result = await AuthService.login(
         email,

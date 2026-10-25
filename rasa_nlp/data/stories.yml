@@ -103,7 +103,7 @@ stories:
 - story: Student feels emotionally exhausted
   steps:
     - intent: depression_symptom
-    - action: action_contextual_support
+    - action: action_depression_support
     - intent: consultation
     - action: utter_consultation
 
@@ -375,7 +375,7 @@ stories:
 - story: Emotional exhaustion
   steps:
     - intent: depression_symptom
-    - action: action_contextual_support
+    - action: action_depression_support
     - intent: motivation
     - action: action_contextual_support
     - intent: consultation
@@ -527,3 +527,68 @@ stories:
     - intent: goodbye
     - action: utter_goodbye
 
+
+# ============================================================
+# STORY 41 — INDIKASI KRISIS (baru)
+# ============================================================
+
+- story: Crisis risk after greeting
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: crisis_risk
+    - action: utter_crisis_support
+
+
+# ============================================================
+# STORY 42 — KRISIS SETELAH CERITA PANJANG (baru)
+# ============================================================
+
+- story: Crisis risk after long story
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+    - intent: crisis_risk
+    - action: utter_crisis_support
+    - intent: consultation
+    - action: utter_consultation
+
+
+# ============================================================
+# STORY 43 — GEJALA EMOSIONAL BERKEMBANG MENJADI KRISIS (baru)
+# ============================================================
+
+- story: Depression symptom escalates to crisis
+  steps:
+    - intent: depression_symptom
+    - action: action_depression_support
+    - intent: crisis_risk
+    - action: utter_crisis_support
+
+
+# ============================================================
+# STORY 44 — PESAN DI LUAR CAKUPAN / AMBIGU (baru)
+# ============================================================
+
+- story: Out of scope message then student shares story
+  steps:
+    - intent: nlu_fallback
+    - action: action_safe_fallback
+    - intent: inform
+    - action: action_contextual_support
+
+# ============================================================
+# STORY 45 — PESAN AMBIGU MEMINTA KLARIFIKASI
+# ============================================================
+- story: Ambiguous distress asks for clarification
+  steps:
+    - intent: ambiguous_distress
+    - action: action_contextual_support
+
+# ============================================================
+# STORY 46 — PERTANYAAN DI LUAR CAKUPAN
+# ============================================================
+- story: Out of scope question receives scope explanation
+  steps:
+    - intent: out_of_scope
+    - action: action_out_of_scope

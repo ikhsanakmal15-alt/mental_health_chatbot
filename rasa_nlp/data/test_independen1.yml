@@ -1,0 +1,87 @@
+version: "3.1"
+
+nlu:
+
+# SKENARIO 1: bahasa sehari-hari mahasiswa
+# Status: DRAF SEMENTARA disusun peneliti dengan gaya bahasa mahasiswa.
+# Ganti dengan kalimat 3 mahasiswa sesungguhnya setelah data terkumpul.
+
+- intent: greet
+  examples: |
+    - woy, ada orang nggak di sini?
+    - halo kak, boleh ngobrol bentar?
+
+- intent: stress_academic
+  examples: |
+    - tugasku numpuk banget, deadline semua minggu ini
+    - stres mikirin skripsi yang nggak kelar-kelar
+
+- intent: anxiety
+  examples: |
+    - jantungku deg-degan terus tiap mau presentasi
+    - aku overthinking terus, takut banget kalau nanti gagal
+
+- intent: motivation
+  examples: |
+    - lagi males banget kuliah, nggak ada semangat
+    - rasanya udah nggak ada dorongan buat ngerjain apa-apa
+
+- intent: self_confidence
+  examples: |
+    - aku minder banget sama temen-temen sekelas
+    - ngerasa nggak sepintar yang lain, nggak pede ngomong di kelas
+
+- intent: loneliness
+  examples: |
+    - di kos sendirian terus, nggak ada temen buat ngobrol
+    - ngerasa kesepian banget semenjak pindah ke kota ini
+
+- intent: sleep_problem
+  examples: |
+    - udah jam 3 pagi dan aku masih melek aja
+    - tidurku kacau, sering kebangun tengah malam
+
+- intent: depression_symptom
+  examples: |
+    - akhir-akhir ini sering nangis sendiri tanpa sebab
+    - ngerasa hampa, hobi yang biasa kusuka jadi nggak seru lagi
+
+- intent: ask_tips
+  examples: |
+    - ada saran nggak biar nggak gampang panik pas ujian?
+    - gimana sih caranya biar bisa bagi waktu kuliah sama organisasi?
+
+- intent: consultation
+  examples: |
+    - boleh curhat nggak? ada yang lagi ganggu pikiranku
+    - aku butuh didengerin, bisa nggak?
+
+- intent: gratitude
+  examples: |
+    - makasih ya, lumayan lega abis cerita
+    - thanks banget udah mau dengerin
+
+- intent: goodbye
+  examples: |
+    - oke deh, aku off dulu ya, dadah
+    - udah dulu ya, sampai ketemu lagi
+
+- intent: inform
+  examples: |
+    - minggu ini ada tiga tugas kelompok, anggota kelompokku nggak ada yang aktif, jadi aku kerjain sendiri dan capek banget
+    - aku lagi ngerjain skripsi sambil kerja part-time, tiap hari pulang malam, terus susah banget buat fokus
+
+- intent: crisis_risk
+  examples: |
+    - rasanya pengen ngilang selamanya aja dari dunia ini
+    - aku udah nggak mau hidup lagi, capek banget
+
+- intent: ambiguous_distress
+  examples: |
+    - lagi nggak jelas aja rasanya hari ini
+    - susah dijelasin, pokoknya nggak enak
+
+- intent: out_of_scope
+  examples: |
+    - jadwal kereta ke Surabaya jam berapa ya?
+    - bantuin bikin caption instagram dong

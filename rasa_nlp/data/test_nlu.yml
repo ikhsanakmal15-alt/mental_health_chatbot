@@ -25,7 +25,7 @@ nlu:
     - hai chatbot, saya sedang butuh teman bicara
     - halo, saya ingin menyampaikan sesuatu
     - apakah kamu ada di sini untuk mendengarkan?
-    - boleh kita ngobrol sebentar?
+    - apakah saya bisa bercerita kepadamu hari ini?
 
 # ============================================================
 # STRESS AKADEMIK
@@ -250,8 +250,11 @@ nlu:
     - saya sudah lama menyimpan beberapa persoalan sendiri dan sekarang semuanya terasa menumpuk bersamaan dengan tuntutan kuliah
 
 # ============================================================
-# CRISIS / KESELAMATAN
-# Tetap menggunakan intent depression_symptom sesuai nlu.yml
+# DEPRESSION SYMPTOM - KASUS BATAS (dulu dilabeli "krisis")
+# Tujuh kalimat berikut tetap berlabel depression_symptom karena
+# TIDAK menyebut keinginan mati / menyakiti diri secara eksplisit.
+# Kalimat ini sengaja dipertahankan sebagai uji batas antara
+# depression_symptom dan crisis_risk. Label perlu dikonfirmasi konselor.
 # ============================================================
 
 - intent: depression_symptom
@@ -260,9 +263,60 @@ nlu:
     - saya merasa tidak ingin menjalani hari-hari seperti ini lagi
     - saya merasa keberadaan saya tidak berarti bagi siapa pun
     - saya ingin berhenti dari semuanya karena terasa terlalu berat
-    - saya merasa tidak memiliki harapan untuk melanjutkan hidup seperti sekarang
-    - saya berharap bisa menghilang dari semua masalah yang sedang saya hadapi
     - saya merasa hidup saya tidak memiliki tujuan lagi
     - saya merasa tidak sanggup menanggung semua masalah ini sendirian
     - saya merasa tidak melihat jalan keluar dari keadaan saya
+
+
+# ============================================================
+# CRISIS RISK  (BELUM divalidasi konselor - hanya uji coba)
+# Tiga kalimat pertama dipindahkan dari blok "krisis" lama
+# (sebelumnya berlabel depression_symptom karena intent crisis_risk
+# belum ada). Sepuluh kalimat berikutnya baru ditambahkan.
+# Tidak ada kalimat yang memuat cara/metode menyakiti diri.
+# ============================================================
+
+- intent: crisis_risk
+  examples: |
+    - saya merasa tidak memiliki harapan untuk melanjutkan hidup seperti sekarang
+    - saya berharap bisa menghilang dari semua masalah yang sedang saya hadapi
     - saya merasa ingin lenyap karena sudah terlalu lelah menghadapi semuanya
+    - aku sudah memikirkan untuk bunuh diri
+    - saya sedang punya keinginan untuk mengakhiri nyawa sendiri
+    - saya ingin mati karena tidak tahan lagi
+    - aku berpikir untuk melukai tubuhku sendiri
+    - saya tidak ingin lagi hidup di dunia ini
+    - saya merasa lebih baik mati daripada terus begini
+    - rasanya saya ingin pergi selamanya dari dunia ini
+    - saya sering berpikir untuk menyakiti diri saya
+    - kayaknya aku sudah tidak sanggup hidup lagi dan pengen mati aja
+    - saya merasa tidak pantas untuk hidup lagi
+
+
+# ============================================================
+# AMBIGUOUS DISTRESS — TEST SET
+# Kalimat uji harus berbeda dari contoh latih.
+# ============================================================
+- intent: ambiguous_distress
+  examples: |
+    - akhir-akhir ini aku ngerasa semuanya numpuk, tapi susah jelasin
+    - aku lagi nggak ngerti sama perasaan sendiri
+    - pokoknya hari-hari ini terasa berat aja
+    - aku pengin cerita tapi kata-katanya nggak ketemu
+    - belakangan aku merasa nggak seperti biasanya
+
+# ============================================================
+# OUT OF SCOPE — TEST SET
+# ============================================================
+- intent: out_of_scope
+  examples: |
+    - tolong carikan harga tablet terbaru
+    - besok di Makassar kemungkinan hujan nggak?
+    - cara bikin sambal matah gimana?
+    - ajari aku bikin tabel HTML sederhana
+    - rekomendasi film komedi buat akhir pekan
+    - berapa hasil 125 dikali 48?
+    - gimana cara ganti password Wi-Fi?
+    - siapa juara liga Inggris musim lalu?
+    - tolong buatkan surat lamaran kerja
+    - tempat makan murah dekat kampus ada apa?

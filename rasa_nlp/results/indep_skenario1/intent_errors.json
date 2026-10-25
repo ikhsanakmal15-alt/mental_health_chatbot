@@ -1,0 +1,106 @@
+[
+  {
+    "text": "woy, ada orang nggak di sini?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.6920156478881836
+    }
+  },
+  {
+    "text": "stres mikirin skripsi yang nggak kelar-kelar",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.739255964756012
+    }
+  },
+  {
+    "text": "lagi males banget kuliah, nggak ada semangat",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.704899787902832
+    }
+  },
+  {
+    "text": "rasanya udah nggak ada dorongan buat ngerjain apa-apa",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.9909271001815796
+    }
+  },
+  {
+    "text": "ngerasa nggak sepintar yang lain, nggak pede ngomong di kelas",
+    "intent": "self_confidence",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.9917616844177246
+    }
+  },
+  {
+    "text": "udah jam 3 pagi dan aku masih melek aja",
+    "intent": "sleep_problem",
+    "intent_prediction": {
+      "name": "crisis_risk",
+      "confidence": 0.33052077889442444
+    }
+  },
+  {
+    "text": "akhir-akhir ini sering nangis sendiri tanpa sebab",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.4729560613632202
+    }
+  },
+  {
+    "text": "ngerasa hampa, hobi yang biasa kusuka jadi nggak seru lagi",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.976773738861084
+    }
+  },
+  {
+    "text": "ada saran nggak biar nggak gampang panik pas ujian?",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.49779558181762695
+    }
+  },
+  {
+    "text": "gimana sih caranya biar bisa bagi waktu kuliah sama organisasi?",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.5311514139175415
+    }
+  },
+  {
+    "text": "boleh curhat nggak? ada yang lagi ganggu pikiranku",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.8694568276405334
+    }
+  },
+  {
+    "text": "aku butuh didengerin, bisa nggak?",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.9503792524337769
+    }
+  },
+  {
+    "text": "thanks banget udah mau dengerin",
+    "intent": "gratitude",
+    "intent_prediction": {
+      "name": "crisis_risk",
+      "confidence": 0.45360058546066284
+    }
+  }
+]

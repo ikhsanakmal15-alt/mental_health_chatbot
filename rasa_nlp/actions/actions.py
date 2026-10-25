@@ -1,12 +1,31 @@
 # ============================================================
 # ACTIONS.PY
-# Chatbot Dukungan Mahasiswa
+# Chatbot Dukungan Mahasiswa (MindCare)
 # Rasa 3.x
+#
+# MEKANISME RESPONS (ringkas):
+#   - Berbasis ATURAN: pencocokan kata kunci -> konteks & emosi -> templat.
+#   - TIDAK memakai API eksternal / LLM / model generatif.
+#   - TIDAK ada data pengguna yang dikirim ke layanan luar dari file ini.
+#   - random hanya dipakai memilih 1 dari 2 templat pada konteks "tugas".
+#
+# PERUBAHAN Oktober 2026 (setelah review pembimbing):
+#   1. contains_any memakai batas awal kata (bug: "kerja" cocok dengan
+#      "dikerjakan", "uas" dengan "luas", "soal" dengan "persoalan";
+#      "pekerjaan kuliah" tidak lagi dihitung sebagai konteks pekerjaan).
+#   2. Teks krisis tidak lagi di-hardcode; semua pengaman memanggil
+#      response "utter_crisis_support" di domain.yml (satu sumber,
+#      mudah divalidasi konselor).
+#   3. Action baru: ActionDepressionSupport dan ActionSafeFallback
+#      (pengaman kata kunci krisis sebelum respons umum / fallback).
+#   4. Respons intent tanpa konteks kata kunci memakai utter_* di
+#      domain.yml (sebelumnya utter_motivation dst. tidak pernah terpakai).
 # ============================================================
 
 from typing import Any, Text, Dict, List
 
 import random
+import re
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -19,11 +38,20 @@ from rasa_sdk.events import SlotSet
 
 def contains_any(text: str, keywords: List[str]) -> bool:
     """
-    Mengecek apakah salah satu keyword terdapat dalam teks.
+    Mengecek apakah salah satu keyword muncul pada AWAL sebuah kata.
+
+    Imbuhan di belakang kata tetap dikenali ("tugasnya" cocok dengan
+    "tugas"), tetapi kata yang hanya mengandung keyword di tengah tidak
+    cocok ("mengerjakan" tidak cocok dengan "kerja").
     """
     text = text.lower()
 
-    return any(keyword.lower() in text for keyword in keywords)
+    for keyword in keywords:
+        pattern = r"(?<![a-z0-9])" + re.escape(keyword.lower())
+        if re.search(pattern, text):
+            return True
+
+    return False
 
 
 def detect_context(message: str) -> List[str]:
@@ -49,6 +77,7 @@ def detect_context(message: str) -> List[str]:
         "tugas banyak",
         "laporan",
         "pekerjaan kuliah",
+        "pekerjaan kampus",
         "tugas kuliah",
         "tugas individu",
         "tugas kelompok",
@@ -140,7 +169,12 @@ def detect_context(message: str) -> List[str]:
         "job",
     ]
 
-    if contains_any(text, kerja_keywords):
+    # "pekerjaan kuliah/kampus" adalah tugas akademik, bukan pekerjaan
+    text_kerja = text.replace("pekerjaan kuliah", " ").replace(
+        "pekerjaan kampus", " "
+    )
+
+    if contains_any(text_kerja, kerja_keywords):
         contexts.append("kerja")
 
     # --------------------------------------------------------
@@ -490,9 +524,45 @@ def detect_crisis(message: str) -> bool:
         "self-harm",
         "melukai diri",
         "melukai diri sendiri",
+        "melukai tubuh",
+        "bunuh diri",
+        "akhiri hidup",
+        "mengakhiri nyawa",
+        "mati saja",
+        "mati aja",
+        "nggak mau hidup",
+        "gak mau hidup",
+        "tidak pantas hidup",
+        "menghilang selamanya",
+        "pergi selamanya",
     ]
 
     return contains_any(text, crisis_keywords)
+
+
+# ============================================================
+# PENGAMAN KRISIS (satu sumber teks: utter_crisis_support di domain.yml)
+# ============================================================
+
+def send_crisis_response(dispatcher: CollectingDispatcher) -> List[Dict[Text, Any]]:
+    """
+    Mengirim respons krisis dari domain.yml dan menandai topik terakhir.
+    Dipakai oleh semua action agar teks rujukan selalu sama.
+    """
+    dispatcher.utter_message(response="utter_crisis_support")
+
+    return [SlotSet("last_topic", "krisis")]
+
+
+# Intent yang, bila pesannya tidak mengandung kata kunci konteks apa pun,
+# dijawab dengan templat bawaan pada domain.yml.
+INTENT_TO_UTTER = {
+    "motivation": "utter_motivation",
+    "self_confidence": "utter_self_confidence",
+    "loneliness": "utter_loneliness",
+    "sleep_problem": "utter_sleep_problem",
+    "ask_tips": "utter_ask_tips",
+}
 
 
 # ============================================================
@@ -573,32 +643,7 @@ class ActionContextualSupport(Action):
 
         if detect_crisis(message):
 
-            dispatcher.utter_message(
-                text=(
-                    "Aku senang kamu memilih untuk menceritakan ini. "
-                    "Kalau saat ini kamu merasa ingin menyakiti diri, "
-                    "mengakhiri hidup, atau merasa tidak aman dengan dirimu sendiri, "
-                    "yang paling penting sekarang bukan menyelesaikan tugas atau "
-                    "masalah kuliah terlebih dahulu, tetapi memastikan kamu tetap aman.\n\n"
-                    
-                    "Tolong jangan menghadapi keadaan ini sendirian. "
-                    "Jika memungkinkan, segera hubungi orang yang kamu percaya "
-                    "dan usahakan untuk berada di dekat orang lain. "
-                    "Jauhkan juga benda atau tempat yang bisa digunakan untuk "
-                    "menyakiti diri.\n\n"
-                    
-                    "Jika ada bahaya yang terasa segera atau kamu merasa tidak "
-                    "mampu menjaga keselamatan diri, hubungi layanan darurat "
-                    "setempat atau pergi ke fasilitas kesehatan terdekat. "
-                    "Kamu tidak harus menyelesaikan semuanya sekarang. "
-                    "Untuk saat ini, fokus pada satu hal: tetap aman dan "
-                    "mendapatkan bantuan dari orang lain."
-                )
-            )
-
-            return [
-                SlotSet("last_topic", "krisis")
-            ]
+            return send_crisis_response(dispatcher)
 
         # ----------------------------------------------------
         # DETEKSI INTENT
@@ -608,6 +653,15 @@ class ActionContextualSupport(Action):
             "name",
             ""
         )
+
+        # ----------------------------------------------------
+        # PESAN AMBIGU: tanyakan klarifikasi, jangan berasumsi
+        # Pengaman krisis sudah dijalankan sebelum cabang ini.
+        # ----------------------------------------------------
+
+        if intent == "ambiguous_distress":
+            dispatcher.utter_message(response="utter_ambiguous_clarification")
+            return [SlotSet("last_topic", "ambiguous_distress")]
 
         # ----------------------------------------------------
         # DETEKSI KONTEKS
@@ -660,6 +714,18 @@ class ActionContextualSupport(Action):
             )
 
             dispatcher.utter_message(text=response)
+
+            return [
+                SlotSet("last_topic", last_topic)
+            ]
+
+        # ----------------------------------------------------
+        # TANPA KATA KUNCI KONTEKS -> TEMPLAT BAWAAN INTENT (domain.yml)
+        # ----------------------------------------------------
+
+        if not contexts and intent in INTENT_TO_UTTER:
+
+            dispatcher.utter_message(response=INTENT_TO_UTTER[intent])
 
             return [
                 SlotSet("last_topic", last_topic)
@@ -1156,21 +1222,7 @@ class ActionStressAdvice(Action):
 
         if detect_crisis(message):
 
-            dispatcher.utter_message(
-                text=(
-                    "Aku ingin memastikan keselamatanmu terlebih dahulu. "
-                    "Kalau tekanan yang kamu rasakan sampai membuatmu ingin "
-                    "menyakiti diri atau mengakhiri hidup, jangan hadapi "
-                    "situasi tersebut sendirian. Segera hubungi orang yang "
-                    "kamu percaya dan cari bantuan langsung dari layanan "
-                    "darurat atau fasilitas kesehatan terdekat jika kamu "
-                    "merasa tidak aman."
-                )
-            )
-
-            return [
-                SlotSet("last_topic", "krisis")
-            ]
+            return send_crisis_response(dispatcher)
 
         contexts = detect_context(message)
 
@@ -1213,21 +1265,7 @@ class ActionAnxietyAdvice(Action):
 
         if detect_crisis(message):
 
-            dispatcher.utter_message(
-                text=(
-                    "Aku ingin memastikan kamu tetap aman. "
-                    "Kalau kecemasan yang kamu rasakan disertai keinginan "
-                    "untuk menyakiti diri atau mengakhiri hidup, cobalah "
-                    "segera mendekati orang yang kamu percaya dan jangan "
-                    "berada sendirian. Jika ada risiko yang terasa segera, "
-                    "hubungi layanan darurat setempat atau pergi ke "
-                    "fasilitas kesehatan terdekat."
-                )
-            )
-
-            return [
-                SlotSet("last_topic", "krisis")
-            ]
+            return send_crisis_response(dispatcher)
 
         contexts = detect_context(message)
 
@@ -1248,3 +1286,89 @@ class ActionAnxietyAdvice(Action):
         return [
             SlotSet("last_topic", last_topic)
         ]
+
+
+# ============================================================
+# ACTION GEJALA EMOSIONAL (depression_symptom) - BARU
+# Pengaman krisis dulu; selain itu respons templat berisi informasi
+# umum + ajakan menghubungi konselor/psikolog, tanpa diagnosis.
+# ============================================================
+
+class ActionDepressionSupport(Action):
+
+    def name(self) -> Text:
+        return "action_depression_support"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        message = tracker.latest_message.get("text", "")
+
+        if detect_crisis(message):
+
+            return send_crisis_response(dispatcher)
+
+        dispatcher.utter_message(response="utter_depression_symptom")
+
+        return [
+            SlotSet("last_topic", "depresi")
+        ]
+
+
+# ============================================================
+# ACTION FALLBACK AMAN (nlu_fallback) - BARU
+# Pesan dengan confidence rendah tetap diperiksa kata kunci krisis
+# sebelum dibalas permintaan klarifikasi.
+# ============================================================
+
+class ActionSafeFallback(Action):
+
+    def name(self) -> Text:
+        return "action_safe_fallback"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        message = tracker.latest_message.get("text", "")
+
+        if detect_crisis(message):
+
+            return send_crisis_response(dispatcher)
+
+        dispatcher.utter_message(response="utter_nlu_fallback")
+
+        return []
+
+
+
+# ============================================================
+# ACTION OUT OF SCOPE
+# Memeriksa kata kunci krisis lebih dahulu, lalu menjelaskan batas chatbot.
+# ============================================================
+
+class ActionOutOfScope(Action):
+    def name(self) -> Text:
+        return "action_out_of_scope"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        message = tracker.latest_message.get("text", "")
+
+        # Safety guard tetap didahulukan jika pesan mengandung indikasi krisis.
+        if detect_crisis(message):
+            return send_crisis_response(dispatcher)
+
+        dispatcher.utter_message(response="utter_out_of_scope")
+        return [SlotSet("last_topic", "out_of_scope")]
