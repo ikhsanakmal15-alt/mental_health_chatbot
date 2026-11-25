@@ -1,0 +1,85 @@
+version: "3.1"
+
+nlu:
+
+# SKENARIO 1: bahasa sehari-hari mahasiswa
+
+- intent: greet
+  examples: |
+    - woy, ada orang nggak di sini?
+    - halo kak, ada orang ji kah di sini? mauka cerita sedikit
+
+- intent: stress_academic
+  examples: |
+    - tugasku numpuk banget, deadline semua minggu ini
+    - tugasku banyak sekali kodong, semua deadline minggu ini, pusing mi
+
+- intent: anxiety
+  examples: |
+    - jantungku deg-degan terus tiap mau presentasi
+    - deg-degan terus ka tiap mau maju presentasi, takut salah ngomong
+
+- intent: motivation
+  examples: |
+    - lagi males banget kuliah, nggak ada semangat
+    - malas sekali ka ke kampus, nda ada semangatku
+
+- intent: self_confidence
+  examples: |
+    - aku minder banget sama temen-temen sekelas
+    - minder ka sama teman-teman kelas, rasanya bodoh sekali ka dibanding mereka
+
+- intent: loneliness
+  examples: |
+    - di kos sendirian terus, nggak ada temen buat ngobrol
+    - sendiri terus ka di kos, nda ada temanku ngobrol
+
+- intent: sleep_problem
+  examples: |
+    - udah jam 3 pagi dan aku masih melek aja
+    - sudah jam 3 subuh tapi mataku nda mau ki tutup, nda bisa tidur
+
+- intent: depression_symptom
+  examples: |
+    - akhir-akhir ini sering nangis sendiri tanpa sebab
+    - akhir-akhir ini sering ka menangis sendiri, nda tau kenapa
+
+- intent: ask_tips
+  examples: |
+    - ada saran nggak biar nggak gampang panik pas ujian?
+    - ada kah saran biar nda gampang panik kalau mau ujian?
+
+- intent: consultation
+  examples: |
+    - boleh curhat nggak? ada yang lagi ganggu pikiranku
+    - bisa ka curhat kak? ada yang ganggu pikiranku dari kemarin
+
+- intent: gratitude
+  examples: |
+    - makasih ya, lumayan lega abis cerita
+    - makasih banyak ya kak, lega mi rasanya setelah cerita
+
+- intent: goodbye
+  examples: |
+    - oke deh, aku off dulu ya, dadah
+    - iye kak, saya pamit dulu ya, sampai ketemu lagi
+
+- intent: inform
+  examples: |
+    - minggu ini ada tiga tugas kelompok, anggota kelompokku nggak ada yang aktif, jadi aku kerjain sendiri dan capek banget
+    - minggu ini ada tiga tugas kelompok tapi teman-temanku nda ada yang aktif, jadi kukerja sendiri semua, capek sekali ka
+
+- intent: crisis_risk
+  examples: |
+    - rasanya pengen ngilang selamanya aja dari dunia ini
+    - rasanya mauka hilang saja dari dunia ini, capek mi
+
+- intent: ambiguous_distress
+  examples: |
+    - lagi nggak jelas aja rasanya hari ini
+    - nda tau kenapa hari ini rasanya nda enak sekali
+
+- intent: out_of_scope
+  examples: |
+    - jadwal kereta ke Surabaya jam berapa ya?
+    - kak tau ji tempat fotokopi yang murah di sekitar kampus?

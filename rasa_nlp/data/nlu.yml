@@ -417,14 +417,7 @@ nlu:
 
 
 # ============================================================
-# CRISIS RISK (intent baru, Oktober 2026)
-# Definisi: ungkapan eksplisit keinginan mati / bunuh diri /
-# menyakiti diri (termasuk ide pasif: ingin menghilang selamanya).
-# Batas dengan depression_symptom: depression_symptom = sedih,
-# hampa, kehilangan minat, putus asa TANPA menyebut keinginan
-# mati atau menyakiti diri.
-# CATATAN: contoh kalimat tidak memuat cara/metode apa pun.
-# STATUS: BELUM ditinjau konselor -> wajib ditinjau sebelum sidang.
+# CRISIS RISK 
 # ============================================================
 
 - intent: crisis_risk

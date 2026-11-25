@@ -3,85 +3,83 @@ version: "3.1"
 nlu:
 
 # SKENARIO 1: bahasa sehari-hari mahasiswa
-# Status: DRAF SEMENTARA disusun peneliti dengan gaya bahasa mahasiswa.
-# Ganti dengan kalimat 3 mahasiswa sesungguhnya setelah data terkumpul.
 
 - intent: greet
   examples: |
     - woy, ada orang nggak di sini?
-    - halo kak, boleh ngobrol bentar?
+    - halo kak, ada orang ji kah di sini? mauka cerita sedikit
 
 - intent: stress_academic
   examples: |
     - tugasku numpuk banget, deadline semua minggu ini
-    - stres mikirin skripsi yang nggak kelar-kelar
+    - tugasku banyak sekali kodong, semua deadline minggu ini, pusing mi
 
 - intent: anxiety
   examples: |
     - jantungku deg-degan terus tiap mau presentasi
-    - aku overthinking terus, takut banget kalau nanti gagal
+    - deg-degan terus ka tiap mau maju presentasi, takut salah ngomong
 
 - intent: motivation
   examples: |
     - lagi males banget kuliah, nggak ada semangat
-    - rasanya udah nggak ada dorongan buat ngerjain apa-apa
+    - malas sekali ka ke kampus, nda ada semangatku
 
 - intent: self_confidence
   examples: |
     - aku minder banget sama temen-temen sekelas
-    - ngerasa nggak sepintar yang lain, nggak pede ngomong di kelas
+    - minder ka sama teman-teman kelas, rasanya bodoh sekali ka dibanding mereka
 
 - intent: loneliness
   examples: |
     - di kos sendirian terus, nggak ada temen buat ngobrol
-    - ngerasa kesepian banget semenjak pindah ke kota ini
+    - sendiri terus ka di kos, nda ada temanku ngobrol
 
 - intent: sleep_problem
   examples: |
     - udah jam 3 pagi dan aku masih melek aja
-    - tidurku kacau, sering kebangun tengah malam
+    - sudah jam 3 subuh tapi mataku nda mau ki tutup, nda bisa tidur
 
 - intent: depression_symptom
   examples: |
     - akhir-akhir ini sering nangis sendiri tanpa sebab
-    - ngerasa hampa, hobi yang biasa kusuka jadi nggak seru lagi
+    - akhir-akhir ini sering ka menangis sendiri, nda tau kenapa
 
 - intent: ask_tips
   examples: |
     - ada saran nggak biar nggak gampang panik pas ujian?
-    - gimana sih caranya biar bisa bagi waktu kuliah sama organisasi?
+    - ada kah saran biar nda gampang panik kalau mau ujian?
 
 - intent: consultation
   examples: |
     - boleh curhat nggak? ada yang lagi ganggu pikiranku
-    - aku butuh didengerin, bisa nggak?
+    - bisa ka curhat kak? ada yang ganggu pikiranku dari kemarin
 
 - intent: gratitude
   examples: |
     - makasih ya, lumayan lega abis cerita
-    - thanks banget udah mau dengerin
+    - makasih banyak ya kak, lega mi rasanya setelah cerita
 
 - intent: goodbye
   examples: |
     - oke deh, aku off dulu ya, dadah
-    - udah dulu ya, sampai ketemu lagi
+    - iye kak, saya pamit dulu ya, sampai ketemu lagi
 
 - intent: inform
   examples: |
     - minggu ini ada tiga tugas kelompok, anggota kelompokku nggak ada yang aktif, jadi aku kerjain sendiri dan capek banget
-    - aku lagi ngerjain skripsi sambil kerja part-time, tiap hari pulang malam, terus susah banget buat fokus
+    - minggu ini ada tiga tugas kelompok tapi teman-temanku nda ada yang aktif, jadi kukerja sendiri semua, capek sekali ka
 
 - intent: crisis_risk
   examples: |
     - rasanya pengen ngilang selamanya aja dari dunia ini
-    - aku udah nggak mau hidup lagi, capek banget
+    - rasanya mauka hilang saja dari dunia ini, capek mi
 
 - intent: ambiguous_distress
   examples: |
     - lagi nggak jelas aja rasanya hari ini
-    - susah dijelasin, pokoknya nggak enak
+    - nda tau kenapa hari ini rasanya nda enak sekali
 
 - intent: out_of_scope
   examples: |
     - jadwal kereta ke Surabaya jam berapa ya?
-    - bantuin bikin caption instagram dong
+    - kak tau ji tempat fotokopi yang murah di sekitar kampus?

@@ -8,11 +8,11 @@
     }
   },
   {
-    "text": "stres mikirin skripsi yang nggak kelar-kelar",
-    "intent": "stress_academic",
+    "text": "deg-degan terus ka tiap mau maju presentasi, takut salah ngomong",
+    "intent": "anxiety",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.739255964756012
+      "name": "self_confidence",
+      "confidence": 0.605131983757019
     }
   },
   {
@@ -21,22 +21,6 @@
     "intent_prediction": {
       "name": "ambiguous_distress",
       "confidence": 0.704899787902832
-    }
-  },
-  {
-    "text": "rasanya udah nggak ada dorongan buat ngerjain apa-apa",
-    "intent": "motivation",
-    "intent_prediction": {
-      "name": "ambiguous_distress",
-      "confidence": 0.9909271001815796
-    }
-  },
-  {
-    "text": "ngerasa nggak sepintar yang lain, nggak pede ngomong di kelas",
-    "intent": "self_confidence",
-    "intent_prediction": {
-      "name": "ambiguous_distress",
-      "confidence": 0.9917616844177246
     }
   },
   {
@@ -56,11 +40,11 @@
     }
   },
   {
-    "text": "ngerasa hampa, hobi yang biasa kusuka jadi nggak seru lagi",
+    "text": "akhir-akhir ini sering ka menangis sendiri, nda tau kenapa",
     "intent": "depression_symptom",
     "intent_prediction": {
-      "name": "ambiguous_distress",
-      "confidence": 0.976773738861084
+      "name": "loneliness",
+      "confidence": 0.6508446335792542
     }
   },
   {
@@ -72,11 +56,11 @@
     }
   },
   {
-    "text": "gimana sih caranya biar bisa bagi waktu kuliah sama organisasi?",
+    "text": "ada kah saran biar nda gampang panik kalau mau ujian?",
     "intent": "ask_tips",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.5311514139175415
+      "name": "out_of_scope",
+      "confidence": 0.4330069422721863
     }
   },
   {
@@ -88,19 +72,19 @@
     }
   },
   {
-    "text": "aku butuh didengerin, bisa nggak?",
+    "text": "bisa ka curhat kak? ada yang ganggu pikiranku dari kemarin",
     "intent": "consultation",
     "intent_prediction": {
-      "name": "ambiguous_distress",
-      "confidence": 0.9503792524337769
+      "name": "loneliness",
+      "confidence": 0.34462985396385193
     }
   },
   {
-    "text": "thanks banget udah mau dengerin",
-    "intent": "gratitude",
+    "text": "kak tau ji tempat fotokopi yang murah di sekitar kampus?",
+    "intent": "out_of_scope",
     "intent_prediction": {
-      "name": "crisis_risk",
-      "confidence": 0.45360058546066284
+      "name": "inform",
+      "confidence": 0.9038538336753845
     }
   }
 ]

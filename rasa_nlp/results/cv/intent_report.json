@@ -1,142 +1,42 @@
 {
-  "goodbye": {
-    "precision": 0.6666666666666666,
-    "recall": 0.6153846153846154,
-    "f1-score": 0.64,
-    "support": 13,
+  "self_confidence": {
+    "precision": 0.37037037037037035,
+    "recall": 0.45454545454545453,
+    "f1-score": 0.40816326530612246,
+    "support": 22,
     "confused_with": {
-      "greet": 3,
-      "gratitude": 1
+      "anxiety": 4,
+      "loneliness": 2
     }
   },
   "gratitude": {
-    "precision": 0.9166666666666666,
+    "precision": 0.7333333333333333,
     "recall": 0.8461538461538461,
-    "f1-score": 0.8799999999999999,
+    "f1-score": 0.7857142857142856,
     "support": 13,
     "confused_with": {
       "self_confidence": 1,
       "greet": 1
     }
   },
-  "crisis_risk": {
-    "precision": 0.84375,
-    "recall": 0.9,
-    "f1-score": 0.870967741935484,
-    "support": 30,
-    "confused_with": {
-      "sleep_problem": 1,
-      "depression_symptom": 1
-    }
-  },
-  "greet": {
-    "precision": 0.47368421052631576,
-    "recall": 0.5625,
-    "f1-score": 0.5142857142857142,
-    "support": 16,
-    "confused_with": {
-      "consultation": 5,
-      "goodbye": 2
-    }
-  },
-  "anxiety": {
-    "precision": 0.5862068965517241,
-    "recall": 0.6296296296296297,
-    "f1-score": 0.6071428571428571,
-    "support": 27,
-    "confused_with": {
-      "self_confidence": 4,
-      "stress_academic": 2
-    }
-  },
-  "stress_academic": {
-    "precision": 0.7142857142857143,
-    "recall": 0.7692307692307693,
-    "f1-score": 0.7407407407407408,
-    "support": 26,
-    "confused_with": {
-      "inform": 3,
-      "anxiety": 2
-    }
-  },
   "loneliness": {
-    "precision": 0.3888888888888889,
-    "recall": 0.35,
-    "f1-score": 0.36842105263157887,
+    "precision": 0.5,
+    "recall": 0.45,
+    "f1-score": 0.4736842105263158,
     "support": 20,
     "confused_with": {
       "self_confidence": 4,
-      "ask_tips": 3
-    }
-  },
-  "sleep_problem": {
-    "precision": 0.9285714285714286,
-    "recall": 0.6842105263157895,
-    "f1-score": 0.7878787878787878,
-    "support": 19,
-    "confused_with": {
-      "stress_academic": 2,
-      "anxiety": 2
-    }
-  },
-  "self_confidence": {
-    "precision": 0.375,
-    "recall": 0.4090909090909091,
-    "f1-score": 0.3913043478260869,
-    "support": 22,
-    "confused_with": {
-      "anxiety": 4,
-      "loneliness": 3
-    }
-  },
-  "consultation": {
-    "precision": 0.3333333333333333,
-    "recall": 0.35714285714285715,
-    "f1-score": 0.3448275862068965,
-    "support": 14,
-    "confused_with": {
-      "loneliness": 3,
-      "greet": 3
-    }
-  },
-  "ask_tips": {
-    "precision": 0.5384615384615384,
-    "recall": 0.6666666666666666,
-    "f1-score": 0.5957446808510638,
-    "support": 21,
-    "confused_with": {
-      "motivation": 2,
-      "self_confidence": 1
-    }
-  },
-  "depression_symptom": {
-    "precision": 0.5185185185185185,
-    "recall": 0.5185185185185185,
-    "f1-score": 0.5185185185185185,
-    "support": 27,
-    "confused_with": {
-      "motivation": 3,
-      "crisis_risk": 3
+      "consultation": 3
     }
   },
   "inform": {
-    "precision": 0.7741935483870968,
+    "precision": 0.7164179104477612,
     "recall": 0.9056603773584906,
-    "f1-score": 0.8347826086956522,
+    "f1-score": 0.7999999999999999,
     "support": 53,
     "confused_with": {
-      "stress_academic": 2,
-      "self_confidence": 1
-    }
-  },
-  "out_of_scope": {
-    "precision": 0.8461538461538461,
-    "recall": 0.55,
-    "f1-score": 0.6666666666666667,
-    "support": 20,
-    "confused_with": {
-      "self_confidence": 2,
-      "ask_tips": 2
+      "motivation": 2,
+      "stress_academic": 1
     }
   },
   "ambiguous_distress": {
@@ -145,37 +45,136 @@
     "f1-score": 0.8,
     "support": 15,
     "confused_with": {
-      "greet": 2,
-      "inform": 1
+      "depression_symptom": 2,
+      "sleep_problem": 1
+    }
+  },
+  "out_of_scope": {
+    "precision": 0.8461538461538461,
+    "recall": 0.55,
+    "f1-score": 0.6666666666666667,
+    "support": 20,
+    "confused_with": {
+      "ask_tips": 3,
+      "motivation": 2
+    }
+  },
+  "greet": {
+    "precision": 0.6,
+    "recall": 0.5625,
+    "f1-score": 0.5806451612903225,
+    "support": 16,
+    "confused_with": {
+      "consultation": 4,
+      "goodbye": 2
+    }
+  },
+  "crisis_risk": {
+    "precision": 0.7631578947368421,
+    "recall": 0.9666666666666667,
+    "f1-score": 0.8529411764705883,
+    "support": 30,
+    "confused_with": {
+      "sleep_problem": 1
+    }
+  },
+  "depression_symptom": {
+    "precision": 0.5185185185185185,
+    "recall": 0.5185185185185185,
+    "f1-score": 0.5185185185185185,
+    "support": 27,
+    "confused_with": {
+      "crisis_risk": 4,
+      "self_confidence": 2
+    }
+  },
+  "sleep_problem": {
+    "precision": 0.6666666666666666,
+    "recall": 0.7368421052631579,
+    "f1-score": 0.7,
+    "support": 19,
+    "confused_with": {
+      "stress_academic": 1,
+      "depression_symptom": 1
     }
   },
   "motivation": {
-    "precision": 0.5294117647058824,
-    "recall": 0.4090909090909091,
-    "f1-score": 0.46153846153846156,
+    "precision": 0.3157894736842105,
+    "recall": 0.2727272727272727,
+    "f1-score": 0.2926829268292683,
     "support": 22,
     "confused_with": {
-      "depression_symptom": 5,
-      "ask_tips": 3
+      "depression_symptom": 6,
+      "inform": 4
     }
   },
-  "accuracy": 0.6480446927374302,
+  "consultation": {
+    "precision": 0.35294117647058826,
+    "recall": 0.42857142857142855,
+    "f1-score": 0.3870967741935484,
+    "support": 14,
+    "confused_with": {
+      "loneliness": 3,
+      "inform": 3
+    }
+  },
+  "ask_tips": {
+    "precision": 0.6666666666666666,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.6666666666666666,
+    "support": 21,
+    "confused_with": {
+      "motivation": 2,
+      "out_of_scope": 1
+    }
+  },
+  "goodbye": {
+    "precision": 0.7,
+    "recall": 0.5384615384615384,
+    "f1-score": 0.608695652173913,
+    "support": 13,
+    "confused_with": {
+      "greet": 3,
+      "self_confidence": 1
+    }
+  },
+  "anxiety": {
+    "precision": 0.6190476190476191,
+    "recall": 0.48148148148148145,
+    "f1-score": 0.5416666666666666,
+    "support": 27,
+    "confused_with": {
+      "self_confidence": 5,
+      "sleep_problem": 3
+    }
+  },
+  "stress_academic": {
+    "precision": 0.7894736842105263,
+    "recall": 0.5769230769230769,
+    "f1-score": 0.6666666666666666,
+    "support": 26,
+    "confused_with": {
+      "inform": 6,
+      "sleep_problem": 2
+    }
+  },
+  "accuracy": 0.6312849162011173,
   "macro avg": {
-    "precision": 0.6521120638573512,
-    "recall": 0.6149966432031042,
-    "f1-score": 0.6264262353074068,
+    "precision": 0.6349085725191843,
+    "recall": 0.6013990687502666,
+    "f1-score": 0.6093630398555968,
     "support": 358
   },
   "weighted avg": {
-    "precision": 0.6595563776150722,
-    "recall": 0.6480446927374302,
-    "f1-score": 0.6474452961342815,
+    "precision": 0.639567758554363,
+    "recall": 0.6312849162011173,
+    "f1-score": 0.6265620363413147,
     "support": 358
   },
   "micro avg": {
-    "precision": 0.6480446927374302,
-    "recall": 0.6480446927374302,
-    "f1-score": 0.6480446927374302,
+    "precision": 0.6312849162011173,
+    "recall": 0.6312849162011173,
+    "f1-score": 0.6312849162011173,
     "support": 358
   }
 }

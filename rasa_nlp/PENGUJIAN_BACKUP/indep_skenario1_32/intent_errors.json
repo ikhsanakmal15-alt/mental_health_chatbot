@@ -1,0 +1,90 @@
+[
+  {
+    "text": "woy, ada orang nggak di sini?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.6920156478881836
+    }
+  },
+  {
+    "text": "deg-degan terus ka tiap mau maju presentasi, takut salah ngomong",
+    "intent": "anxiety",
+    "intent_prediction": {
+      "name": "self_confidence",
+      "confidence": 0.605131983757019
+    }
+  },
+  {
+    "text": "lagi males banget kuliah, nggak ada semangat",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.704899787902832
+    }
+  },
+  {
+    "text": "udah jam 3 pagi dan aku masih melek aja",
+    "intent": "sleep_problem",
+    "intent_prediction": {
+      "name": "crisis_risk",
+      "confidence": 0.33052077889442444
+    }
+  },
+  {
+    "text": "akhir-akhir ini sering nangis sendiri tanpa sebab",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.4729560613632202
+    }
+  },
+  {
+    "text": "akhir-akhir ini sering ka menangis sendiri, nda tau kenapa",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.6508446335792542
+    }
+  },
+  {
+    "text": "ada saran nggak biar nggak gampang panik pas ujian?",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.49779558181762695
+    }
+  },
+  {
+    "text": "ada kah saran biar nda gampang panik kalau mau ujian?",
+    "intent": "ask_tips",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.4330069422721863
+    }
+  },
+  {
+    "text": "boleh curhat nggak? ada yang lagi ganggu pikiranku",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.8694568276405334
+    }
+  },
+  {
+    "text": "bisa ka curhat kak? ada yang ganggu pikiranku dari kemarin",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "loneliness",
+      "confidence": 0.34462985396385193
+    }
+  },
+  {
+    "text": "kak tau ji tempat fotokopi yang murah di sekitar kampus?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9038538336753845
+    }
+  }
+]

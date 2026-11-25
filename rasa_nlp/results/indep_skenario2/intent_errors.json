@@ -1,130 +1,114 @@
 [
   {
-    "text": "hay ad yg bs diajak ngobrol ga",
+    "text": "hlo kak, lg sibuk gk? aq mw ngbrol sbentar",
     "intent": "greet",
     "intent_prediction": {
-      "name": "loneliness",
-      "confidence": 0.5686931610107422
+      "name": "anxiety",
+      "confidence": 0.3280028998851776
     }
   },
   {
-    "text": "revisi skripsi dr dosen pembimbing blm kelar2 dan ujian udh deket bgt stress parah",
+    "text": "assalamualaikum kk, bs ngobrol bntr gk?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2474270462989807
+    }
+  },
+  {
+    "text": "tgs kuliahku numpuk smua, bsk hrs kumpul 3 sekaligus, pusing bgt",
     "intent": "stress_academic",
     "intent_prediction": {
       "name": "inform",
-      "confidence": 0.9999275207519531
+      "confidence": 0.9163997769355774
     }
   },
   {
-    "text": "laporan praktikum blm kelar, besok dikumpul, pusing bgt",
+    "text": "dosen minta revisi lg padahal ujian tinggal 2 hr, aq udh gk tau hrs mulai dr mana",
     "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9632489681243896
+    }
+  },
+  {
+    "text": "tiap mau maju presentasi dada deg2an, tangan dingin, takut bgt salah",
+    "intent": "anxiety",
     "intent_prediction": {
       "name": "self_confidence",
-      "confidence": 0.7939674854278564
+      "confidence": 0.9218579530715942
     }
   },
   {
-    "text": "aku takut bgt kalo dipanggil maju ke depan, badan lgsg gemeteran dan keringat dingin",
-    "intent": "anxiety",
-    "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.976533830165863
-    }
-  },
-  {
-    "text": "khawatir terus soal masa depan, nggak bisa tenang sama sekali",
-    "intent": "anxiety",
-    "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.4694717824459076
-    }
-  },
-  {
-    "text": "mager parah, bukannya belajar malah scroll hp seharian padahal tau harus ngerjain tugas",
+    "text": "udh gk ad semangat kuliah, tiap pagi males bgt bangun ke kampus",
     "intent": "motivation",
     "intent_prediction": {
       "name": "inform",
-      "confidence": 0.925157368183136
+      "confidence": 0.8535301089286804
     }
   },
   {
-    "text": "udah nggak ada alasan buat semangat ngampus lagi sih",
-    "intent": "motivation",
+    "text": "di kos sndirian trs, gk ad tmn buat cerita, sepi bgt",
+    "intent": "loneliness",
     "intent_prediction": {
-      "name": "ambiguous_distress",
-      "confidence": 0.9040156602859497
+      "name": "consultation",
+      "confidence": 0.40278467535972595
     }
   },
   {
-    "text": "kyknya aku emg nggak cocok di jurusan ini, orang lain jauh lebih bagus",
-    "intent": "self_confidence",
-    "intent_prediction": {
-      "name": "ambiguous_distress",
-      "confidence": 0.7548765540122986
-    }
-  },
-  {
-    "text": "nggak ada yg ngajak aku ngumpul, kyknya aku nggak dianggap di kelas",
+    "text": "tmn2 sbuk sndiri2, aq ngerasa gk ad yg peduli sm aq",
     "intent": "loneliness",
     "intent_prediction": {
       "name": "ambiguous_distress",
-      "confidence": 0.9867566823959351
+      "confidence": 0.447077214717865
     }
   },
   {
-    "text": "bgadang tiap malam gara2 tugas, badan jadi lemes dan nggak bisa tidur nyenyak",
-    "intent": "sleep_problem",
+    "text": "ad tips gk biar gk gampang gugup pas presentasi?",
+    "intent": "ask_tips",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.9014587998390198
+      "name": "anxiety",
+      "confidence": 0.6537784337997437
     }
   },
   {
-    "text": "aku ngerasa sedih terus tanpa alasan jelas dan udah males ngapa-ngapain berminggu-minggu",
-    "intent": "depression_symptom",
+    "text": "kasih saran dong gmn cara ngatur waktu biar tugas gk numpuk",
+    "intent": "ask_tips",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.8900887966156006
+      "name": "stress_academic",
+      "confidence": 0.9812881946563721
     }
   },
   {
-    "text": "aku mau konsul soal masalah yg bikin aku nggak tenang akhir2 ini",
+    "text": "kak bs curhat gk? ad yg lg ganggu pikiranku",
     "intent": "consultation",
     "intent_prediction": {
-      "name": "inform",
-      "confidence": 0.6867995262145996
+      "name": "anxiety",
+      "confidence": 0.5761297345161438
     }
   },
   {
-    "text": "bisa minta tolong dengerin cerita aku nggak, agak panjang soalnya",
+    "text": "aq mw konsul soal masalahku, bs dengerin gk?",
     "intent": "consultation",
     "intent_prediction": {
-      "name": "ambiguous_distress",
-      "confidence": 0.9162151217460632
+      "name": "self_confidence",
+      "confidence": 0.28643104434013367
     }
   },
   {
-    "text": "sebenernya aku pengen akhiri semuanya aja, udh gk kuat",
-    "intent": "crisis_risk",
+    "text": "thx bnyk kak, saran nya ngebantu bgt",
+    "intent": "gratitude",
     "intent_prediction": {
       "name": "ambiguous_distress",
-      "confidence": 0.8115586638450623
+      "confidence": 0.5946664810180664
     }
   },
   {
-    "text": "entah kenapa aku ngerasa aneh, bukan sedih bukan marah juga",
-    "intent": "ambiguous_distress",
-    "intent_prediction": {
-      "name": "depression_symptom",
-      "confidence": 0.3384309709072113
-    }
-  },
-  {
-    "text": "cara daftar BPJS online gimana ya?",
+    "text": "cara bikin paspor online gmn ya?",
     "intent": "out_of_scope",
     "intent_prediction": {
       "name": "ask_tips",
-      "confidence": 0.953734278678894
+      "confidence": 0.8751827478408813
     }
   }
 ]

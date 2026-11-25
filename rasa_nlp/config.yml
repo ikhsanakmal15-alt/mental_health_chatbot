@@ -25,10 +25,6 @@ pipeline:
   - name: DIETClassifier
     epochs: 100
     constrain_similarities: true
-    # random_seed: TIDAK DITETAPKAN secara khusus (nilai acak default Rasa).
-    # Jika ingin hasil yang dapat direproduksi persis, hapus tanda # di bawah
-    # lalu ubah teks naskah menjadi "random seed = 42".
-    # random_seed: 42
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100

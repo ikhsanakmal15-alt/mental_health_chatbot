@@ -1,0 +1,85 @@
+version: "3.1"
+
+nlu:
+
+# SKENARIO 2 (versi peneliti): kalimat sulit - singkatan, salah ketik, multi-topik
+
+- intent: greet
+  examples: |
+    - hlo kak, lg sibuk gk? aq mw ngbrol sbentar
+    - assalamualaikum kk, bs ngobrol bntr gk?
+
+- intent: stress_academic
+  examples: |
+    - tgs kuliahku numpuk smua, bsk hrs kumpul 3 sekaligus, pusing bgt
+    - dosen minta revisi lg padahal ujian tinggal 2 hr, aq udh gk tau hrs mulai dr mana
+
+- intent: anxiety
+  examples: |
+    - tiap mau maju presentasi dada deg2an, tangan dingin, takut bgt salah
+    - kepikiran terus hasil ujian kmrn, gelisah gk bs tenang dr tadi malam
+
+- intent: motivation
+  examples: |
+    - udh gk ad semangat kuliah, tiap pagi males bgt bangun ke kampus
+    - pgn rajin blajar tp ujung2nya rebahan trs, mls bgt rasanya
+
+- intent: self_confidence
+  examples: |
+    - aq ngerasa gk sepintar tmn2 sekelas, selalu minder kalo diskusi
+    - gk pede bgt sm kemampuanku, takut dikira bodoh kalo ngomong
+
+- intent: loneliness
+  examples: |
+    - di kos sndirian trs, gk ad tmn buat cerita, sepi bgt
+    - tmn2 sbuk sndiri2, aq ngerasa gk ad yg peduli sm aq
+
+- intent: sleep_problem
+  examples: |
+    - udh jam 3 pagi mataku msh melek, gk bs tdr dr semalam
+    - tdr cmn 3 jam tiap hr gr2 begadang, bangun2 pusing trs
+
+- intent: depression_symptom
+  examples: |
+    - sdh lama aq sedih trs tanpa sebab, gk ad yg bikin senang lg
+    - ngerasa hampa bgt akhir2 ini, sering nangis sndiri, gk minat apa2
+
+- intent: ask_tips
+  examples: |
+    - ad tips gk biar gk gampang gugup pas presentasi?
+    - kasih saran dong gmn cara ngatur waktu biar tugas gk numpuk
+
+- intent: consultation
+  examples: |
+    - kak bs curhat gk? ad yg lg ganggu pikiranku
+    - aq mw konsul soal masalahku, bs dengerin gk?
+
+- intent: gratitude
+  examples: |
+    - mksh ya kak udh dengerin, aq jd agak lega
+    - thx bnyk kak, saran nya ngebantu bgt
+
+- intent: goodbye
+  examples: |
+    - ok kak aq cabut dlu ya, bye
+    - udahan dlu ya kak, mw tdr, sampai ktmu lg
+
+- intent: inform
+  examples: |
+    - tgs numpuk, ujian dkt, trs ad masalah sm tmn kos, jd gk bs tdr dan gk fokus kuliah
+    - skripsi gk maju2, ortu nanyain trs, aq takut dan jd mls ngapa2in, bingung hrs gmn
+
+- intent: crisis_risk
+  examples: |
+    - aq pgn mengakhiri hidupku aja, udh gk kuat
+    - kyknya lbh baik aq gk ad di dunia ini lg
+
+- intent: ambiguous_distress
+  examples: |
+    - gk tau knp hr ini rasanya aneh bgt, susah dijelasin
+    - lg gk baik2 aja sih, tp gk ngerti sebabnya
+
+- intent: out_of_scope
+  examples: |
+    - cara bikin paspor online gmn ya?
+    - rekomendasi laptop murah buat kuliah dong

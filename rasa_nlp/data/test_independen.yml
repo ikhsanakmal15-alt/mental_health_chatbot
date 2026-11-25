@@ -1,82 +1,85 @@
 version: "3.1"
 
 nlu:
+
+# SKENARIO 2 (versi peneliti): kalimat sulit - singkatan, salah ketik, multi-topik
+
 - intent: greet
   examples: |
-    - hallo selamat siang kk, aq mau cerita ttg kuliahku
-    - hay ad yg bs diajak ngobrol ga
+    - hlo kak, lg sibuk gk? aq mw ngbrol sbentar
+    - assalamualaikum kk, bs ngobrol bntr gk?
 
 - intent: stress_academic
   examples: |
-    - revisi skripsi dr dosen pembimbing blm kelar2 dan ujian udh deket bgt stress parah
-    - laporan praktikum blm kelar, besok dikumpul, pusing bgt
+    - tgs kuliahku numpuk smua, bsk hrs kumpul 3 sekaligus, pusing bgt
+    - dosen minta revisi lg padahal ujian tinggal 2 hr, aq udh gk tau hrs mulai dr mana
 
 - intent: anxiety
   examples: |
-    - aku takut bgt kalo dipanggil maju ke depan, badan lgsg gemeteran dan keringat dingin
-    - khawatir terus soal masa depan, nggak bisa tenang sama sekali
+    - tiap mau maju presentasi dada deg2an, tangan dingin, takut bgt salah
+    - kepikiran terus hasil ujian kmrn, gelisah gk bs tenang dr tadi malam
 
 - intent: motivation
   examples: |
-    - mager parah, bukannya belajar malah scroll hp seharian padahal tau harus ngerjain tugas
-    - udah nggak ada alasan buat semangat ngampus lagi sih
+    - udh gk ad semangat kuliah, tiap pagi males bgt bangun ke kampus
+    - pgn rajin blajar tp ujung2nya rebahan trs, mls bgt rasanya
 
 - intent: self_confidence
   examples: |
-    - kyknya aku emg nggak cocok di jurusan ini, orang lain jauh lebih bagus
-    - aku selalu ngerasa hasil kerjaku jelek dibanding punya orang lain
+    - aq ngerasa gk sepintar tmn2 sekelas, selalu minder kalo diskusi
+    - gk pede bgt sm kemampuanku, takut dikira bodoh kalo ngomong
 
 - intent: loneliness
   examples: |
-    - nggak ada yg ngajak aku ngumpul, kyknya aku nggak dianggap di kelas
-    - ngerasa sendirian padahal lagi rame di kampus
+    - di kos sndirian trs, gk ad tmn buat cerita, sepi bgt
+    - tmn2 sbuk sndiri2, aq ngerasa gk ad yg peduli sm aq
 
 - intent: sleep_problem
   examples: |
-    - isomnia ku kambuh lg, 3 hari ini tidur cuma 2 jam
-    - bgadang tiap malam gara2 tugas, badan jadi lemes dan nggak bisa tidur nyenyak
+    - udh jam 3 pagi mataku msh melek, gk bs tdr dr semalam
+    - tdr cmn 3 jam tiap hr gr2 begadang, bangun2 pusing trs
 
 - intent: depression_symptom
   examples: |
-    - aku ngerasa sedih terus tanpa alasan jelas dan udah males ngapa-ngapain berminggu-minggu
-    - hatiku kosong bgt, makan pun nggak selera
+    - sdh lama aq sedih trs tanpa sebab, gk ad yg bikin senang lg
+    - ngerasa hampa bgt akhir2 ini, sering nangis sndiri, gk minat apa2
 
 - intent: ask_tips
   examples: |
-    - kasih aku cara dong buat ngatasin rasa cemas sebelum sidang
-    - tips biar fokus belajar gimana ya
+    - ad tips gk biar gk gampang gugup pas presentasi?
+    - kasih saran dong gmn cara ngatur waktu biar tugas gk numpuk
 
 - intent: consultation
   examples: |
-    - aku mau konsul soal masalah yg bikin aku nggak tenang akhir2 ini
-    - bisa minta tolong dengerin cerita aku nggak, agak panjang soalnya
+    - kak bs curhat gk? ad yg lg ganggu pikiranku
+    - aq mw konsul soal masalahku, bs dengerin gk?
 
 - intent: gratitude
   examples: |
-    - terima kasih bnyk ya udh bantu, aku jd lebih tenang
-    - makasih sarannya, bakal aku coba
+    - mksh ya kak udh dengerin, aq jd agak lega
+    - thx bnyk kak, saran nya ngebantu bgt
 
 - intent: goodbye
   examples: |
-    - ok aku pamit dulu ya, makasih udh nemenin, bye
-    - sampai jumpa, aku mau istirahat dulu
+    - ok kak aq cabut dlu ya, bye
+    - udahan dlu ya kak, mw tdr, sampai ktmu lg
 
 - intent: inform
   examples: |
-    - aku capek kuliah, tugas banyak, dosen nggak pernah puas, di rumah juga ortu nuntut nilai bagus, rasanya semua numpuk jadi satu
-    - skripsiku ditolak dua kali, teman-teman udah pada wisuda, aku jadi takut dan nggak tau mau mulai dari mana lagi
+    - tgs numpuk, ujian dkt, trs ad masalah sm tmn kos, jd gk bs tdr dan gk fokus kuliah
+    - skripsi gk maju2, ortu nanyain trs, aq takut dan jd mls ngapa2in, bingung hrs gmn
 
 - intent: crisis_risk
   examples: |
-    - sebenernya aku pengen akhiri semuanya aja, udh gk kuat
-    - kadang kepikiran buat nyakitin diri sendiri biar lega
+    - aq pgn mengakhiri hidupku aja, udh gk kuat
+    - kyknya lbh baik aq gk ad di dunia ini lg
 
 - intent: ambiguous_distress
   examples: |
-    - entah kenapa aku ngerasa aneh, bukan sedih bukan marah juga
-    - aku nggak tau ini apa, cuma ngerasa ada yg salah sama aku akhir2 ini
+    - gk tau knp hr ini rasanya aneh bgt, susah dijelasin
+    - lg gk baik2 aja sih, tp gk ngerti sebabnya
 
 - intent: out_of_scope
   examples: |
-    - cara daftar BPJS online gimana ya?
-    - minta tolong terjemahin paragraf ini ke bahasa Jepang
+    - cara bikin paspor online gmn ya?
+    - rekomendasi laptop murah buat kuliah dong

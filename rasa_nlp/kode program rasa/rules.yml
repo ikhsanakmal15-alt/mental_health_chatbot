@@ -1,0 +1,171 @@
+version: "3.1"
+
+rules:
+
+# ============================================================
+# GREETING
+# ============================================================
+
+- rule: Respond to greeting
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+
+# ============================================================
+# ACADEMIC STRESS
+# ============================================================
+
+- rule: Handle academic stress
+  steps:
+    - intent: stress_academic
+    - action: action_contextual_support
+
+
+# ============================================================
+# ANXIETY
+# ============================================================
+
+- rule: Handle anxiety
+  steps:
+    - intent: anxiety
+    - action: action_contextual_support
+
+
+# ============================================================
+# MOTIVATION
+# ============================================================
+
+- rule: Handle motivation
+  steps:
+    - intent: motivation
+    - action: action_contextual_support
+
+
+# ============================================================
+# SELF CONFIDENCE
+# ============================================================
+
+- rule: Handle self confidence
+  steps:
+    - intent: self_confidence
+    - action: action_contextual_support
+
+
+# ============================================================
+# LONELINESS
+# ============================================================
+
+- rule: Handle loneliness
+  steps:
+    - intent: loneliness
+    - action: action_contextual_support
+
+
+# ============================================================
+# SLEEP PROBLEM
+# ============================================================
+
+- rule: Handle sleep problem
+  steps:
+    - intent: sleep_problem
+    - action: action_contextual_support
+
+
+# ============================================================
+# DEPRESSION SYMPTOM
+# ============================================================
+
+- rule: Handle depression symptom
+  steps:
+    - intent: depression_symptom
+    - action: action_depression_support
+
+
+# ============================================================
+# CRISIS RISK (baru, Oktober 2026)
+# Respons tetap (utter_crisis_support), tidak melalui custom action
+# berbasis kata kunci, selalu berisi rujukan konselor + layanan darurat.
+# ============================================================
+
+- rule: Handle crisis risk
+  steps:
+    - intent: crisis_risk
+    - action: utter_crisis_support
+
+
+# ============================================================
+# ASK TIPS
+# ============================================================
+
+- rule: Handle ask tips
+  steps:
+    - intent: ask_tips
+    - action: action_contextual_support
+
+
+# ============================================================
+# CONSULTATION
+# ============================================================
+
+- rule: Handle consultation
+  steps:
+    - intent: consultation
+    - action: utter_consultation
+
+
+# ============================================================
+# GRATITUDE
+# ============================================================
+
+- rule: Handle gratitude
+  steps:
+    - intent: gratitude
+    - action: utter_gratitude
+
+
+# ============================================================
+# GOODBYE
+# ============================================================
+
+- rule: Handle goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+# ============================================================
+# INFORM
+# Untuk cerita panjang / narasi mahasiswa
+# ============================================================
+
+- rule: Handle long student story
+  steps:
+    - intent: inform
+    - action: action_contextual_support
+
+
+# ============================================================
+# NLU FALLBACK
+# ============================================================
+
+- rule: Handle NLU fallback
+  steps:
+    - intent: nlu_fallback
+    - action: action_safe_fallback
+
+# ============================================================
+# AMBIGUOUS DISTRESS
+# ============================================================
+- rule: Clarify ambiguous distress message
+  steps:
+    - intent: ambiguous_distress
+    - action: action_contextual_support
+
+# ============================================================
+# OUT OF SCOPE
+# ============================================================
+- rule: Handle out of scope question
+  steps:
+    - intent: out_of_scope
+    - action: action_out_of_scope

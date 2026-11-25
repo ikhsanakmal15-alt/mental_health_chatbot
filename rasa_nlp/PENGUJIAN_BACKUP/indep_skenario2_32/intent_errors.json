@@ -1,0 +1,162 @@
+[
+  {
+    "text": "hlo kak, ad org gk? aq mw crta2 dikit ttg kuliah",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "anxiety",
+      "confidence": 0.4025677740573883
+    }
+  },
+  {
+    "text": "revisi skripsi dr dosen pembimbing blm kelar2 dan ujian udh deket bgt stress parah",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999275207519531
+    }
+  },
+  {
+    "text": "tgs numpuk bgt, dosen pmbimbing susah ditemui, ujian tggl 3 hr lg, pusing mi ka",
+    "intent": "stress_academic",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7537090182304382
+    }
+  },
+  {
+    "text": "aku takut bgt kalo dipanggil maju ke depan, badan lgsg gemeteran dan keringat dingin",
+    "intent": "anxiety",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.976533830165863
+    }
+  },
+  {
+    "text": "mager parah, bukannya belajar malah scroll hp seharian padahal tau harus ngerjain tugas",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.925157368183136
+    }
+  },
+  {
+    "text": "mls bgt ka ngampus, bkn blajar mlh main hp smpe subuh, gk ad smgt sm skali",
+    "intent": "motivation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9027743339538574
+    }
+  },
+  {
+    "text": "kyknya aku emg nggak cocok di jurusan ini, orang lain jauh lebih bagus",
+    "intent": "self_confidence",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.7548765540122986
+    }
+  },
+  {
+    "text": "mndr ka bgt sm tmn2 yg lbh pntr, kyknya sya gk cocok di jurusan ini",
+    "intent": "self_confidence",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.2570248544216156
+    }
+  },
+  {
+    "text": "nggak ada yg ngajak aku ngumpul, kyknya aku nggak dianggap di kelas",
+    "intent": "loneliness",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.9867566823959351
+    }
+  },
+  {
+    "text": "tmn2 smua ad gengnya, aq sndiri trs dkos, nda ad yg ngjak ngumpul",
+    "intent": "loneliness",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8359862565994263
+    }
+  },
+  {
+    "text": "insmnia ku kmbuh lg, 3 hr ini tdr cmn 2 jam, bgdg trs gr2 tgs",
+    "intent": "sleep_problem",
+    "intent_prediction": {
+      "name": "crisis_risk",
+      "confidence": 0.3157649040222168
+    }
+  },
+  {
+    "text": "aku ngerasa sedih terus tanpa alasan jelas dan udah males ngapa-ngapain berminggu-minggu",
+    "intent": "depression_symptom",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8900887966156006
+    }
+  },
+  {
+    "text": "aku mau konsul soal masalah yg bikin aku nggak tenang akhir2 ini",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.6867995262145996
+    }
+  },
+  {
+    "text": "kak bs konsul gk? ad msalah yg bkin nda tenang akhir2 ini",
+    "intent": "consultation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.5798782706260681
+    }
+  },
+  {
+    "text": "mksh bnyk ya kak, aq jd lbh tenang mi",
+    "intent": "gratitude",
+    "intent_prediction": {
+      "name": "anxiety",
+      "confidence": 0.9456664323806763
+    }
+  },
+  {
+    "text": "sebenernya aku pengen akhiri semuanya aja, udh gk kuat",
+    "intent": "crisis_risk",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.8115586638450623
+    }
+  },
+  {
+    "text": "kdg kepikiran mw akhiri smua aja, udh gk kuat ka",
+    "intent": "crisis_risk",
+    "intent_prediction": {
+      "name": "ambiguous_distress",
+      "confidence": 0.3825386166572571
+    }
+  },
+  {
+    "text": "entah kenapa aku ngerasa aneh, bukan sedih bukan marah juga",
+    "intent": "ambiguous_distress",
+    "intent_prediction": {
+      "name": "depression_symptom",
+      "confidence": 0.3384309709072113
+    }
+  },
+  {
+    "text": "cara daftar BPJS online gimana ya?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_tips",
+      "confidence": 0.953734278678894
+    }
+  },
+  {
+    "text": "cr ngurus ktp ilang dmn ya?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "anxiety",
+      "confidence": 0.6090166568756104
+    }
+  }
+]

@@ -1,0 +1,51 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# The assistant project unique identifier
+assistant_id: 20260609-083551-charcoal-balustrade
+
+language: id
+# ------------------------------------------------------------------
+# PIPELINE NLU
+# Sebelumnya: "pipeline: null" (Rasa memakai pipeline default).
+# Sekarang DIEKSPLISITKAN agar dapat dilaporkan di naskah (Bab III/IV)
+# dan dilampirkan. Isinya SAMA dengan pipeline default Rasa 3.x,
+# sehingga perilaku model tidak berubah.
+# ------------------------------------------------------------------
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+    constrain_similarities: true
+  # Intent "nlu_fallback" ditetapkan bila confidence teratas < 0,3
+  # atau selisih dua intent teratas < 0,1.
+  - name: FallbackClassifier
+    threshold: 0.3
+    ambiguity_threshold: 0.1
+
+# ------------------------------------------------------------------
+# POLICIES (Rasa Core) - sama dengan default Rasa 3.x
+# RulePolicy WAJIB ada agar rule nlu_fallback dan crisis_risk berjalan.
+# ------------------------------------------------------------------
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 100
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+    constrain_similarities: true

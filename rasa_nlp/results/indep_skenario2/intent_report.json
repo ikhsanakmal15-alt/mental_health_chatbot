@@ -1,77 +1,11 @@
 {
-  "motivation": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2,
-    "confused_with": {
-      "inform": 1,
-      "ambiguous_distress": 1
-    }
-  },
-  "ask_tips": {
-    "precision": 0.6666666666666666,
-    "recall": 1.0,
-    "f1-score": 0.8,
-    "support": 2,
-    "confused_with": {}
-  },
-  "goodbye": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2,
-    "confused_with": {}
-  },
-  "depression_symptom": {
-    "precision": 0.5,
+  "anxiety": {
+    "precision": 0.25,
     "recall": 0.5,
-    "f1-score": 0.5,
+    "f1-score": 0.3333333333333333,
     "support": 2,
     "confused_with": {
-      "inform": 1
-    }
-  },
-  "inform": {
-    "precision": 0.2222222222222222,
-    "recall": 1.0,
-    "f1-score": 0.3636363636363636,
-    "support": 2,
-    "confused_with": {}
-  },
-  "stress_academic": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2,
-    "confused_with": {
-      "self_confidence": 1,
-      "inform": 1
-    }
-  },
-  "sleep_problem": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2,
-    "confused_with": {
-      "inform": 1
-    }
-  },
-  "gratitude": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2,
-    "confused_with": {}
-  },
-  "crisis_risk": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2,
-    "confused_with": {
-      "ambiguous_distress": 1
+      "self_confidence": 1
     }
   },
   "consultation": {
@@ -80,35 +14,32 @@
     "f1-score": 0.0,
     "support": 2,
     "confused_with": {
-      "inform": 1,
-      "ambiguous_distress": 1
+      "self_confidence": 1,
+      "anxiety": 1
     }
   },
-  "self_confidence": {
-    "precision": 0.5,
-    "recall": 0.5,
-    "f1-score": 0.5,
+  "goodbye": {
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 0.8,
     "support": 2,
-    "confused_with": {
-      "ambiguous_distress": 1
-    }
+    "confused_with": {}
+  },
+  "sleep_problem": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
   },
   "loneliness": {
-    "precision": 0.5,
-    "recall": 0.5,
-    "f1-score": 0.5,
-    "support": 2,
-    "confused_with": {
-      "ambiguous_distress": 1
-    }
-  },
-  "anxiety": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
     "support": 2,
     "confused_with": {
-      "inform": 2
+      "consultation": 1,
+      "ambiguous_distress": 1
     }
   },
   "out_of_scope": {
@@ -120,41 +51,105 @@
       "ask_tips": 1
     }
   },
-  "ambiguous_distress": {
-    "precision": 0.16666666666666666,
-    "recall": 0.5,
-    "f1-score": 0.25,
+  "greet": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
     "support": 2,
     "confused_with": {
-      "depression_symptom": 1
+      "goodbye": 1,
+      "anxiety": 1
     }
   },
-  "greet": {
+  "crisis_risk": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "gratitude": {
     "precision": 1.0,
     "recall": 0.5,
     "f1-score": 0.6666666666666666,
     "support": 2,
     "confused_with": {
-      "loneliness": 1
+      "ambiguous_distress": 1
     }
   },
-  "accuracy": 0.5,
-  "macro avg": {
-    "precision": 0.5347222222222222,
+  "ask_tips": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "stress_academic": 1,
+      "anxiety": 1
+    }
+  },
+  "motivation": {
+    "precision": 1.0,
     "recall": 0.5,
-    "f1-score": 0.4737689393939394,
+    "f1-score": 0.6666666666666666,
+    "support": 2,
+    "confused_with": {
+      "inform": 1
+    }
+  },
+  "self_confidence": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1-score": 0.6666666666666666,
+    "support": 2,
+    "confused_with": {}
+  },
+  "ambiguous_distress": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1-score": 0.6666666666666666,
+    "support": 2,
+    "confused_with": {}
+  },
+  "depression_symptom": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "stress_academic": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "inform": 2
+    }
+  },
+  "inform": {
+    "precision": 0.4,
+    "recall": 1.0,
+    "f1-score": 0.5714285714285715,
+    "support": 2,
+    "confused_with": {}
+  },
+  "accuracy": 0.5625,
+  "macro avg": {
+    "precision": 0.5197916666666667,
+    "recall": 0.5625,
+    "f1-score": 0.5023809523809524,
     "support": 32
   },
   "weighted avg": {
-    "precision": 0.5347222222222222,
-    "recall": 0.5,
-    "f1-score": 0.4737689393939394,
+    "precision": 0.5197916666666667,
+    "recall": 0.5625,
+    "f1-score": 0.5023809523809524,
     "support": 32
   },
   "micro avg": {
-    "precision": 0.5,
-    "recall": 0.5,
-    "f1-score": 0.5,
+    "precision": 0.5625,
+    "recall": 0.5625,
+    "f1-score": 0.5625,
     "support": 32
   }
 }

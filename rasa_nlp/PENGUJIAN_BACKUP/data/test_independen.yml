@@ -1,0 +1,85 @@
+version: "3.1"
+
+nlu:
+
+# SKENARIO 2: kalimat awal + kalimat sulit 
+
+- intent: greet
+  examples: |
+    - hallo selamat siang kk, aq mau cerita ttg kuliahku
+    - hlo kak, ad org gk? aq mw crta2 dikit ttg kuliah
+
+- intent: stress_academic
+  examples: |
+    - revisi skripsi dr dosen pembimbing blm kelar2 dan ujian udh deket bgt stress parah
+    - tgs numpuk bgt, dosen pmbimbing susah ditemui, ujian tggl 3 hr lg, pusing mi ka
+
+- intent: anxiety
+  examples: |
+    - aku takut bgt kalo dipanggil maju ke depan, badan lgsg gemeteran dan keringat dingin
+    - klo mw sidang bru mikir sj dh gemeteran ka, kringat dingin trs gk bs tenang
+
+- intent: motivation
+  examples: |
+    - mager parah, bukannya belajar malah scroll hp seharian padahal tau harus ngerjain tugas
+    - mls bgt ka ngampus, bkn blajar mlh main hp smpe subuh, gk ad smgt sm skali
+
+- intent: self_confidence
+  examples: |
+    - kyknya aku emg nggak cocok di jurusan ini, orang lain jauh lebih bagus
+    - mndr ka bgt sm tmn2 yg lbh pntr, kyknya sya gk cocok di jurusan ini
+
+- intent: loneliness
+  examples: |
+    - nggak ada yg ngajak aku ngumpul, kyknya aku nggak dianggap di kelas
+    - tmn2 smua ad gengnya, aq sndiri trs dkos, nda ad yg ngjak ngumpul
+
+- intent: sleep_problem
+  examples: |
+    - isomnia ku kambuh lg, 3 hari ini tidur cuma 2 jam
+    - insmnia ku kmbuh lg, 3 hr ini tdr cmn 2 jam, bgdg trs gr2 tgs
+
+- intent: depression_symptom
+  examples: |
+    - aku ngerasa sedih terus tanpa alasan jelas dan udah males ngapa-ngapain berminggu-minggu
+    - sdh brapa mggu sedih trs gk jls kenapa, mkn pn nda slera, mls ngapa2in
+
+- intent: ask_tips
+  examples: |
+    - kasih aku cara dong buat ngatasin rasa cemas sebelum sidang
+    - ad tips gk biar fokus blajar? hp nya ganggu trs
+
+- intent: consultation
+  examples: |
+    - aku mau konsul soal masalah yg bikin aku nggak tenang akhir2 ini
+    - kak bs konsul gk? ad msalah yg bkin nda tenang akhir2 ini
+
+- intent: gratitude
+  examples: |
+    - terima kasih bnyk ya udh bantu, aku jd lebih tenang
+    - mksh bnyk ya kak, aq jd lbh tenang mi
+
+- intent: goodbye
+  examples: |
+    - ok aku pamit dulu ya, makasih udh nemenin, bye
+    - ok kak aq pamit dlu ya, mw istirahat, bye
+
+- intent: inform
+  examples: |
+    - aku capek kuliah, tugas banyak, dosen nggak pernah puas, di rumah juga ortu nuntut nilai bagus, rasanya semua numpuk jadi satu
+    - tgs klmpk 3 sekaligus, tmn2 gk ad yg aktif, pdhl aq jg krj part-time, ortu jg nuntut nilai bgs, rasanya numpuk smua
+
+- intent: crisis_risk
+  examples: |
+    - sebenernya aku pengen akhiri semuanya aja, udh gk kuat
+    - kdg kepikiran mw akhiri smua aja, udh gk kuat ka
+
+- intent: ambiguous_distress
+  examples: |
+    - entah kenapa aku ngerasa aneh, bukan sedih bukan marah juga
+    - ntah knp ya ngerasa aneh, bkn sedih bkn marah jg, bingung mi
+
+- intent: out_of_scope
+  examples: |
+    - cara daftar BPJS online gimana ya?
+    - cr ngurus ktp ilang dmn ya?
